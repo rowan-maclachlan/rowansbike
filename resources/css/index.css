@@ -1,19 +1,50 @@
 * {
-    font-family: Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
+body {
+  margin: 0 0 0 0;
+  background-color: #edc561; /* tan */
+  colour: black;
+}
 
 h1 {
-    color: SeaGreen;
+  text-align: center;
 }
 
-
-p, 
-li {
-    font-size: 18px;
+body div.bike { 
+  /* This selector should specify the default colour of the bike section
+   * background, the centering of the image and title (possibly any text) as
+   * well as the font colour.  Individual bike sections should override the
+   * default background colour (possibly?) */
+  width: 100%;
+  margin: 0 0 0 0;
+  padding: 4 4 4 4; 
 }
 
+#cambio-rino {
+  background-color: #ce42a6 /* pink */;
+}
 
-a {
-    text-decoration: none;
+#giant-cypress {
+  background-color: #6b7182 /* grey */;
+}
+
+#khs-alite {
+  background-color: #a32618 /* red */;
+}
+
+/* To center the title of the bike */
+body div.bike h2 {
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
+/* To center the image of the bike */
+body div.bike img {
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20
 }
