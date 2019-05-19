@@ -62,15 +62,59 @@ nav a:hover {
 /*** NAVBAR END ***/
 
 /*** TITLE BEGIN ***/
-#title {
+#title-page {
   height: 100vh; /* To compensate for fixed nav menu */
+  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
+
+#title-wrapper {
+  width: 100%;
+  display: block;
+  align-self: center;
+  justify-content: center;
+}
+
 /* TODO get backup font? */
-#title h1 {
+#dividor-top-title {
+  height: 40px;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    white,
+    white 25%,
+    green 25%,
+    green 50%,
+    yellow 50%,
+    yellow 75%,
+    black 75%
+  );
+}
+
+#title {
+  background-color: white;
   font-size: 48pt;
+  height: 75px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#dividor-bottom-title {
+  height: 40px;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    black,
+    black 25%,
+    yellow 25%,
+    yellow 50%,
+    green 50%,
+    green 75%,
+    white 75%
+  );
 }
 /*** TITLE END ***/
 

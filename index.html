@@ -1,7 +1,7 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
-    <link href="./resources/css/index.css" type="text/css" rel="stylesheet">
+    <link href="./style/main.css" type="text/css" rel="stylesheet">
     <title>rowans-bike</title>
     <meta name="description"
           content="A collection of work on Rowan's bicycles" />
@@ -24,39 +24,64 @@
       rel="stylesheet">
   </head>
   <body>
-    <nav id="navbar">
-      <a href="#title">rowan's bikes</a>
-      <a href="bikes/khs-alite.html">KHS Alite 100</a>
-      <a href="bikes/giant-cypress.html">Giant Cypress</a>
-      <a href="bikes/cambio-rino.html">Cambio Rino</a>
-      <a href="tour/tour.html">Tour</a>
-    </nav>
-    <div id="title">
-      <h1>
+    <nav>
+      <a id=logo href="#title">
         <span style="font-family:'Archivo Black',sans-serif">rowan's </span>
         <span style="font-family:'Sonsie One',cursive">Bikes</span>
-      </h1>
+      </a>
+      <a href="./bikes/khs-alite.html">KHS Alite 100</a>
+      <a href="./bikes/giant-cypress.html">Giant Cypress</a>
+      <a href="./bikes/cambio-rino.html">Cambio Rino</a>
+      <a href="./tour/tour.html">The Tour</a>
+    </nav>
+      
+    <div id="title-page">
+      <div id="title-wrapper">
+        <div id=dividor-top-title></div>
+        <h1 id="title">
+          <span style="font-family:'Archivo Black',sans-serif">rowan's </span>
+          <span style="font-family:'Sonsie One',cursive">Bikes</span>
+        </h1>
+        <div id=dividor-bottom-title></div>
+      </div>
     </div>
+
+    <div class=dividor-top></div>
+    <h2>The KHS Alite 100</h2>
+    <div class=dividor-bottom></div>
+    
     <div class="bike" id="khs-alite">
-      <h2>The KHS Alite 100</h2>
       <a href="bikes/khs-alite.html">
-      <img src="resources/photos/alite_100_07.jpg" 
-           title="The KHS Alite 100"
-           alt="A photo of the KHS Alite 100.">
+        <img src="resources/photos/khs_02.jpg"
+             width=800px
+             height=600px
+             title="The KHS Alite 100"
+             alt="A photo of the KHS Alite 100.">
       </a>
     </div>
+    
+    <div class=dividor-top></div>
+    <h2>The Giant Cypress</h2>
+    <div class=dividor-bottom></div>
+    
     <div class="bike" id="giant-cypress">
-      <h2>The Giant Cypress</h2>
       <a href="bikes/giant-cypress.html">
-        <img src="resources/photos/giant_cypress.jpg" 
-           title="The Giant Cypress"
-           alt="A stock photo of the Giant Cypress.">
+        <img src="resources/photos/stock.giant.jpg"
+             width=800px
+             height=600px
+             title="The Giant Cypress"
+             alt="A stock photo of the Giant Cypress.">
       </a>
     </div>
+    
+    <div class=dividor-top></div>
+    <h2>The Cambio Rino</h2>
+    <div class=dividor-bottom></div>
     <div class="bike" id="cambio-rino">
-      <h2>The Cambio Rino</h2>
       <a href="bikes/cambio-rino.html">
-        <img src="resources/photos/on_campus.jpg"
+        <img src="resources/photos/cambio_02.jpg"
+             width=800px
+             height=600px
              title="The Cambio Rino"
              alt="A photo of the Cambio Rino in front of the University of
              Saskatchewan administration building.">
