@@ -1,0 +1,238 @@
+@font-face {
+    font-family: 'Big Poppa Regular';
+    src: url('../resources/fonts/bigpoppae-regular-webfont.woff2') format('woff2'),
+         url('../resources/fonts/bigpoppae-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Liberty Island';
+    src: url('../resources/fonts/libertyislandlaserital-webfont.woff2') format('woff2'),
+         url('../resources/fonts/libertyislandlaserital-webfont.woff') format('woff'),
+         url('../resources/fonts/libertyislandlaserital-webfont.tff') format('tff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html{
+  scroll-behavior:smooth
+}
+
+* {
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --navbar_height: 75px;
+}
+
+body {
+  margin: 0;
+  background-color: red; /* red */
+  font-size: 14pt;
+  colour: black;
+}
+
+.preload * { /* To prevent unwanted transitions on page load */
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+ }
+
+/*** NAVBAR BEGIN ***/
+nav {
+  overflow: hidden;
+  background-color: #333; /* black */
+  list-style-type: none;
+  display: block; /* display as block element */
+  height: var(--navbar_height);
+  width: 100%; /* extend over the whole page */
+  margin: 0;
+  padding: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Overlap other content */
+}
+
+nav a {
+  height: 100%;
+  width: auto;
+  float: left;
+  vertical-align: middle;
+  margin: auto 0;
+  text-align: center;
+  padding: 30px 16px; /* hack for centering text vertically... */
+  line-height: 20px;
+  text-decoration: none;
+  font-size: 14pt;
+  color: white;
+  transition: color, 0.5s, linear, 0s;
+  -webkit-transition: color, 0.5s linear 0s;
+  -moz-transition: color, 0.5s linear 0s;
+  -o-transition: color, 0.5s linear 0s;
+}
+
+nav a#logo {
+  width: 350px;
+  padding-left: 25px;
+  padding-right: 25px;
+  line-height: 20px;
+  font-size: 24pt;
+}
+
+nav a#tour {
+  float: right;
+}
+
+nav a:hover {
+  background: white;
+  color: black;
+  text-decoration: none;
+}
+/*** NAVBAR END ***/
+
+/*** TITLE BEGIN ***/
+#title-page {
+  height: 100vh; /* To compensate for fixed nav menu */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#title-wrapper {
+  width: 100%;
+  display: block;
+  align-self: center;
+  justify-content: center;
+}
+
+/* TODO get backup font? */
+#dividor-top-title {
+  height: 40px;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    white,
+    white 25%,
+    green 25%,
+    green 50%,
+    yellow 50%,
+    yellow 75%,
+    black 75%
+  );
+}
+
+#title {
+  background-color: white;
+  font-size: 48pt;
+  height: 75px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#dividor-bottom-title {
+  height: 40px;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    black,
+    black 25%,
+    yellow 25%,
+    yellow 50%,
+    green 50%,
+    green 75%,
+    white 75%
+  );
+}
+/*** TITLE END ***/
+
+/*** BIKE HEADER START ***/
+div.dividor-top {
+  height: 40px;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    white,
+    white 25%,
+    green 25%,
+    green 50%,
+    yellow 50%,
+    yellow 75%,
+    black 75%
+  );
+}
+
+/* To center the title of the bike */
+h2 {  
+  height: 40px;
+  width: 100%;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+div.dividor-bottom {
+  height: 40px;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    black,
+    black 25%,
+    yellow 25%,
+    yellow 50%,
+    green 50%,
+    green 75%,
+    white 75%
+  );
+}
+/*** BIKE HEADER END ***/
+
+div.bike { 
+  background-color: #a3eaf7;
+  height: 100vh; /* To compensate for fixed nav menu */
+  min-height: 100vh; /* Needs a good absolute minimum height */
+  /* For scroll snapping... */
+  scroll-snap-type: y mandatory;
+  scroll-padding: -var(--navbar_height, 175px); /* compensate for header */
+  /* Snap to the top of the div, minus navbar height */
+  scroll-snap-align: start;
+  /* For filling with the image */
+  resize: both;
+  margin: 0;
+  padding: 0;
+}
+
+div.bike div.bike-content {
+    font-size: 14pt;
+    line-height: 25pt;
+    width: 20%;
+    display: inline-block;
+    float: left;
+    padding: 15px;
+    text-overflow: ellipsis;
+    /* Required for text-overflow to do anything */
+    overflow: hidden;
+}
+
+/* To center the image of the bike */
+div.bike div.bike-image {
+  height: 100%;
+  width: 80%;
+  display: inline-block;
+  float: right;
+}
+
+div.bike-image img {
+    height: auto;
+    max-height: 100vh;
+    width: 100%;
+}
