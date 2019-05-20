@@ -1,9 +1,29 @@
+@font-face {
+    font-family: 'Big Poppa Regular';
+    src: url('../resources/fonts/bigpoppae-regular-webfont.woff2') format('woff2'),
+         url('../resources/fonts/bigpoppae-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Liberty Island';
+    src: url('../resources/fonts/libertyislandlaserital-webfont.woff2') format('woff2'),
+         url('../resources/fonts/libertyislandlaserital-webfont.woff') format('woff'),
+         url('../resources/fonts/libertyislandlaserital-webfont.tff') format('tff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html{
   scroll-behavior:smooth
 }
 
 * {
   font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -16,6 +36,13 @@ body {
   font-size: 14pt;
   colour: black;
 }
+
+.preload * { /* To prevent unwanted transitions on page load */
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+ }
 
 /*** NAVBAR BEGIN ***/
 nav {
@@ -34,24 +61,31 @@ nav {
 nav a {
   height: 100%;
   width: auto;
-  float: left; 
-  display: table-cell;
+  float: left;
   vertical-align: middle;
   margin: auto 0;
   text-align: center;
   padding: 30px 16px; /* hack for centering text vertically... */
+  line-height: 20px;
   text-decoration: none;
   font-size: 14pt;
   color: white;
   transition: color, 0.5s, linear, 0s;
   -webkit-transition: color, 0.5s linear 0s;
   -moz-transition: color, 0.5s linear 0s;
+  -o-transition: color, 0.5s linear 0s;
 }
 
 nav a#logo {
-  width: 250px;
-  padding: 20px 20px 0px 16px; /* hack for centering text vertically... */
-  font-size: 18pt;
+  width: 350px;
+  padding-left: 25px;
+  padding-right: 25px;
+  line-height: 20px;
+  font-size: 24pt;
+}
+
+nav a#tour {
+  float: right;
 }
 
 nav a:hover {
@@ -118,21 +152,7 @@ nav a:hover {
 }
 /*** TITLE END ***/
 
-div.bike { 
-  /* This selector should specify the default colour of the bike section
-   * background, the centering of the image and title (possibly any text) as
-   * well as the font colour.  Individual bike sections should override the
-   * default background colour (possibly?) */
-  height: 100vh; /* To compensate for fixed nav menu */
-  min-height: 100vh; /* Needs a good absolute minimum height */
-  position: relative; /* for centering its contents... */
-  /* For scroll snapping... */
-  scroll-snap-type: y mandatory;
-  scroll-padding: 0px;  
-  /* Snap to the top of the div, minus navbar height */
-  scroll-snap-align: start;
-}
-
+/*** BIKE HEADER START ***/
 div.dividor-top {
   height: 40px;
   width: 100%;
@@ -174,24 +194,45 @@ div.dividor-bottom {
     white 75%
   );
 }
+/*** BIKE HEADER END ***/
 
-#khs-alite {
-  background-color: yellow;
+div.bike { 
+  background-color: #a3eaf7;
+  height: 100vh; /* To compensate for fixed nav menu */
+  min-height: 100vh; /* Needs a good absolute minimum height */
+  /* For scroll snapping... */
+  scroll-snap-type: y mandatory;
+  scroll-padding: -var(--navbar_height, 175px); /* compensate for header */
+  /* Snap to the top of the div, minus navbar height */
+  scroll-snap-align: start;
+  /* For filling with the image */
+  resize: both;
+  margin: 0;
+  padding: 0;
 }
 
-#giant-cypress {
-  background-color: green;
-}
-
-#cambio-rino {
-  background-color: red;
+div.bike div.bike-content {
+    font-size: 14pt;
+    line-height: 25pt;
+    width: 20%;
+    display: inline-block;
+    float: left;
+    padding: 15px;
+    text-overflow: ellipsis;
+    /* Required for text-overflow to do anything */
+    overflow: hidden;
 }
 
 /* To center the image of the bike */
-body div.bike img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%)
+div.bike div.bike-image {
+  height: 100%;
+  width: 80%;
+  display: inline-block;
+  float: right;
+}
+
+div.bike-image img {
+    height: auto;
+    max-height: 100vh;
+    width: 100%;
 }
