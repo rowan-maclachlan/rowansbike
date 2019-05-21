@@ -196,8 +196,8 @@ div.dividor-bottom {
 }
 /*** BIKE HEADER END ***/
 
-div.bike { 
-  background-color: #a3eaf7;
+div.bike {
+  background-color: #baf0ff; /* baby blue */
   height: 100vh; /* To compensate for fixed nav menu */
   min-height: 100vh; /* Needs a good absolute minimum height */
   /* For scroll snapping... */
@@ -213,6 +213,7 @@ div.bike {
 
 div.bike div.bike-content {
     font-size: 14pt;
+    color: #4c4b4b; /* grey */
     line-height: 25pt;
     width: 20%;
     display: inline-block;

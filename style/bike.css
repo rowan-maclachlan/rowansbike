@@ -1,21 +1,17 @@
 div.bike-title-wrapper {
   width: 100%;
-  display: block;
-  align-self: center;
-  justify-content: center;
   padding-top: var(--navbar_height, 75px);
 }
 
-div.into-image {
+div.into_image {
     display: block;
     height: 100vh;
     width: 100%;
-    justify-content: center;
 }
 
-div.intro-image img {
+div.intro_image img {
     display: block;
-    width: 100%;
+    margin: 0 auto;
 }
 
 /* TODO get backup font? */
@@ -104,31 +100,20 @@ div.dividor-bottom {
 }
 /*** BIKE HEADER END ***/
 
-div.bike { 
-  background-color: #a3eaf7;
-  height: 100vh; /* To compensate for fixed nav menu */
-  min-height: 100vh; /* Needs a good absolute minimum height */
-  /* For scroll snapping... */
-  scroll-snap-type: y mandatory;
-  scroll-padding: -var(--navbar_height, 175px); /* compensate for header */
-  /* Snap to the top of the div, minus navbar height */
-  scroll-snap-align: start;
-  /* For filling with the image */
-  resize: both;
-  margin: 0;
-  padding: 0;
+/*** MAIN CONTENT ***/
+div.bike-content {
+    background-color: #baf0ff; /* baby blue */
+    color: #4c4b4b; /* grey */
+    font-size: 16pt;
+    line-height: 25pt;
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto; /* For horizontally centered children */
 }
 
-div.bike div.bike-content {
-    font-size: 14pt;
-    line-height: 25pt;
-    width: 20%;
-    display: inline-block;
-    float: left;
-    padding: 15px;
-    text-overflow: ellipsis;
-    /* Required for text-overflow to do anything */
-    overflow: hidden;
+div.bike-content p {
+    margin: auto;
+    width: 50%;
 }
 
 /* To center the image of the bike */
