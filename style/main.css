@@ -15,6 +15,10 @@
     font-style: normal;
 }
 
+@media only screen and (min-width: 600px) { /* For tablets and desktops */
+    
+}
+
 html{
   scroll-behavior:smooth
 }
@@ -97,6 +101,10 @@ nav a:hover {
 
 /*** TITLE BEGIN ***/
 #title-page {
+  background-image: linear-gradient(to bottom right, 
+      red 25%,
+      #f27629 50%,
+      red);
   height: 100vh; /* To compensate for fixed nav menu */
   width: 100%;
   display: flex;
@@ -150,6 +158,22 @@ nav a:hover {
     white 75%
   );
 }
+
+#catchphrase {
+  width: 100%;
+  height: 100%;
+}
+
+#catchphrase p {
+    padding-top: 120px;
+    padding-bottom: 0px;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    color: rgb(50, 50, 50);
+    font-size: 18pt;
+    text-align: center;
+}
 /*** TITLE END ***/
 
 /*** BIKE HEADER START ***/
@@ -196,44 +220,47 @@ div.dividor-bottom {
 }
 /*** BIKE HEADER END ***/
 
+/* Needs to have a max height of the largest that the image can get on the screen. */
 div.bike {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    #baf0ff,
+    #def5fc
+  );
   background-color: #baf0ff; /* baby blue */
-  height: 100vh; /* To compensate for fixed nav menu */
-  min-height: 100vh; /* Needs a good absolute minimum height */
   /* For scroll snapping... */
   scroll-snap-type: y mandatory;
-  scroll-padding: -var(--navbar_height, 175px); /* compensate for header */
+  scroll-padding: -var(--navbar_height, 175px); /* compensate for fixed header */
   /* Snap to the top of the div, minus navbar height */
   scroll-snap-align: start;
-  /* For filling with the image */
-  resize: both;
-  margin: 0;
-  padding: 0;
 }
 
+/* Needs to have a max height of 100% of its container */
 div.bike div.bike-content {
-    font-size: 14pt;
-    color: #4c4b4b; /* grey */
-    line-height: 25pt;
-    width: 20%;
-    display: inline-block;
+    width: calc(30%);
+    min-width: 320px;
+    height: 100%;
     float: left;
-    padding: 15px;
+    padding: 24px;
+    font-size: 16pt;
+    color: #4c4b40; /* grey */
+    line-height: 25pt;
     text-overflow: ellipsis;
     /* Required for text-overflow to do anything */
     overflow: hidden;
 }
 
-/* To center the image of the bike */
+/* max height of whatever the image it contains can be scaled to while maintaining its inline positioning with the bike content to its left (or right in the future).  This content to the left must take at last 260 px, or 25% of the screen, whichever is most.  Because the image scales proportionately, we would like this to occur at the moment that the content and image next to each other become longer in the horizontal axis */
 div.bike div.bike-image {
-  height: 100%;
-  width: 80%;
-  display: inline-block;
+  background-color: green;
+  width: 70%;
   float: right;
-}
+  resize: none;
+} 
 
 div.bike-image img {
-    height: auto;
-    max-height: 100vh;
-    width: 100%;
+  height: auto;
+  width: 100%;
 }
