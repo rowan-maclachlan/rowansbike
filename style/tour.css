@@ -1,9 +1,36 @@
 #game-container {
-    display: flex;
-    align-content: center;
 }
 
-#tour {
-    flex: 1;
-    
+canvas {
+  background: linear-gradient(
+    to bottom,
+    #1050c9,
+    pink 50%,
+    white 75%
+  );
+  display: block;
+  flex: 1;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+  width: 800px;
+}
+
+div.game-header {
+  opacity: 0.5;
+  background-color: grey;
+  height: 80px;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.game-footer {
+  opacity: 0.5;
+  background-color: grey;
+  height: 80px;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
