@@ -1,12 +1,9 @@
-* {
-  font-family: Helvetica, Arial, sans-serif; }
-
-body {
-  margin: 0 0 0 0;
-  background-color: #edc561; /* tan */
-  colour: black;
+#game-container {
+    display: flex;
+    align-content: center;
 }
 
-h1 {
-  text-align: center;
+#tour {
+    flex: 1;
+    
 }
