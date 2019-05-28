@@ -11,23 +11,44 @@ const line_len = 300;
 let angle = 0;
 let points = new Array();
 const START_HEIGHT = canvas.height - 100; 
-/* The distance by which the points move at a time. */
+/* The distance by which the points move across the screen. */
 const DELTA_X = 10;
+/* The minimum distance between 2 points */
+const DELTA_X_MIN = 10;
+/* The maximum distance between 2 points */
+const DELTA_X_MAX = 100;
 /* The distance by which the points may vary in the Y axis. */
-const DELTA_MAX_Y = 5;
-/* The maximum height to which the terrain can extend */
-const MAX_Y = 100;
-/* Height at which the ground starts */
-const START_Y = canvas.height - 100;
+const DELTA_MAX_Y = 10;
 /* The minimum height to which the terrain can fall */
-const MIN_Y = 0;
-points[0] = new Point(START_HEIGHT, 0);
-points[1] = new Point(START_HEIGHT, canvas.width);
+const MIN_Y = canvas.height - 20;
+/* The maximum height to which the terrain can extend */
+const MAX_Y = 200;
+/* Height at which the ground starts */
+const START_Y = canvas.height - 50;
+const END_Y = canvas.height;
+
+/* Where bike appears on the track */
+var bikeCenter = canvas.width / 2;
+/* offset of wheels */
+var wheelBase = 20;
+/* Length of bike frame */
+var frameSize = 20;
+/* Height of frame off wheels.  This is when the bottom tip of the frame
+ * triangle extends above the wheel contacts. */
+var BBRise = 5;
+/* height of bike */
+var bikeStack = 15;
+/* Diameter of the wheels */
+var wheelDiameter = 15;
+
+function drawBike() {
+  
+}
 
 const ctx = canvas.getContext('2d');
 
 initPoints();
-window.setInterval(draw, 1000);
+window.setInterval(draw, 100);
 
 function initPoints() {
   points.push(new Point(0, START_Y));
@@ -84,30 +105,22 @@ function drawBackground() {
   drawForeMountains();
 }
 
-function getDrawablePoints(points) {
-  let drawablePoints = points.filter(p => p.x < canvas.width);
-    /* Get the first point off the right side of the screen */
-  let lastPoint = points[points.indexOf(drawablePoints.slice(-1)[0])];
-  if (typeof lastPoint === 'undefined') {
-    lastPoint = new Point(canvas.width, )
-  }
-  drawablePoints.push(lastPoint);
-  return drawablePoints;
+function logPoints(points) {
+  points.forEach(function(point) { console.log(point)});
 }
 
 function drawGround(drawablePoints) {
-  ctx.fillStyle = "brown";
+  ctx.fillStyle = "orange";
   ctx.beginPath();
   /* start drawing from the first point (offscreen) */
-  
   ctx.moveTo(drawablePoints[0].x, drawablePoints[0].y);
-  for (var p in drawablePoints) {
-    ctx.lineTo(p.x, p.y);
-  }
-  let lastPoint = drawablePoints.slice(-1)[0];
-  ctx.lineTo(lastPoint.x, lastPoint.y);
+  drawablePoints.slice(1).forEach(function(point) {
+    ctx.lineTo(point.x, point.y);
+  });
   /* Draw line to bottom of the screen so we can fill a connected shape */
-  ctx.lineTo(lastPoint.x, canvas.height);
+  ctx.lineTo(canvas.width, END_Y);
+  /* Draw over from the bottom right to the bottom left */
+  ctx.lineTo(0, END_Y);
   ctx.closePath();
   ctx.fill();
 }
@@ -117,21 +130,29 @@ function drawGround(drawablePoints) {
 function movePoints(points) {
   return points.map(
     function(point) { 
-      return new Point(point.x -= DELTA_X, point.y) 
+      return new Point(point.x - DELTA_X, point.y) 
     }
   );
 }
 
 function generateNewPoint(prevPoint) {
+  let deltaX = (Math.random() * DELTA_X_MAX) + DELTA_X_MIN;
   let deltaY = (Math.random() * DELTA_MAX_Y*2) - DELTA_MAX_Y;
-  return new Point(canvas.width, deltaY + prevPoint.y);
+  /* Cut off the y value between the minimum and maximum allowed */
+  let y = Math.min(Math.max(prevPoint.y + deltaY, MAX_Y), MIN_Y);
+  return new Point(canvas.width + deltaX, y);
 }
 
+function clearCanvas() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+
 function draw() {
+  clearCanvas();
   drawBackground();
-  let drawablePoints = getDrawablePoints(points);
-  drawGround(drawablePoints);
-  
+  drawGround(points);
+  drawBike();
   points = movePoints(points);
   
   /* If the second point is off the screen, delete the first. */
@@ -140,7 +161,7 @@ function draw() {
   }
   /* If the last point is now fully in the window, create a new one
    * off the right side of the screen. */
-  let lastPoint = points.slice(1)[0];
+  let lastPoint = points.slice(-1)[0];
   if (lastPoint.x < canvas.width) {
     points.push(generateNewPoint(lastPoint));
   }
