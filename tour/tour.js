@@ -12,7 +12,7 @@ let angle = 0;
 let points = new Array();
 const START_HEIGHT = canvas.height - 100; 
 /* The distance by which the points move across the screen. */
-const DELTA_X = 10;
+const DELTA_X = 5;
 /* The minimum distance between 2 points */
 const DELTA_X_MIN = 10;
 /* The maximum distance between 2 points */
@@ -82,7 +82,7 @@ function drawBike() {
 const ctx = canvas.getContext('2d');
 
 initPoints();
-window.setInterval(draw, 100);
+window.setInterval(draw, 50);
 
 function initPoints() {
   points.push(new Point(0, START_Y));
