@@ -1,6 +1,6 @@
 'use strict';
 
-import Point from './Point';
+import Point from './Point.js';
 
 const canvas = window.document.getElementById('tour-game');
 
@@ -27,7 +27,7 @@ points[1] = new Point(START_HEIGHT, canvas.width);
 const ctx = canvas.getContext('2d');
 
 initPoints();
-window.setInterval(draw, 1);
+window.setInterval(draw, 1000);
 
 function initPoints() {
   points.push(new Point(0, START_Y));
@@ -85,26 +85,29 @@ function drawBackground() {
 }
 
 function getDrawablePoints(points) {
-  drawablePoints = points.filter(p => p.x < canvas.width);
+  let drawablePoints = points.filter(p => p.x < canvas.width);
     /* Get the first point off the right side of the screen */
-  lastPoint = points[points.indexOf(drawablePoints.slice(-1)[0])];
+  let lastPoint = points[points.indexOf(drawablePoints.slice(-1)[0])];
   if (typeof lastPoint === 'undefined') {
     lastPoint = new Point(canvas.width, )
   }
-  return drawablePoints.push(lastPoint);
+  drawablePoints.push(lastPoint);
+  return drawablePoints;
 }
 
 function drawGround(drawablePoints) {
   ctx.fillStyle = "brown";
   ctx.beginPath();
   /* start drawing from the first point (offscreen) */
+  
   ctx.moveTo(drawablePoints[0].x, drawablePoints[0].y);
-  for (var p in drawable_points) {
+  for (var p in drawablePoints) {
     ctx.lineTo(p.x, p.y);
   }
-  ctx.lineTo(last_p.x, last_p.y);
+  let lastPoint = drawablePoints.slice(-1)[0];
+  ctx.lineTo(lastPoint.x, lastPoint.y);
   /* Draw line to bottom of the screen so we can fill a connected shape */
-  ctx.lineTo(last_p.x, canvas.height);
+  ctx.lineTo(lastPoint.x, canvas.height);
   ctx.closePath();
   ctx.fill();
 }
@@ -112,7 +115,11 @@ function drawGround(drawablePoints) {
 /* Move points over by some delta on the x axis.
  * Returns a new list of points. */
 function movePoints(points) {
-  return points.map(p => p.x -= DELTA_X);
+  return points.map(
+    function(point) { 
+      return new Point(point.x -= DELTA_X, point.y) 
+    }
+  );
 }
 
 function generateNewPoint(prevPoint) {
@@ -120,23 +127,23 @@ function generateNewPoint(prevPoint) {
   return new Point(canvas.width, deltaY + prevPoint.y);
 }
 
-function adjustPoints(points) {
+function draw() {
+  drawBackground();
+  let drawablePoints = getDrawablePoints(points);
+  drawGround(drawablePoints);
+  
+  points = movePoints(points);
+  
   /* If the second point is off the screen, delete the first. */
   if (points[1].x < 0) {
     points.shift();
   }
   /* If the last point is now fully in the window, create a new one
    * off the right side of the screen. */
-  if (points.slice[-1].x < canvas.width) {
-    points.push(generateNewPoint(points.slice[-1]));
+  let lastPoint = points.slice(1)[0];
+  if (lastPoint.x < canvas.width) {
+    points.push(generateNewPoint(lastPoint));
   }
-}
-
-function draw() {
-  drawBackground();
-  drawGround(getDrawablePoints(points));
-  points = movePoints(points);
-  adjustPoints(points);
 }
 
 
