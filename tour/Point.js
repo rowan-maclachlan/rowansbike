@@ -19,4 +19,12 @@ export default class Point {
     let y = this.y - m * (this.x - x); 
     return y;
   }
+
+  /* Get the mid point between two other points */
+  midPoint(point) {
+    let m = (point.y - this.y) / (point.x - this.x);
+    let x = point.x - ((point.x - this.x) / 2);
+    let y = this.yOfLine(point, x);
+    return new Point(x, y);
+  }
 }

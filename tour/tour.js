@@ -30,7 +30,7 @@ const END_Y = canvas.height;
 /* Where bike appears on the track */
 var bikeCenter = canvas.width / 2;
 /* offset of wheels */
-var wheelBase = 20;
+var wheelBase = 25;
 /* Length of bike frame */
 var frameSize = 20;
 /* Height of frame off wheels.  This is when the bottom tip of the frame
@@ -39,7 +39,7 @@ var BBRise = 5;
 /* height of bike */
 var bikeStack = 15;
 /* Diameter of the wheels */
-var wheelDiameter = 15;
+var wheelDiameter = 30;
 
 function getWheelHeight(wheelXPosition) {
   /* Where is the center of the wheel? */
@@ -50,24 +50,33 @@ function getWheelHeight(wheelXPosition) {
   let firstPoint = points[firstPointIndex];
   let terrainHeight = firstPoint.yOfLine(points[secondPointIndex], wheelXPosition);
   return terrainHeight - (wheelDiameter / 2);
-
 }
 
-function drawWheel(wheelX, wheelY) {
+function drawWheel(wheel) {
   ctx.fillStyle = "white";
-  ctx.beginPath(wheelX, wheelY);
-  ctx.arc(wheelX, wheelY, wheelDiameter / 2, 0, 360);
+  ctx.beginPath(wheel.x, wheel.y);
+  ctx.arc(wheel.x, wheel.y, wheelDiameter / 2, 0, 360);
+  ctx.fill();
+}
+
+function drawFrame(fhp, rhp) {
+  ctx.fillStyle = "black";
+  let bb = rhp.midPoint(fhp);
+  ctx.beginPath(bb.x, bb.y);
+  /* rhp.yOfLine(fhp, (rhp.x - fhp.x) / 2) */
+  ctx.arc(bb.x, bb.y, 10, 0, 360);
   ctx.fill();
 }
 
 function drawBike() {
   ctx.fillStyle = "black";
   let frontWheelX = bikeCenter + wheelBase;
-  let frontWheelY = getWheelHeight(frontWheelX);
-  drawWheel(frontWheelX, frontWheelY);
+  let frontHubPoint = new Point(frontWheelX, getWheelHeight(frontWheelX));
+  drawWheel(frontHubPoint);
   let rearWheelX = bikeCenter - wheelBase;
-  let rearWheelY = getWheelHeight(rearWheelX);
-  drawWheel(rearWheelX, rearWheelY);
+  let rearHubPoint = new Point(rearWheelX, getWheelHeight(rearWheelX));
+  drawWheel(rearHubPoint);
+  drawFrame(frontHubPoint, rearHubPoint);
 }
 
 const ctx = canvas.getContext('2d');
