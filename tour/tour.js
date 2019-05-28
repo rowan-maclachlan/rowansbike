@@ -41,8 +41,33 @@ var bikeStack = 15;
 /* Diameter of the wheels */
 var wheelDiameter = 15;
 
+function getWheelHeight(wheelXPosition) {
+  /* Where is the center of the wheel? */
+  let secondPointIndex = points.findIndex(function (point) {
+    return point.x > wheelXPosition;
+  })
+  let firstPointIndex = secondPointIndex - 1;
+  let firstPoint = points[firstPointIndex];
+  let terrainHeight = firstPoint.yOfLine(points[secondPointIndex], wheelXPosition);
+  return terrainHeight - (wheelDiameter / 2);
+
+}
+
+function drawWheel(wheelX, wheelY) {
+  ctx.fillStyle = "white";
+  ctx.beginPath(wheelX, wheelY);
+  ctx.arc(wheelX, wheelY, wheelDiameter / 2, 0, 360);
+  ctx.fill();
+}
+
 function drawBike() {
-  
+  ctx.fillStyle = "black";
+  let frontWheelX = bikeCenter + wheelBase;
+  let frontWheelY = getWheelHeight(frontWheelX);
+  drawWheel(frontWheelX, frontWheelY);
+  let rearWheelX = bikeCenter - wheelBase;
+  let rearWheelY = getWheelHeight(rearWheelX);
+  drawWheel(rearWheelX, rearWheelY);
 }
 
 const ctx = canvas.getContext('2d');
@@ -106,7 +131,7 @@ function drawBackground() {
 }
 
 function drawGround(drawablePoints) {
-  ctx.fillStyle = "orange";
+  ctx.fillStyle = "rgb(99, 72, 61)";
   ctx.beginPath();
   /* start drawing from the first point (offscreen) */
   ctx.moveTo(drawablePoints[0].x, drawablePoints[0].y);
