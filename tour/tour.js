@@ -105,10 +105,6 @@ function drawBackground() {
   drawForeMountains();
 }
 
-function logPoints(points) {
-  points.forEach(function(point) { console.log(point)});
-}
-
 function drawGround(drawablePoints) {
   ctx.fillStyle = "orange";
   ctx.beginPath();
