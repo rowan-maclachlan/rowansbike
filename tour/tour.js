@@ -32,12 +32,12 @@ var bikeCenter = canvas.width / 2;
 /* offset of wheels */
 var wheelBase = 25;
 /* Length of bike frame */
-var frameSize = 20;
-/* Height of frame off wheels.  This is when the bottom tip of the frame
- * triangle extends above the wheel contacts. */
-var BBRise = 5;
+var frameSize = 45;
+/* Height of frame off wheels.  This is the distance that the bottom point of the bike is above the 
+ * line between the two wheel hubs. */
+var BBDrop = 10;
 /* height of bike */
-var bikeStack = 15;
+var bikeStack = 25;
 /* Diameter of the wheels */
 var wheelDiameter = 30;
 
@@ -60,12 +60,22 @@ function drawWheel(wheel) {
 }
 
 function drawFrame(fhp, rhp) {
+  ctx.save();
   ctx.fillStyle = "black";
   let bb = rhp.midPoint(fhp);
-  ctx.beginPath(bb.x, bb.y);
-  /* rhp.yOfLine(fhp, (rhp.x - fhp.x) / 2) */
-  ctx.arc(bb.x, bb.y, 10, 0, 360);
+  /* translate to bb center */
+  ctx.translate(bb.x, bb.y);
+  /* rotate around bb center */
+  let radians = bb.getRotation(fhp);
+  ctx.rotate(radians);
+  ctx.beginPath(0, 0 + BBDrop);
+  ctx.lineTo(0 + (frameSize / 2), 0 - bikeStack);
+  ctx.lineTo(0 - (frameSize / 2), 0 - bikeStack);
+  ctx.lineTo(0, 0 + BBDrop);
+  ctx.closePath();
+  ctx.stroke();
   ctx.fill();
+  ctx.restore();
 }
 
 function drawBike() {

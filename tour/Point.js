@@ -27,4 +27,10 @@ export default class Point {
     let y = this.yOfLine(point, x);
     return new Point(x, y);
   }
+
+  /* Get the angle (in radians) between a horizontal line and
+   * a line going from p1 to p2 */
+  getRotation(p2) {
+    return Math.tan((p2.y - this.y) / (p2.x - this.x));
+  }
 }
