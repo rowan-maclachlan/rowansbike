@@ -88,12 +88,22 @@ function drawFrame(fhp, rhp) {
   let radians = bb.getRotation(fhp);
   ctx.rotate(radians);
   ctx.beginPath(0, 0 + BBDrop);
-  ctx.lineTo(0 + (frameSize / 2), 0 - bikeStack);
-  ctx.lineTo(0 - (frameSize / 2), 0 - bikeStack);
-  ctx.lineTo(0, 0 + BBDrop);
+  ctx.lineTo((frameSize / 2), -bikeStack);
+  ctx.lineTo(-(frameSize / 2), -bikeStack);
+  ctx.lineTo(0, BBDrop);
   ctx.closePath();
-  ctx.stroke();
   ctx.fill();
+  /* Draw handlebars */
+  ctx.lineWidth = 4;
+  ctx.moveTo((frameSize / 2), -bikeStack + 2);
+  ctx.beginPath();
+  ctx.lineTo((frameSize / 2) - 5, -bikeStack + 2);
+  ctx.arc((frameSize / 2), -bikeStack + 5 + 2,
+          5,
+          1.5 * Math.PI,
+          0.5 * Math.PI,
+          false);
+  ctx.stroke();
   ctx.restore();
 }
 
