@@ -27,7 +27,7 @@ const DELTA_X_MIN_BACKGROUND = 50;
 /* The maximum distance between 2 background points */
 const DELTA_X_MAX_BACKGROUND = 150;
 /* The maximum height by which the background points vary */
-const DELTA_Y_MAX_BACKGROUND = 50g;
+const DELTA_Y_MAX_BACKGROUND = 50;
 /* The minimum height to which the ground can fall */
 const MIN_Y = canvas.height - 20;
 /* The maximum height to which the ground can extend */
