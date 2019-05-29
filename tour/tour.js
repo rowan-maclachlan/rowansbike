@@ -4,27 +4,41 @@ import Point from './Point.js';
 
 const canvas = window.document.getElementById('tour-game');
 
-const MAX_POINTS = 64;
 const center_x = canvas.width / 2;
 const center_y = canvas.height / 2;
 const line_len = 300;
 let angle = 0;
+/* Holds points used to draw the ground */
 let points = new Array();
-const START_HEIGHT = canvas.height - 100; 
+/* Holds the points used to draw the moving background */
+let backgroundPoints = new Array();
 /* The distance by which the points move across the screen. */
 const DELTA_X = 5;
+/* The distance by which the background points move across the screen */
+const DELTA_X_BACKGROUND = 2;
 /* The minimum distance between 2 points */
 const DELTA_X_MIN = 10;
 /* The maximum distance between 2 points */
 const DELTA_X_MAX = 100;
 /* The distance by which the points may vary in the Y axis. */
-const DELTA_MAX_Y = 10;
-/* The minimum height to which the terrain can fall */
+const DELTA_Y_MAX = 10;
+/* The minimum distance between two background points */
+const DELTA_X_MIN_BACKGROUND = 50;
+/* The maximum distance between 2 background points */
+const DELTA_X_MAX_BACKGROUND = 150;
+/* The maximum height by which the background points vary */
+const DELTA_Y_MAX_BACKGROUND = 100;
+/* The minimum height to which the ground can fall */
 const MIN_Y = canvas.height - 20;
-/* The maximum height to which the terrain can extend */
+/* The maximum height to which the ground can extend */
 const MAX_Y = 200;
+/* The minimum height to which the background can fall */
+const MIN_Y_BACKGROUND = canvas.height - 100;
+/* The maximum height to which the background can extend */
+const MAX_Y_BACKGROUND = 200;
 /* Height at which the ground starts */
 const START_Y = canvas.height - 50;
+/* What depth to extends when drawing the shape of the ground */
 const END_Y = canvas.height;
 
 /* Where bike appears on the track */
@@ -51,6 +65,11 @@ function getWheelHeight(wheelXPosition) {
   let terrainHeight = firstPoint.yOfLine(points[secondPointIndex], wheelXPosition);
   return terrainHeight - (wheelDiameter / 2);
 }
+
+const ctx = canvas.getContext('2d');
+
+initPoints();
+window.setInterval(draw, 50);
 
 function drawWheel(wheel) {
   ctx.fillStyle = "white";
@@ -87,16 +106,22 @@ function drawBike() {
   let rearHubPoint = new Point(rearWheelX, getWheelHeight(rearWheelX));
   drawWheel(rearHubPoint);
   drawFrame(frontHubPoint, rearHubPoint);
+  /* TODO drawHandlebars(); */
+  /* TODO drawSeat(); */
 }
 
-const ctx = canvas.getContext('2d');
-
-initPoints();
-window.setInterval(draw, 50);
-
+/* Set up the initial points drawn for the ground as well as the moving 
+ * background. */
 function initPoints() {
   points.push(new Point(0, START_Y));
   points.push(new Point(canvas.width, START_Y));
+  backgroundPoints.push(new Point(0, START_Y));
+  let newPoint = generateNewPoint(
+      backgroundPoints[0], 
+      DELTA_X_MAX_BACKGROUND, 
+      DELTA_X_MIN_BACKGROUND, 
+      DELTA_Y_MAX_BACKGROUND);
+  backgroundPoints.push(newPoint);
 }
 
 function drawSun() {
@@ -149,8 +174,8 @@ function drawBackground() {
   drawForeMountains();
 }
 
-function drawGround(drawablePoints) {
-  ctx.fillStyle = "rgb(99, 72, 61)";
+function drawGround(drawablePoints, colour) {
+  ctx.fillStyle = colour;
   ctx.beginPath();
   /* start drawing from the first point (offscreen) */
   ctx.moveTo(drawablePoints[0].x, drawablePoints[0].y);
@@ -167,44 +192,69 @@ function drawGround(drawablePoints) {
 
 /* Move points over by some delta on the x axis.
  * Returns a new list of points. */
-function movePoints(points) {
+function movePoints(points, delta_x) {
   return points.map(
     function(point) { 
-      return new Point(point.x - DELTA_X, point.y) 
+      return new Point(point.x - delta_x, point.y) 
     }
   );
 }
 
-function generateNewPoint(prevPoint) {
-  let deltaX = (Math.random() * DELTA_X_MAX) + DELTA_X_MIN;
-  let deltaY = (Math.random() * DELTA_MAX_Y*2) - DELTA_MAX_Y;
+/** Generate a new point.
+ *
+ * @param {Point} prevPoint The point to vary from.
+ * @param {int} delta_x_max The maximum value by which the new point may vary in the x axis.
+ * @param {int} delta_x_min The minimum value by which the new point may vary in the x axis.
+ * @param {int} delta_y_max The maximum value by which a new point may vary in the y axis.
+ *
+ * @return {Point} A pseudo-randomly generated point.
+ */
+function generateNewPoint(prevPoint, delta_x_max, delta_x_min, delta_y_max) {
+  let deltaX = (Math.random() * delta_x_max) + delta_x_min;
+  let deltaY = (Math.random() * delta_y_max*2) - delta_y_max;
   /* Cut off the y value between the minimum and maximum allowed */
   let y = Math.min(Math.max(prevPoint.y + deltaY, MAX_Y), MIN_Y);
   return new Point(canvas.width + deltaX, y);
 }
 
+/* Clear the canvas of all drawn shapes. */
 function clearCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+/* If the points extends far enough off the left side of the canvas, shift off the
+ * furthest.  If there are not enough points past the right side of the screen, generate a 
+ * new one. */
+function shiftPoints(shiftPoints, delta_x_max, delta_x_min, delta_y_max) {
+  /* If the second point is off the screen, delete the first. */
+  if (shiftPoints[1].x < 0) {
+    shiftPoints.shift();
+  }
+  /* If the last point is now fully in the window, create a new one
+   * off the right side of the screen. */
+  let lastPoint = shiftPoints.slice(-1)[0];
+  if (lastPoint.x < canvas.width) {
+    shiftPoints.push(generateNewPoint(
+      lastPoint, delta_x_max, delta_x_min, delta_y_max));
+  }
+}
 
 function draw() {
   clearCanvas();
   drawBackground();
-  drawGround(points);
+  drawGround(backgroundPoints, "rgb(67, 79, 67)");
+  drawGround(points, "rgb(99, 72, 61)");
   drawBike();
-  points = movePoints(points);
-  
-  /* If the second point is off the screen, delete the first. */
-  if (points[1].x < 0) {
-    points.shift();
-  }
-  /* If the last point is now fully in the window, create a new one
-   * off the right side of the screen. */
-  let lastPoint = points.slice(-1)[0];
-  if (lastPoint.x < canvas.width) {
-    points.push(generateNewPoint(lastPoint));
-  }
+  points = movePoints(points, DELTA_X);
+  backgroundPoints = movePoints(backgroundPoints, DELTA_X_BACKGROUND);
+  shiftPoints(points, 
+              DELTA_X_MAX, 
+              DELTA_X_MIN, 
+              DELTA_Y_MAX);
+  shiftPoints(backgroundPoints, 
+              DELTA_X_MAX_BACKGROUND, 
+              DELTA_X_MIN_BACKGROUND, 
+              DELTA_Y_MAX_BACKGROUND);
 }
 
 
