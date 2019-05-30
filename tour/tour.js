@@ -2,12 +2,21 @@
 
 import Point from './Point.js';
 
-const canvas = window.document.getElementById('tour-game');
+/* Background canvas.  Only contains permenant renderings */
+const BACKGROUND = window.document.getElementById('background');
+/* Mid-level canvas.  Renders terrain and bike and other moving elements */
+const TERRAIN = window.document.getElementById('terrain');
+/* Top level canvas.  Only renders UI elements */
+const UI = window.document.getElementById('ui');
 
-const center_x = canvas.width / 2;
-const center_y = canvas.height / 2;
-const line_len = 300;
-let angle = 0;
+/* canvas width */
+const WIDTH = BACKGROUND.width;
+/* canvas height */
+const HEIGHT = BACKGROUND.height;
+/* canvas center point on the x axis */
+const CENTER_X = BACKGROUND.width / 2;
+/* canvas center point on the y axis */
+const CENTER_Y = BACKGROUND.height / 2;
 /* Holds points used to draw the ground */
 let points = new Array();
 /* Holds the points used to draw the moving background */
@@ -29,20 +38,20 @@ const DELTA_X_MAX_BACKGROUND = 150;
 /* The maximum height by which the background points vary */
 const DELTA_Y_MAX_BACKGROUND = 50;
 /* The minimum height to which the ground can fall */
-const MIN_Y = canvas.height - 20;
+const MIN_Y = BACKGROUND.height - 20;
 /* The maximum height to which the ground can extend */
 const MAX_Y = 200;
 /* The minimum height to which the background can fall */
-const MIN_Y_BACKGROUND = canvas.height - 100;
+const MIN_Y_BACKGROUND = BACKGROUND.height - 100;
 /* The maximum height to which the background can extend */
 const MAX_Y_BACKGROUND = 200;
 /* Height at which the ground starts */
-const START_Y = canvas.height - 50;
+const START_Y = BACKGROUND.height - 50;
 /* What depth to extends when drawing the shape of the ground */
-const END_Y = canvas.height;
+const END_Y = BACKGROUND.height;
 
 /* Where bike appears on the track */
-var bikeCenter = canvas.width / 2;
+var bikeCenter = BACKGROUND.width / 2;
 /* offset of wheels */
 var wheelBase = 25;
 /* Length of bike frame */
@@ -55,6 +64,14 @@ var bikeStack = 25;
 /* Diameter of the wheels */
 var wheelDiameter = 30;
 
+const BACKGROUND_CTX = BACKGROUND.getContext('2d');
+const TERRAIN_CTX = TERRAIN.getContext('2d');
+const UI_CTX = UI.getContext('2d');
+
+initPoints();
+drawBackground(BACKGROUND_CTX);
+window.setInterval(draw, 50);
+
 function getWheelHeight(wheelXPosition) {
   /* Where is the center of the wheel? */
   let secondPointIndex = points.findIndex(function (point) {
@@ -66,19 +83,14 @@ function getWheelHeight(wheelXPosition) {
   return terrainHeight - (wheelDiameter / 2);
 }
 
-const ctx = canvas.getContext('2d');
-
-initPoints();
-window.setInterval(draw, 50);
-
-function drawWheel(wheel) {
+function drawWheel(ctx, wheel) {
   ctx.fillStyle = "white";
   ctx.beginPath(wheel.x, wheel.y);
   ctx.arc(wheel.x, wheel.y, wheelDiameter / 2, 0, 360);
   ctx.fill();
 }
 
-function drawFrame(fhp, rhp) {
+function drawFrame(ctx, fhp, rhp) {
   ctx.save();
   ctx.fillStyle = "black";
   let bb = rhp.midPoint(fhp);
@@ -107,16 +119,14 @@ function drawFrame(fhp, rhp) {
   ctx.restore();
 }
 
-function drawBike() {
-  ctx.fillStyle = "black";
+function drawBike(ctx) {
   let frontWheelX = bikeCenter + wheelBase;
   let frontHubPoint = new Point(frontWheelX, getWheelHeight(frontWheelX));
-  drawWheel(frontHubPoint);
+  drawWheel(ctx, frontHubPoint);
   let rearWheelX = bikeCenter - wheelBase;
   let rearHubPoint = new Point(rearWheelX, getWheelHeight(rearWheelX));
-  drawWheel(rearHubPoint);
-  drawFrame(frontHubPoint, rearHubPoint);
-  /* TODO drawHandlebars(); */
+  drawWheel(ctx, rearHubPoint);
+  drawFrame(ctx, frontHubPoint, rearHubPoint);
   /* TODO drawSeat(); */
 }
 
@@ -124,7 +134,7 @@ function drawBike() {
  * background. */
 function initPoints() {
   points.push(new Point(0, START_Y));
-  points.push(new Point(canvas.width, START_Y));
+  points.push(new Point(WIDTH, START_Y));
   backgroundPoints.push(new Point(0, START_Y));
   let newPoint = generateNewPoint(
       backgroundPoints[0], 
@@ -134,57 +144,74 @@ function initPoints() {
   backgroundPoints.push(newPoint);
 }
 
-function drawSun() {
+function drawSun(ctx) {
   ctx.beginPath();
   ctx.fillStyle = "yellow";
-  ctx.arc(canvas.width - 100, 200, 50, 0, 2 * Math.PI);
+  ctx.arc(WIDTH - 100, 200, 50, 0, 2 * Math.PI);
   ctx.fill();
 }
 
-function drawBackMountains() {
+function drawBackMountains(ctx) {
   ctx.beginPath();
   ctx.fillStyle = "rgba(173, 157, 173, 0.5)";
-  ctx.moveTo(0, canvas.height);
-  ctx.lineTo(0, canvas.height - 120);
-  ctx.lineTo(120, canvas.height - 165);
-  ctx.lineTo(155, canvas.height - 150);
-  ctx.lineTo(265, canvas.height - 220);
-  ctx.lineTo(345, canvas.height - 160);
-  ctx.lineTo(410, canvas.height - 180);
-  ctx.lineTo(475, canvas.height - 150);
-  ctx.lineTo(575, canvas.height - 160);
-  ctx.lineTo(630, canvas.height - 150);
-  ctx.lineTo(canvas.width, canvas.height - 125);
-  ctx.lineTo(canvas.width, canvas.height);
+  ctx.moveTo(0, HEIGHT);
+  ctx.lineTo(0, HEIGHT - 120);
+  ctx.lineTo(120, HEIGHT - 165);
+  ctx.lineTo(155, HEIGHT - 150);
+  ctx.lineTo(265, HEIGHT - 220);
+  ctx.lineTo(345, HEIGHT - 160);
+  ctx.lineTo(410, HEIGHT - 180);
+  ctx.lineTo(475, HEIGHT - 150);
+  ctx.lineTo(575, HEIGHT - 160);
+  ctx.lineTo(630, HEIGHT - 150);
+  ctx.lineTo(WIDTH, HEIGHT - 125);
+  ctx.lineTo(WIDTH, HEIGHT);
   ctx.closePath();
   ctx.fill();
 }
 
-function drawForeMountains() {
-  ctx.fillStyle = "rgba(90, 96, 90, 0.8)";
+function drawMidMountains(ctx) {
+  ctx.fillStyle = "rgba(90, 96, 90, 0.75)";
   ctx.beginPath();
-  ctx.moveTo(0, canvas.height);
-  ctx.lineTo(0, canvas.height - 100);
-  ctx.lineTo(100, canvas.height - 140);
-  ctx.lineTo(150, canvas.height - 120);
-  ctx.lineTo(225, canvas.height - 180);
-  ctx.lineTo(325, canvas.height - 150);
-  ctx.lineTo(400, canvas.height - 170);
-  ctx.lineTo(500, canvas.height - 125);
-  ctx.lineTo(600, canvas.height - 145);
-  ctx.lineTo(canvas.width, canvas.height - 110);
-  ctx.lineTo(canvas.width, canvas.height);
+  ctx.moveTo(0, HEIGHT);
+  ctx.lineTo(0, HEIGHT - 100);
+  ctx.lineTo(100, HEIGHT - 140);
+  ctx.lineTo(150, HEIGHT - 120);
+  ctx.lineTo(225, HEIGHT - 180);
+  ctx.lineTo(325, HEIGHT - 150);
+  ctx.lineTo(400, HEIGHT - 170);
+  ctx.lineTo(500, HEIGHT - 125);
+  ctx.lineTo(600, HEIGHT - 145);
+  ctx.lineTo(WIDTH, HEIGHT - 110);
+  ctx.lineTo(WIDTH, HEIGHT);
   ctx.closePath();
   ctx.fill();
 }
 
-function drawBackground() {
-  drawSun();
-  drawBackMountains();
-  drawForeMountains();
+function drawForeMountains(ctx) {
+  ctx.fillStyle = "rgba(64, 71, 64, 0.9)";
+  ctx.beginPath();
+  ctx.moveTo(0, HEIGHT);
+  ctx.lineTo(0, HEIGHT - 90);
+  ctx.lineTo(90, HEIGHT - 110);
+  ctx.lineTo(130, HEIGHT - 95);
+  ctx.lineTo(195, HEIGHT - 140);
+  ctx.lineTo(255, HEIGHT - 110);
+  ctx.lineTo(425, HEIGHT - 120);
+  ctx.lineTo(WIDTH, HEIGHT - 90);
+  ctx.lineTo(WIDTH, HEIGHT);
+  ctx.closePath();
+  ctx.fill();
 }
 
-function drawGround(drawablePoints, colour) {
+function drawBackground(ctx) {
+  drawSun(ctx);
+  drawBackMountains(ctx);
+  drawMidMountains(ctx);
+  drawForeMountains(ctx);
+}
+
+function drawGround(ctx, drawablePoints, colour) {
   ctx.fillStyle = colour;
   ctx.beginPath();
   /* start drawing from the first point (offscreen) */
@@ -193,7 +220,7 @@ function drawGround(drawablePoints, colour) {
     ctx.lineTo(point.x, point.y);
   });
   /* Draw line to bottom of the screen so we can fill a connected shape */
-  ctx.lineTo(canvas.width, END_Y);
+  ctx.lineTo(WIDTH, END_Y);
   /* Draw over from the bottom right to the bottom left */
   ctx.lineTo(0, END_Y);
   ctx.closePath();
@@ -224,12 +251,12 @@ function generateNewPoint(prevPoint, delta_x_max, delta_x_min, delta_y_max) {
   let deltaY = (Math.random() * delta_y_max*2) - delta_y_max;
   /* Cut off the y value between the minimum and maximum allowed */
   let y = Math.min(Math.max(prevPoint.y + deltaY, MAX_Y), MIN_Y);
-  return new Point(canvas.width + deltaX, y);
+  return new Point(WIDTH + deltaX, y);
 }
 
 /* Clear the canvas of all drawn shapes. */
-function clearCanvas() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+function clearCanvas(ctx) {
+  ctx.clearRect(0, 0, WIDTH, HEIGHT);
 }
 
 /* If the points extends far enough off the left side of the canvas, shift off the
@@ -243,18 +270,17 @@ function shiftPoints(shiftPoints, delta_x_max, delta_x_min, delta_y_max) {
   /* If the last point is now fully in the window, create a new one
    * off the right side of the screen. */
   let lastPoint = shiftPoints.slice(-1)[0];
-  if (lastPoint.x < canvas.width) {
+  if (lastPoint.x < WIDTH) {
     shiftPoints.push(generateNewPoint(
       lastPoint, delta_x_max, delta_x_min, delta_y_max));
   }
 }
 
 function draw() {
-  clearCanvas();
-  drawBackground();
-  drawGround(backgroundPoints, "rgb(67, 79, 67)");
-  drawGround(points, "rgb(99, 78, 72)");
-  drawBike();
+  clearCanvas(TERRAIN_CTX);
+  drawGround(TERRAIN_CTX, backgroundPoints, "rgb(44, 53, 44)");
+  drawGround(TERRAIN_CTX, points, "rgb(173, 119, 83)");
+  drawBike(TERRAIN_CTX);
   points = movePoints(points, DELTA_X);
   backgroundPoints = movePoints(backgroundPoints, DELTA_X_BACKGROUND);
   shiftPoints(points, 

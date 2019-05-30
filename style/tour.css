@@ -1,7 +1,4 @@
 #game-container {
-}
-
-canvas {
   background: linear-gradient(
     to bottom,
     #1050c9,
@@ -15,7 +12,13 @@ canvas {
   padding-left: 0;
   padding-right: 0;
   width: 800px;
+  position: relative;
 }
+
+canvas { position: absolute }
+#background { z-index 1 }
+#terrain { z-index: 2 }
+#ui { z-index: 3 }
 
 div.game-header {
   opacity: 0.5;
