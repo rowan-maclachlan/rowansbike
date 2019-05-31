@@ -168,7 +168,32 @@ nav a:hover {
   justify-content: center;
 }
 
-/* TODO get backup font? */
+/* For shine effect */
+#title-band {
+  z-index: 1;
+  position: relative;
+  padding: none;
+  outline: none;
+  border: none;
+  overflow: hidden;
+}
+
+#title-band::after {
+  content: '';
+  z-index: 2;
+  background-color: hsla(0, 0%, 100%, 0.5);
+  position: absolute;
+  top: -50%;
+  bottom: -50%;
+  width: 2em;
+  transform: translateX(-250%) rotate(35deg);
+}
+
+#title-band:hover::after {
+  transition: transform 1.5s ease-out;
+  transform: translateX(110vw) rotate(35deg);
+}
+
 #dividor-top-title {
   height: 40px;
   width: 100%;
@@ -224,6 +249,7 @@ nav a:hover {
     font-size: 18pt;
     text-align: center;
 }
+
 /*** TITLE END ***/
 
 /*** BIKE HEADER START ***/

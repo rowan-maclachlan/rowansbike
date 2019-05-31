@@ -1,6 +1,9 @@
 div.bike-title-wrapper {
   width: 100%;
   padding-top: var(--navbar_height, 75px);
+  display: block;
+  align-self: center;
+  justify-content: center;
 }
 
 div.into_image {
