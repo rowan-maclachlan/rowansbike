@@ -49,6 +49,31 @@ const MAX_Y_BACKGROUND = 200;
 const START_Y = BACKGROUND.height - 50;
 /* What depth to extends when drawing the shape of the ground */
 const END_Y = BACKGROUND.height;
+/* What is the current RPM of the bike? */
+let rpm = 0;
+/* Current front gear of the bike */
+let currFrontGear = 1;
+/* Current rear gear of the bike */
+let currRearGear = 1;
+/* The gearings of the front chainrings */
+const FRONT_GEARS = new Array(30, 39, 50);
+/* Front gear range */
+const FRONT_GEAR_RANGE = FRONT_GEARS.length;
+/* The gearings of the rear sprockets */
+const REAR_GEARS = new Array(28, 25, 22, 20, 18, 16, 14, 12);
+/* Rear gear range */
+const REAR_GEAR_RANGE = REAR_GEARS.length;
+/* Constant wattage of the rider. */
+const WATTAGE = 200;
+/* Drag of rider and bike */
+const CDA = 0.4;
+/* Weight of rider and bike - kilograms */
+const WEIGHT = 80;
+/* Wheels and tyre radius - metres */
+const TYRE_RADIUS = 0.339; /* A 700c w/ 28mm tyres */
+/* crank arm length of the crankset - millimeters */
+const CRANK_ARM_LENGTH = 172.5;
+
 
 /* Where bike appears on the track */
 var bikeCenter = BACKGROUND.width / 2;
@@ -276,11 +301,82 @@ function shiftPoints(shiftPoints, delta_x_max, delta_x_min, delta_y_max) {
   }
 }
 
+function drawUi(ctx) {
+  ctx.font = "24px Verdana";
+  ctx.fillText(rpm, WIDTH / 2, 100);
+  ctx.font = "16px Verdana";
+  ctx.fillText(currFrontGear, (WIDTH / 2) - 20, 75);
+  ctx.fillText(currRearGear, (WIDTH / 2) + 20, 75);
+}
+
+/**
+ * Calculate the gear ratio.
+ * @param {int} frontTeeth The number of teeth for the front chainring.
+ * @param {int} rearTeeth The number of teeth for the rear sprocket.
+ * @return {int} the gear ratio.
+ */
+function calcGearRatio(frontTeeth, rearTeeth) {
+  return frontTeeth / rearTeeth;
+}
+
+/**
+ * Get the new front gear after upshifting on the front derailleur.
+ * @param {int} currFrontGear The current front gearing.
+ * @return {int} The new front gearing.
+ */
+function upFrontGear(currFrontGear) {
+  return Math.min(currFrontGear + 1, FRONT_GEAR_RANGE);
+}
+
+/**
+ * Get the new front gear after downshifting on the front derailleur.
+ * @param {int} currFrontGear The current front gearing.
+ * @return {int} The new front gearing.
+ */
+function downFrontGear(currFrontGear) {
+  return Math.max(currFrontGear - 1, 1);
+}
+
+/**
+ * Get the new rear gear after upshifting on the rear derailleur.
+ * @param {int} currRearGear The current rear gearing.
+ * @return {int} The new rear gearing.
+ */
+function upRearGear(currRearGear) {
+  return Math.min(currRearGear + 1, REAR_GEAR_RANGE);
+}
+
+/**
+ * Get the new rear gear after downshifting on the rear derailleur.
+ * @param {int} currRearGear The current rear gearing.
+ * @return {int} The new rear gearing.
+ */
+function downRearGear(currRearGear) {
+  return Math.max(currRearGear - 1, 1);
+}
+
+/** Get the total wheel diameter factoring in wheel size and tyre size.
+ * @param {int} wheelSize Total wheel diameter in millimeters.
+ * @param {int} Tyre size in millimeters.
+ * @return {int} Total wheel diameter.
+ */
+function calculateWheelCircumference(wheelSize, tireSize) {
+  return Math.PI * (wheelSize + (2 * tireSize))
+}
+
+/**
+ * Calculate the cadence of the rider in the provided conditions.
+ */
+function calcCadence(diameter, frontTeeth, rearTeeth) {
+  return speed / (calculateWheelCircumference(diameter, tire_size)) * calcGearRatio(front, rear);
+}
+
 function draw() {
   clearCanvas(TERRAIN_CTX);
   drawGround(TERRAIN_CTX, backgroundPoints, "rgb(44, 53, 44)");
   drawGround(TERRAIN_CTX, points, "rgb(173, 119, 83)");
   drawBike(TERRAIN_CTX);
+  drawUi(UI_CTX);
   points = movePoints(points, DELTA_X);
   backgroundPoints = movePoints(backgroundPoints, DELTA_X_BACKGROUND);
   shiftPoints(points, 
