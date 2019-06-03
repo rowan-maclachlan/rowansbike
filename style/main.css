@@ -347,3 +347,54 @@ div.bike div.bike-img img {
   max-width: 900px;
   margin: 0 auto; /* For horizontal centering */
 }
+
+/* Footer design should display as a table of 3 columns on large screens and be stacked on small screens */
+footer {
+  max-height: 100vh;
+}
+
+/* div#footer-info { */
+#footer-info {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+/* div#footer-info div.footer-block { */
+div.footer-block {
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  width: 33.33%;
+  padding: 24px;
+}
+
+div#footer-info div#site-map {
+  background-color: green;
+}
+
+div#footer-info div#about-me {
+  background-color: red;
+}
+
+div#footer-info div#contact {
+  background-color: yellow;
+  list-style-position: inside;
+}
+
+@media (max-width: 680px) {
+  div.footer-block {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media (min-width: 680px) {
+  div.footer-block {
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    width: 33.33%;
+    padding: 24px;
+  }
+}
