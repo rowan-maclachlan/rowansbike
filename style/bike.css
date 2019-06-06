@@ -7,14 +7,19 @@ div.bike-title-wrapper {
 }
 
 div.into_image {
-    display: block;
-    height: 100vh;
-    width: 100%;
+  flex: 1;
+  display: block;
+  width: auto;
+  resize: none;
 }
 
 div.intro_image img {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  height: auto;
+  width: 100%;
+  min-width: 400px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* TODO get backup font? */
