@@ -109,7 +109,7 @@ nav {
   margin: 0;
   padding: 0;
   position: fixed; /* Stay in place */
-  z-index: 1; /* Overlap other content */
+  z-index: 3; /* Overlap other content */
 }
 
 nav a {
@@ -190,7 +190,7 @@ nav a:hover {
 }
 
 #title-band:hover::after {
-  transition: transform 1.5s ease-out;
+  transition: transform 0.75s ease-out;
   transform: translateX(110vw) rotate(35deg);
 }
 
@@ -353,14 +353,12 @@ footer {
   max-height: 100vh;
 }
 
-/* div#footer-info { */
 #footer-info {
   display: table;
   width: 100%;
   height: 100%;
 }
 
-/* div#footer-info div.footer-block { */
 div.footer-block {
   display: table-cell;
   text-align: left;
@@ -371,6 +369,10 @@ div.footer-block {
 
 div#footer-info div#site-map {
   background-color: green;
+}
+
+div#footer-info div#site-map a {
+  display: block;
 }
 
 div#footer-info div#about-me {
