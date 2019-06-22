@@ -388,5 +388,3 @@ function draw() {
               DELTA_X_MIN_BACKGROUND, 
               DELTA_Y_MAX_BACKGROUND);
 }
-
-

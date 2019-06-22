@@ -5,35 +5,48 @@
     pink 50%,
     white 75%
   );
-  display: block;
-  flex: 1;
+  margin-top: 100px;
+  margin-bottom: 100px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 0;
-  padding-right: 0;
+  display: block;
   width: 800px;
+  height: 400px;
   position: relative;
 }
 
-canvas { position: absolute }
+canvas { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  max-height: 400px;
+  max-width: 800px;
+}
 #background { z-index 1 }
 #terrain { z-index: 2 }
 #ui { z-index: 3 }
 
 div.game-header {
+  position: absolute;
   opacity: 0.5;
   background-color: grey;
   height: 80px;
   width: 800px;
   margin-left: auto;
   margin-right: auto;
+  bottom: -100px;
+  z-index: 3;
 }
 
 div.game-footer {
   opacity: 0.5;
-  background-color: grey;
+  background-color: green;
   height: 80px;
   width: 800px;
   margin-left: auto;
   margin-right: auto;
+  top: 100px;
+  z-index: 3;
 }
