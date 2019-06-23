@@ -21,6 +21,8 @@ const CENTER_Y = BACKGROUND.height / 2;
 let points = new Array();
 /* Holds the points used to draw the moving background */
 let backgroundPoints = new Array();
+/* Holds the points that define cloud positions.  A cloud is defined by two points - top left and bottom right */
+let clouds = new Array();
 /* The distance by which the points move across the screen. */
 const DELTA_X = 5;
 /* The distance by which the background points move across the screen */
@@ -37,6 +39,20 @@ const DELTA_X_MIN_BACKGROUND = 50;
 const DELTA_X_MAX_BACKGROUND = 150;
 /* The maximum height by which the background points vary */
 const DELTA_Y_MAX_BACKGROUND = 50;
+/* The distance by which the clouds move across the screen per tick */
+const DELTA_X_CLOUDS = 1;
+/* The maximum distance between 2 clouds */
+const DELTA_X_CLOUDS_MAX = 500px;
+/* The minimum distance between 2 clouds */
+const DELTA_X_CLOUDS_MIN = 200px;
+/* The height of a cloud */
+const CLOUD_HEIGHT = 10px;
+/* The minimum height at which point a cloud may appear */
+const CLOUD_FLOOR = 300px;
+/* The minimum length of a cloud */
+const CLOUD_LENGTH_MIN = 10px;
+/* The maximum length of a cloud */
+const CLOUD_LENGTH_MAX = 50px;
 /* The minimum height to which the ground can fall */
 const MIN_Y = BACKGROUND.height - 20;
 /* The maximum height to which the ground can extend */
@@ -167,6 +183,15 @@ function initPoints() {
       DELTA_X_MIN_BACKGROUND, 
       DELTA_Y_MAX_BACKGROUND);
   backgroundPoints.push(newPoint);
+  
+  let cloudTopLeft = new Point(
+      (WIDTH + Math.max((Math.random() * DELTA_X_CLOUDS_MAX), DELTA_X_CLOUDS_MIN)),
+      (Math.random() * CLOUD_FLOOR));
+  let cloudBottomRight = new Point(
+      (cloudTopLeft.x + Math.max(CLOUD_LENGTH_MIN, Math.random() * CLOUD_LENGTH_MAX)),
+      (cloudTopLeft.y + CLOUD_HEIGHT));
+  clouds.push(cloudTopLeft);
+  clouds.push(cloudBottomRight);
 }
 
 function drawSun(ctx) {
@@ -252,7 +277,22 @@ function drawGround(ctx, drawablePoints, colour) {
   ctx.fill();
 }
 
-/* Move points over by some delta on the x axis.
+function drawClouds(ctx, drawablePoints) {
+  ctx.fillStyle = "rgb(255, 255, 255)";
+  ctx.beginPath();
+  /* start drawing from at the leftmost cloud */
+  let topLeft = drawablePoints[0];
+  let bottomRight = drawablePoints[1];
+  ctx.moveTo(topLeft.x, topLeft.y);
+  ctx.lineTo(bottomRight.x, topLeft.y);
+  ctx.lineTo(bottomRight.x, bottomRight.y);
+  ctx.lineTo(TopLeft.x, bottomRight.y);
+  ctx.closePath();
+  ctx.fill();
+}
+
+/** 
+ * Move points over by some delta on the x axis.
  * Returns a new list of points. */
 function movePoints(points, delta_x) {
   return points.map(
@@ -279,7 +319,7 @@ function generateNewPoint(prevPoint, delta_x_max, delta_x_min, delta_y_max) {
   return new Point(WIDTH + deltaX, y);
 }
 
-/* Clear the canvas of all drawn shapes. */
+/** Clear the canvas of all drawn shapes. */
 function clearCanvas(ctx) {
   ctx.clearRect(0, 0, WIDTH, HEIGHT);
 }
@@ -301,6 +341,49 @@ function shiftPoints(shiftPoints, delta_x_max, delta_x_min, delta_y_max) {
   }
 }
 
+/**
+ * Get a list of two points that define a cloud.  
+ * @param {Point} The end position of the previous cloud needs to be provided in order
+ * to determine at what position to place the next.
+ * @return [Point, Point] Two points that define the position of the cloud.
+ */
+function getNextCloud(prevCloud) {
+  let deltaX = Math.max((Math.random() * DELTA_X_CLOUDS_MAX), DELTA_X_CLOUDS_MIN);
+  let cloudTopLeft = new Point(
+      (deltaX + prevCloud.x),
+      (Math.random() * CLOUD_FLOOR));
+  let cloudBottomRight = new Point(
+      (cloudTopLeft.x + Math.max(CLOUD_LENGTH_MIN, Math.random() * CLOUD_LENGTH_MAX)),
+      (cloudTopLeft.y + CLOUD_HEIGHT));
+  return [cloudTopLeft, cloudBottomRight];
+}
+
+/** 
+ * If the points extends far enough off the left side of the canvas, shift off the
+ * furthest.  If there are not enough points past the right side of the screen, generate a 
+ * new one. 
+ * @param {Point[]} clouds The list of Points that define the position and size of clouds 
+ * on the screen.
+ */
+function shiftClouds(clouds) {
+  /* If a whole cloud is off the screen, delete it. */
+  if (shiftPoints[1].x < 0) {
+    shiftPoints.shift();
+    shiftPoint.shift();
+  }
+  /* If the tail end of the last cloud is within the frame, generate a new cloud. 
+     If there are no clouds on the screen, generate a new one the same way */
+  let lastPoint = shiftPoints.slice(-1)[0];
+  if (lastPoint.x < WIDTH) {
+    clouds = clouds.concat(getNextCloud(lastPoint));
+  }
+}
+
+/**
+ * Draw the UI on the context provided.  This should display details that need
+ * to be overlaid ontop of the terrain to provide the player with feedback.
+ * @param {context} ctx The context for the UI to be drawn on.
+ */
 function drawUi(ctx) {
   ctx.font = "24px Verdana";
   ctx.fillText(rpm, WIDTH / 2, 100);
@@ -373,12 +456,15 @@ function calcCadence(diameter, frontTeeth, rearTeeth) {
 
 function draw() {
   clearCanvas(TERRAIN_CTX);
+  drawClouds(TERRAIN_CTX, clouds);
   drawGround(TERRAIN_CTX, backgroundPoints, "rgb(44, 53, 44)");
   drawGround(TERRAIN_CTX, points, "rgb(173, 119, 83)");
   drawBike(TERRAIN_CTX);
   drawUi(UI_CTX);
+  clouds = movePoints(clouds, DELTA_X_CLOUDS);
   points = movePoints(points, DELTA_X);
   backgroundPoints = movePoints(backgroundPoints, DELTA_X_BACKGROUND);
+  shiftClouds(clouds);
   shiftPoints(points, 
               DELTA_X_MAX, 
               DELTA_X_MIN, 
