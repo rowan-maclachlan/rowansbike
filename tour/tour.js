@@ -42,17 +42,17 @@ const DELTA_Y_MAX_BACKGROUND = 50;
 /* The distance by which the clouds move across the screen per tick */
 const DELTA_X_CLOUDS = 1;
 /* The maximum distance between 2 clouds */
-const DELTA_X_CLOUDS_MAX = 500px;
+const DELTA_X_CLOUDS_MAX = 500;
 /* The minimum distance between 2 clouds */
-const DELTA_X_CLOUDS_MIN = 200px;
+const DELTA_X_CLOUDS_MIN = 200;
 /* The height of a cloud */
-const CLOUD_HEIGHT = 10px;
+const CLOUD_HEIGHT = 25;
 /* The minimum height at which point a cloud may appear */
-const CLOUD_FLOOR = 300px;
+const CLOUD_FLOOR = 200;
 /* The minimum length of a cloud */
-const CLOUD_LENGTH_MIN = 10px;
+const CLOUD_LENGTH_MIN = 50;
 /* The maximum length of a cloud */
-const CLOUD_LENGTH_MAX = 50px;
+const CLOUD_LENGTH_MAX = 150;
 /* The minimum height to which the ground can fall */
 const MIN_Y = BACKGROUND.height - 20;
 /* The maximum height to which the ground can extend */
@@ -280,15 +280,18 @@ function drawGround(ctx, drawablePoints, colour) {
 function drawClouds(ctx, drawablePoints) {
   ctx.fillStyle = "rgb(255, 255, 255)";
   ctx.beginPath();
-  /* start drawing from at the leftmost cloud */
-  let topLeft = drawablePoints[0];
-  let bottomRight = drawablePoints[1];
-  ctx.moveTo(topLeft.x, topLeft.y);
-  ctx.lineTo(bottomRight.x, topLeft.y);
-  ctx.lineTo(bottomRight.x, bottomRight.y);
-  ctx.lineTo(TopLeft.x, bottomRight.y);
-  ctx.closePath();
-  ctx.fill();
+
+  /* Gradient clouds from pink at the bottom to white */
+  let cloudGradient = ctx.createLinearGradient(0, 0, 0, 170);
+  cloudGradient.addColorStop(0, "white");
+  cloudGradient.addColorStop(1, "pink");
+  ctx.fillStyle = cloudGradient;
+    
+  for (let i = 0; i < drawablePoints.length; i += 2) {
+    let topLeft = drawablePoints[i];
+    let bottomRight = drawablePoints[i + 1];
+    ctx.fillRect(topLeft.x, topLeft.y, bottomRight.x, bottomRight.y);
+  }
 }
 
 /** 
@@ -367,15 +370,16 @@ function getNextCloud(prevCloud) {
  */
 function shiftClouds(clouds) {
   /* If a whole cloud is off the screen, delete it. */
-  if (shiftPoints[1].x < 0) {
-    shiftPoints.shift();
-    shiftPoint.shift();
+  if (clouds[1].x < 0) {
+    clouds.shift();
+    clouds.shift();
   }
   /* If the tail end of the last cloud is within the frame, generate a new cloud. 
      If there are no clouds on the screen, generate a new one the same way */
-  let lastPoint = shiftPoints.slice(-1)[0];
-  if (lastPoint.x < WIDTH) {
+  let lastPoint = clouds.slice(-1)[0];
+  if (!lastPoint || lastPoint.x < WIDTH) {
     clouds = clouds.concat(getNextCloud(lastPoint));
+    console.log(clouds);
   }
 }
 
