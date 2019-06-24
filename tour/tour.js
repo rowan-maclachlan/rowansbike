@@ -40,7 +40,7 @@ const DELTA_X_MAX_BACKGROUND = 150;
 /* The maximum height by which the background points vary */
 const DELTA_Y_MAX_BACKGROUND = 50;
 /* The distance by which the clouds move across the screen per tick */
-const DELTA_X_CLOUDS = 5;
+const DELTA_X_CLOUDS = 1;
 /* The maximum distance between 2 clouds */
 const DELTA_X_CLOUDS_MAX = 500;
 /* The minimum distance between 2 clouds */
@@ -199,6 +199,19 @@ function drawSun(ctx) {
   ctx.fillStyle = "yellow";
   ctx.arc(WIDTH - 100, 200, 50, 0, 2 * Math.PI);
   ctx.fill();
+  
+  /* Gradient clouds from pink at the bottom to white */
+  let sunGradient = ctx.createLinearGradient(0, 210, 0, 220);
+  sunGradient.addColorStop(0, "orange");
+  sunGradient.addColorStop(1, "pink");
+  ctx.fillStyle = sunGradient;
+  ctx.fillRect(WIDTH - 175, 210, 110, 10);
+  
+  sunGradient = ctx.createLinearGradient(0, 230, 0, 236);
+  sunGradient.addColorStop(0, "orange");
+  sunGradient.addColorStop(1, "pink");
+  ctx.fillStyle = sunGradient;
+  ctx.fillRect(WIDTH - 175, 230, 85, 6);
 }
 
 function drawBackMountains(ctx) {
@@ -278,15 +291,14 @@ function drawGround(ctx, drawablePoints, colour) {
 }
 
 function drawClouds(ctx, drawablePoints) {
-  /* Gradient clouds from pink at the bottom to white */
-  let cloudGradient = ctx.createLinearGradient(0, 0, 0, 170);
-  cloudGradient.addColorStop(0, "white");
-  cloudGradient.addColorStop(1, "pink");
-  ctx.fillStyle = cloudGradient;
-    
   for (let i = 0; i < drawablePoints.length; i += 2) {
     let topLeft = drawablePoints[i];
     let bottomRight = drawablePoints[i + 1];
+    /* Gradient clouds from pink at the bottom to white */
+    let cloudGradient = ctx.createLinearGradient(0, topLeft.y, 0, bottomRight.y);
+    cloudGradient.addColorStop(0, "white");
+    cloudGradient.addColorStop(1, "pink");
+    ctx.fillStyle = cloudGradient;
     ctx.fillRect(topLeft.x, topLeft.y, bottomRight.x - topLeft.x, CLOUD_HEIGHT);
   }
 }
