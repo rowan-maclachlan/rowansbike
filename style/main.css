@@ -138,9 +138,14 @@ nav a#logo {
   font-size: 24pt;
 }
 
+nav a#blog {
+  float: right;
+}
+
 nav a#tour {
   float: right;
 }
+
 
 nav a:hover {
   background: white;
