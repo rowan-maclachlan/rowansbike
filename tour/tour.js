@@ -40,15 +40,15 @@ const DELTA_X_MAX_BACKGROUND = 150;
 /* The maximum height by which the background points vary */
 const DELTA_Y_MAX_BACKGROUND = 50;
 /* The distance by which the clouds move across the screen per tick */
-const DELTA_X_CLOUDS = 1;
+const DELTA_X_CLOUDS = 5;
 /* The maximum distance between 2 clouds */
 const DELTA_X_CLOUDS_MAX = 500;
 /* The minimum distance between 2 clouds */
 const DELTA_X_CLOUDS_MIN = 200;
 /* The height of a cloud */
-const CLOUD_HEIGHT = 25;
+const CLOUD_HEIGHT = 40;
 /* The minimum height at which point a cloud may appear */
-const CLOUD_FLOOR = 200;
+const CLOUD_FLOOR = 150;
 /* The minimum length of a cloud */
 const CLOUD_LENGTH_MIN = 50;
 /* The maximum length of a cloud */
@@ -278,9 +278,6 @@ function drawGround(ctx, drawablePoints, colour) {
 }
 
 function drawClouds(ctx, drawablePoints) {
-  ctx.fillStyle = "rgb(255, 255, 255)";
-  ctx.beginPath();
-
   /* Gradient clouds from pink at the bottom to white */
   let cloudGradient = ctx.createLinearGradient(0, 0, 0, 170);
   cloudGradient.addColorStop(0, "white");
@@ -290,7 +287,7 @@ function drawClouds(ctx, drawablePoints) {
   for (let i = 0; i < drawablePoints.length; i += 2) {
     let topLeft = drawablePoints[i];
     let bottomRight = drawablePoints[i + 1];
-    ctx.fillRect(topLeft.x, topLeft.y, bottomRight.x, bottomRight.y);
+    ctx.fillRect(topLeft.x, topLeft.y, bottomRight.x - topLeft.x, CLOUD_HEIGHT);
   }
 }
 
@@ -374,11 +371,16 @@ function shiftClouds(clouds) {
     clouds.shift();
     clouds.shift();
   }
-  /* If the tail end of the last cloud is within the frame, generate a new cloud. 
+  /* If the head end of the last cloud is within the frame, generate a new cloud. 
      If there are no clouds on the screen, generate a new one the same way */
-  let lastPoint = clouds.slice(-1)[0];
-  if (!lastPoint || lastPoint.x < WIDTH) {
-    clouds = clouds.concat(getNextCloud(lastPoint));
+  /* Get the front of the last cloud in the list of Points */
+  let lastPoint = clouds.slice(-2)[0];
+  /* If that last cloud is partially on-screen, create the next cloud */
+  if (lastPoint.x < WIDTH) {
+    console.log("LastPoint: " + lastPoint.x);
+    let newCloud = getNextCloud(lastPoint);
+    clouds.push(newCloud[0], newCloud[1]);
+    console.log("Cloud is fully onscreen");
     console.log(clouds);
   }
 }
