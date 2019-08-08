@@ -47,14 +47,14 @@
         text-overflow: ellipsis;
         /* Required for text-overflow to do anything */
         overflow: hidden;
-    } 
+    }
 
     /* max height of whatever the image it contains can be scaled to while maintaining its inline positioning with the bike content to its left (or right in the future).  This content to the left must take at last 260 px, or 25% of the screen, whichever is most.  Because the image scales proportionately, we would like this to occur at the moment that the content and image next to each other become longer in the horizontal axis */
     div.bike div.bike-img {
         width: 70%;
         float: right;
         resize: none;
-    } 
+    }
 
     div.bike-img img {
         height: auto;
@@ -156,7 +156,7 @@ nav a:hover {
 
 /*** TITLE BEGIN ***/
 #title-page {
-  background-image: linear-gradient(to bottom right, 
+  background-image: linear-gradient(to bottom right,
       red 25%,
       #f27629 50%,
       red);
@@ -278,8 +278,8 @@ h2 {
   font-size: 28pt;
   height: 48px;
   width: 100%;
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   justify-content: center;
   margin: 0;
   padding: 0;
@@ -342,7 +342,7 @@ div.bike div.bike-img {
   display: block;
   width: auto;
   resize: none;
-} 
+}
 
 div.bike div.bike-img img {
   display: block;
@@ -370,6 +370,15 @@ div.footer-block {
   vertical-align: middle;
   width: 33.33%;
   padding: 24px;
+}
+
+.footer-block a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer-block ul {
+    list-style-type: none;
 }
 
 div#footer-info div#site-map {
@@ -405,3 +414,4 @@ div#footer-info div#contact {
     padding: 24px;
   }
 }
+
