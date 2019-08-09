@@ -7,17 +7,7 @@
   </head>
   <body>
     
-    <nav>
-      <a id=logo href="../index.html#title-page">
-        <span style="font-family:'Liberty Island'">ROWAN'S BIKES</span>
-      </a>
-      <a class="bike-nav" href="../bikes/khs-alite.html">KHS Alite 100</a>
-      <a class="bike-nav" href="../bikes/cambio-rino.html">Cambio Rino</a>
-      <a class="bike-nav" href="../bikes/beekay-mirage.html">Beekay Mirage</a>
-      <a class="bike-nav" href="../bikes/nova.html">Nova</a>
-      <a class="bike-nav" href="../bikes/bianchi-volpe.html">Bianchi Volpe</a>
-      <a class="bike-nav" id="tour" href="../tour/tour.html">The Tour</a>
-    </nav>
+    <?php require 'header.php'; ?>
       
     <div class="bike-title-wrapper">
       <div id="dividor-top-title"></div>
