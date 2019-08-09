@@ -5,8 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/reset.css" />
-	<link rel="stylesheet" href="css/styles.css" />
+  <link href="../style/main.css" type="text/css" rel="stylesheet">
 	<!-- Scripts -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
 	<!--[if IE 6]>
@@ -30,13 +29,7 @@
 		<h1 id="logo" class="grid_4">Aurelius</h1>
 		
 		<!-- Navigation Menu -->
-		<ul id="navigation" class="grid_8">
-			<li><a href="contact.html"><span class="meta">Get in touch</span><br />Contact Us</a></li>
-			<li><a href="blog.html" class="current"><span class="meta">Latest news</span><br />Blog</a></li>
-			<li><a href="portfolio.html"><span class="meta">Our latest work</span><br />Portfolio</a></li>
-			<li><a href="about.html"><span class="meta">Who are we?</span><br />About</a></li>
-			<li><a href="index.html"><span class="meta">Homepage</span><br />Home</a></li>
-		</ul>
+    <?php require 'header.php'; ?>
 		
 		<div class="hr grid_12 clearfix">&nbsp;</div>
 			

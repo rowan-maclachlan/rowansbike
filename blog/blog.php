@@ -9,11 +9,7 @@
 		type='image'
 	/>
 	
-	<cms:folder name="philosophy" title="Philosophy" />
-	<cms:folder name="history" title="History" />
-	<cms:folder name="jobs" title="Jobs" />
-	<cms:folder name="staff" title="Staff" />
-	<cms:folder name="clients" title="Clients" />
+	<cms:folder name="touring" title="Bicycle Touring" />
 	
 </cms:template>
 
@@ -25,7 +21,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="main.css" />
+	<link rel="stylesheet" href="../style/main.css" />
 
 	<!-- Scripts -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
@@ -51,13 +47,7 @@
 		<h1 id="logo" class="grid_4">Blog</h1>
 		
 		<!-- Navigation Menu -->
-		<ul id="navigation" class="grid_8">
-			<li><a href="contact.html"><span class="meta">Get in touch</span><br />Contact Us</a></li>
-			<li><a href="blog.html" class="current"><span class="meta">Latest news</span><br />Blog</a></li>
-			<li><a href="portfolio.html"><span class="meta">Our latest work</span><br />Portfolio</a></li>
-			<li><a href="about.html"><span class="meta">Who are we?</span><br />About</a></li>
-			<li><a href="index.html"><span class="meta">Homepage</span><br />Home</a></li>
-		</ul>
+    <?php require 'header.php'; ?>
 		
 		<div class="hr grid_12 clearfix">&nbsp;</div>
 			
