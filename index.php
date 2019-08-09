@@ -25,17 +25,7 @@
   </head>
   <body>
 
-    <nav>
-      <a id="logo" href="#title-page">
-        <span style="font-family:'Liberty Island'">ROWAN'S BIKE</span>
-      </a>
-      <a class="bike-nav" href="./bikes/khs-alite.html">KHS Alite 100</a>
-      <a class="bike-nav" href="./bikes/cambio-rino.html">Cambio Rino</a>
-      <a class="bike-nav" href="./bikes/beekay-mirage.html">Beekay Mirage</a>
-      <a class="bike-nav" href="./bikes/nova.html">Nova</a>
-      <a class="bike-nav" href="./bikes/bianchi-volpe.html">Bianchi Volpe</a>
-      <a id="tour" class="bike-nav" href="./tour/tour.html">The Tour</a>
-    </nav>
+    <?php require 'header.php'; ?>
 
     <div id="title-page">
       <div id="title-wrapper">
