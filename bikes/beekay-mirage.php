@@ -23,7 +23,7 @@
                    ../resources/photos/beekay/beekay.full.med.jpg 900w,
                    ../resources/photos/beekay/beekay.full.high.jpg 1200w"
            title="The Beekay Mirage"
-           alt="A photo of the Beekay Mirage.">>
+           alt="A photo of the Beekay Mirage.">
     </div>
 
     <div class="dividor-top"></div>
