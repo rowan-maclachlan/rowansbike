@@ -22,6 +22,7 @@
 	
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="/style/main.css" />
+	<link rel="stylesheet" href="/style/blog.css" />
 
 	<!-- Scripts -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
@@ -41,48 +42,37 @@
 
 <body>
 
-	<div id="wrapper" class="container_12 clearfix">
 
 		<!-- Navigation Menu -->
-    <?php require 'header.php'; ?>
-		
-		<div class="hr grid_12 clearfix">&nbsp;</div>
-			
-		<!-- Caption Line -->
-		<h2 class="grid_12 caption clearfix">Our <span>blog</span>, keeping you up-to-date on our latest news.</h2>
-		
-		<div class="hr grid_12 clearfix">&nbsp;</div>
+    <?php require 'header.html'; ?>
 		
 		<!-- Column 1 /Content -->
-		<div class="grid_8">
-			
-			<!-- Blog Post -->
-			<div class="post">
-				<!-- Post Title -->
-				<h3 class="title"><a href="<cms:show k_page_link />"><cms:show k_page_title /></a></h3>
-				<!-- Post Title -->
-				<cms:if k_page_foldertitle >
-					<cms:set my_category=k_page_foldertitle />
-				<cms:else />
-					<cms:set my_category='Uncategorised' />
-				</cms:if>
-				<p class="sub"><a href="#"><cms:show my_category /></a> &bull; <cms:date k_page_date format='jS M, y'/> &bull; <a href="#"><cms:show k_comments_count /> Comments</a></p>
-				<div class="hr dotted clearfix">&nbsp;</div>
-				<!-- Post Title -->
-				<img class="thumb" src="<cms:show blog_image />" alt=""/>
-				<!-- Post Content -->
-				<cms:show blog_content />
-				<!-- Post Links -->
-				<p class="clearfix">
-					<a href="<cms:link masterpage='blog.php' />" class="button float" >&lt;&lt; Back to Blog</a>
-					<a href="#commentform" class="button float right" >Discuss this post</a>
-				</p>
-			</div>
-			<div class="hr clearfix">&nbsp;</div>
+		<!-- Blog Post -->
+		<div class="post">
+			<!-- Post Title -->
+			<h3 class="title"><a href="<cms:show k_page_link />"><cms:show k_page_title /></a></h3>
+			<!-- Post Title -->
+			<cms:if k_page_foldertitle >
+				<cms:set my_category=k_page_foldertitle />
+			<cms:else />
+				<cms:set my_category='Uncategorised' />
+			</cms:if>
+      <p class="sub">
+        <a href="#"><cms:show my_category /></a> &bull; <cms:date k_page_date format='jS M, y'/> &bull; <a href="#"><cms:show k_comments_count /> Comments</a>
+      </p>
+			<!-- Post Title -->
+			<img class="thumb" src="<cms:show blog_image />" alt=""/>
+			<!-- Post Content -->
+			<cms:show blog_content />
+			<!-- Post Links -->
+			<div>
+				<a href="<cms:link masterpage='blog.php' />">Back to Blog</a>
+				<a href="#commentform">Discuss this post</a>
+      </div>
+    </div>
 			
 			<!-- Comment's List -->
 			<h3>Comments</h3>
-			<div class="hr dotted clearfix">&nbsp;</div>
 			
 			<cms:if k_comments_count >
 			<ol class="commentlist">
@@ -109,8 +99,6 @@
 				No comments.
 			</cms:if>
 			
-			<div class="hr clearfix">&nbsp;</div>
-			
 			<!-- Comment Form -->
 			<cms:embed 'comments_form.html' />
 
@@ -120,10 +108,7 @@
 		<cms:embed 'blog_sidebar.html' />
 		
 		<!-- Footer -->
-		<p class="grid_12 footer clearfix">
-			<span class="float"><b>&copy; Copyright</b> <a href="">QwibbleDesigns</a> - remove upon purchase.</span>
-			<a class="float right" href="#">top</a>
-		</p>
+    <?php require 'footer.html'; ?>
 	</div><!--end wrapper-->
 
 </body>

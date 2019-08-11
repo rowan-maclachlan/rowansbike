@@ -25,7 +25,7 @@
   </head>
   <body>
 
-    <?php require 'header.php'; ?>
+    <?php require 'header.html'; ?>
 
     <div id="title-page">
       <div id="title-wrapper">
@@ -132,34 +132,7 @@
       </div>
     </div>
 
-    <footer>
-      <div class="dividor-top">
-      </div>
-      <div id="footer-info">
-        <div class="footer-block" id="site-map">
-          <a id="logo" href="#title-page">
-            <span style="font-family:'Liberty Island'">ROWAN'S BIKE</span>
-          </a>
-          <a href="./bikes/khs-alite.html">KHS Alite 100</a>
-          <a href="./bikes/cambio-rino.html">Cambio Rino</a>
-          <a href="./bikes/beekay-mirage.html">Beekay Mirage</a>
-          <a href="./bikes/nova.html">Nova</a>
-          <a href="./bikes/bianchi-volpe.html">Bianchi Volpe</a>
-          <a id="tour" href="./tour/tour.html">The Tour</a>
-        </div>
-        <div class="footer-block" id="about-me">
-          <p>Rowan is from Saskatoon.  He has a B.Sc of Computer Science from the University of Saskatchewan and he wonders how he can best apply his skills and talents to make the world a more equitable place, and further the opportunities of everyone to learn and to develop their passions.
-          </p>
-        </div>
-        <div class="footer-block" id="contact">
-          <ul>
-            <li><a href="mailto:maclachlan.rowan@gmail.com">maclachlan.rowan@gmail.com</a></li>
-            <li><a href="https://github.com/rowan-maclachlan">Github</a></li>
-            <li><a href="https://linkedin.com/in/rowan-maclachlan">Linkedin</a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
+    <?php require 'footer.html'; ?>
 
     <!-- Load React. -->
     <!-- Note: when deploying, replace "development.js" with "production.min.js". -->

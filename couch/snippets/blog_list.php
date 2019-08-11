@@ -26,7 +26,7 @@
 	<div id="wrapper" class="container_12 clearfix">		
 		
 		<!-- Navigation Menu -->
-    <?php require 'header.php'; ?>
+    <?php require 'header.html'; ?>
 		
 		<div class="hr grid_12 clearfix">&nbsp;</div>
 			
@@ -87,10 +87,7 @@
 		<cms:embed 'blog_sidebar.html' />
 		
 		<!-- Footer -->
-		<p class="grid_12 footer clearfix">
-			<span class="float"><b>&copy; Copyright</b> <a href="">QwibbleDesigns</a> - remove upon purchase.</span>
-			<a class="float right" href="#">top</a>
-		</p>
+    <?php require 'footer.html'; ?>
 		
 	</div><!--end wrapper-->
 

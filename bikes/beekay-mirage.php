@@ -7,7 +7,7 @@
   </head>
   <body>
     
-    <?php require 'header.php'; ?>
+    <?php require 'header.html'; ?>
       
     <div class="bike-title-wrapper">
       <div id="dividor-top-title"></div>
