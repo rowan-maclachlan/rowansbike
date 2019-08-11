@@ -21,7 +21,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="../style/main.css" />
+	<link rel="stylesheet" href="/style/main.css" />
 
 	<!-- Scripts -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
@@ -43,9 +43,6 @@
 
 	<div id="wrapper" class="container_12 clearfix">
 
-		<!-- Text Logo -->
-		<h1 id="logo" class="grid_4">Blog</h1>
-		
 		<!-- Navigation Menu -->
     <?php require 'header.php'; ?>
 		
@@ -132,7 +129,7 @@
 </body>
 </html>
 <cms:else />
-	<cms:embed 'blog_list.html' />
+	<cms:embed 'blog_list.php' />
 </cms:if>
 
 <?php COUCH::invoke(); ?>
