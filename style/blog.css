@@ -1,0 +1,417 @@
+@font-face {
+    font-family: 'Big Poppa Regular';
+    src: url('../resources/fonts/bigpoppae-regular-webfont.woff2') format('woff2'),
+         url('../resources/fonts/bigpoppae-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Liberty Island';
+    src: url('../resources/fonts/libertyislandlaserital-webfont.woff2') format('woff2'),
+         url('../resources/fonts/libertyislandlaserital-webfont.woff') format('woff'),
+         url('../resources/fonts/libertyislandlaserital-webfont.tff') format('tff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@media only screen and (min-width: 1000px) { /* For tablets and desktops */
+    /* Needs to have a max height of the largest that the image can get on the screen. */
+    div.bike {
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(
+            to bottom,
+            #baf0ff,
+            #def5fc
+        );
+        background-color: #baf0ff; /* baby blue */
+        /* For scroll snapping... */
+        scroll-snap-type: y mandatory;
+        scroll-padding: -var(--navbar_height, 175px); /* compensate for fixed header */
+        /* Snap to the top of the div, minus navbar height */
+        scroll-snap-align: start;
+    }
+
+    /* Needs to have a max height of 100% of its container */
+    div.bike div.bike-content {
+        width: calc(30%);
+        min-width: 320px;
+        height: 100%;
+        float: left;
+        padding: 24px;
+        font-size: 16pt;
+        color: #4c4b40; /* grey */
+        line-height: 25pt;
+        text-overflow: ellipsis;
+        /* Required for text-overflow to do anything */
+        overflow: hidden;
+    }
+
+    /* max height of whatever the image it contains can be scaled to while maintaining its inline positioning with the bike content to its left (or right in the future).  This content to the left must take at last 260 px, or 25% of the screen, whichever is most.  Because the image scales proportionately, we would like this to occur at the moment that the content and image next to each other become longer in the horizontal axis */
+    div.bike div.bike-img {
+        width: 70%;
+        float: right;
+        resize: none;
+    }
+
+    div.bike-img img {
+        height: auto;
+        width: 100%;
+    }
+}
+
+
+html{
+  scroll-behavior:smooth
+}
+
+* {
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --navbar_height: 75px;
+}
+
+body {
+  margin: 0;
+  background-color: red; /* red */
+  font-size: 14pt;
+  background: linear-gradient(
+    to bottom,
+    #47d1ff 25%,
+    #d8f5ff 50%,
+    #a5e8ff 75%,
+    #effbff
+  );
+}
+
+.preload * { /* To prevent unwanted transitions on page load */
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+ }
+
+/*** NAVBAR BEGIN ***/
+nav {
+  overflow: hidden;
+  background-color: #333; /* black */
+  list-style-type: none;
+  display: block; /* display as block element */
+  height: var(--navbar_height);
+  width: 100%; /* extend over the whole page */
+  margin: 0;
+  padding: 0;
+  position: fixed; /* Stay in place */
+  z-index: 3; /* Overlap other content */
+}
+
+nav a {
+  height: 100%;
+  width: auto;
+  float: left;
+  vertical-align: middle;
+  margin: auto 0;
+  text-align: center;
+  padding: 30px 16px; /* hack for centering text vertically... */
+  line-height: 20px;
+  text-decoration: none;
+  font-size: 14pt;
+  color: white;
+  transition: color, 0.5s, linear, 0s;
+  -webkit-transition: color, 0.5s linear 0s;
+  -moz-transition: color, 0.5s linear 0s;
+  -o-transition: color, 0.5s linear 0s;
+}
+
+nav a#logo {
+  width: 350px;
+  padding-left: 25px;
+  padding-right: 25px;
+  line-height: 20px;
+  font-size: 24pt;
+}
+
+nav a#blog {
+  float: right;
+}
+
+nav a#tour {
+  float: right;
+}
+
+
+nav a:hover {
+  background: white;
+  color: black;
+  text-decoration: none;
+}
+/*** NAVBAR END ***/
+
+/*** TITLE BEGIN ***/
+#title-page {
+  background-image: linear-gradient(to bottom right,
+      red 25%,
+      #f27629 50%,
+      red);
+  height: 100vh; /* To compensate for fixed nav menu */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#title-wrapper {
+  width: 100%;
+  display: block;
+  align-self: center;
+  justify-content: center;
+}
+
+/* For shine effect */
+#title-band {
+  z-index: 1;
+  position: relative;
+  padding: none;
+  outline: none;
+  border: none;
+  overflow: hidden;
+}
+
+#title-band::after {
+  content: '';
+  z-index: 2;
+  background-color: hsla(0, 0%, 100%, 0.5);
+  position: absolute;
+  top: -50%;
+  bottom: -50%;
+  width: 2em;
+  transform: translateX(-250%) rotate(35deg);
+}
+
+#title-band:hover::after {
+  transition: transform 0.75s ease-out;
+  transform: translateX(110vw) rotate(35deg);
+}
+
+#dividor-top-title {
+  height: 40px;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    white,
+    white 25%,
+    green 25%,
+    green 50%,
+    yellow 50%,
+    yellow 75%,
+    black 75%
+  );
+}
+
+#title {
+  background-color: white;
+  font-size: 48pt;
+  height: 75px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#dividor-bottom-title {
+  height: 40px;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    black,
+    black 25%,
+    yellow 25%,
+    yellow 50%,
+    green 50%,
+    green 75%,
+    white 75%
+  );
+}
+
+#catchphrase {
+  width: 100%;
+  height: 100%;
+}
+
+#catchphrase p {
+    padding-top: 120px;
+    padding-bottom: 0px;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    color: rgb(50, 50, 50);
+    font-size: 18pt;
+    text-align: center;
+}
+
+/*** TITLE END ***/
+
+/*** BIKE HEADER START ***/
+div.dividor-top {
+  height: 40px;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    white,
+    white 25%,
+    green 25%,
+    green 50%,
+    yellow 50%,
+    yellow 75%,
+    black 75%
+  );
+}
+
+/* To center the title of the bike */
+h2 {
+  font-size: 28pt;
+  height: 48px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+div.dividor-bottom {
+  height: 40px;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    black,
+    black 25%,
+    yellow 25%,
+    yellow 50%,
+    green 50%,
+    green 75%,
+    white 75%
+  );
+}
+/*** BIKE HEADER END ***/
+
+/* Needs to have a max height of the largest that the image can get on the screen. */
+div.bike {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  /* For scroll snapping... */
+  scroll-snap-type: y mandatory;
+  scroll-padding: -var(--navbar_height, 175px); /* compensate for fixed header */
+  /* Snap to the top of the div, minus navbar height */
+  scroll-snap-align: start;
+}
+
+/* Needs to have a max height of 100% of its container */
+div.bike div.bike-content {
+    flex: 1;
+    width: 100%;
+    height: auto;
+    color: #4c4b40; /* grey */
+}
+
+div.bike div.bike-content p {
+    font-size: 24pt;
+    line-height: 32pt;
+    display: block;
+    margin: auto;
+    padding: 24px 24px;
+    height: auto;
+    width: 75%;
+    min-width: 400px;
+}
+
+/* max height of whatever the image it contains can be scaled to while maintaining its inline positioning with the bike content to its left (or right in the future).  This content to the left must take at last 260 px, or 25% of the screen, whichever is most.  Because the image scales proportionately, we would like this to occur at the moment that the content and image next to each other become longer in the horizontal axis */
+div.bike div.bike-img {
+  flex: 1;
+  display: block;
+  width: auto;
+  resize: none;
+}
+
+div.bike div.bike-img img {
+  display: block;
+  height: auto;
+  width: 100%;
+  min-width: 400px;
+  max-width: 900px;
+  margin: 0 auto; /* For horizontal centering */
+}
+
+/* Footer design should display as a table of 3 columns on large screens and be stacked on small screens */
+footer {
+  max-height: 100vh;
+}
+
+#footer-info {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+div.footer-block {
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  width: 33.33%;
+  padding: 24px;
+}
+
+.footer-block a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer-block ul {
+    list-style-type: none;
+}
+
+div#footer-info div#site-map {
+  background-color: green;
+}
+
+div#footer-info div#site-map a {
+  display: block;
+}
+
+div#footer-info div#about-me {
+  background-color: red;
+}
+
+div#footer-info div#contact {
+  background-color: yellow;
+  list-style-position: inside;
+}
+
+@media (max-width: 680px) {
+  div.footer-block {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media (min-width: 680px) {
+  div.footer-block {
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    width: 33.33%;
+    padding: 24px;
+  }
+}
+
