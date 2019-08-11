@@ -6,7 +6,7 @@
     <meta name="description"
           content="A collection of work on Rowan's bicycles" />
     <meta name="keywords"
-          content="bike, bikes, blog, cambio, rino, cambio-rino, 10-speed" />
+          content="bike, bikes, blog, cambio, rino, cambio-rino, 10-speed, bicycle touring, touring" />
     <meta http-equiv="author"
           content="Rowan MacLachlan" />
     <!-- Font for title -->
