@@ -30,7 +30,7 @@
     // -4.5   Venezuela (UTC-04:30)
     // -6     United States (Central Time) (UTC-06:00)
     // -8     United States (Pacific Time) (UTC-08:00)
-    define( 'K_GMT_OFFSET', +5.5 );
+    define( 'K_GMT_OFFSET', -8 );
 
     // 3.
     // Define the charset used by your site. If in any doubt, leave the default utf-8.
@@ -39,13 +39,13 @@
     // MySQL settings. You need to get this info from your web host.
     // 4.
     // Name of the database
-    define( 'K_DB_NAME', 'database_name' );
+    define( 'K_DB_NAME', 'mysql' );
     // 5.
     // Database username
-    define( 'K_DB_USER', 'database_username' );
+    define( 'K_DB_USER', 'root' );
     // 6.
     // Database password
-    define( 'K_DB_PASSWORD', 'database_password' );
+    define( 'K_DB_PASSWORD', '' );
     // 7.
     // MySQL hostname (it will usually be 'localhost')
     define( 'K_DB_HOST', 'localhost' );
