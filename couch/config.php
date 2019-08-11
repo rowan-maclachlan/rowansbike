@@ -30,7 +30,7 @@
     // -4.5   Venezuela (UTC-04:30)
     // -6     United States (Central Time) (UTC-06:00)
     // -8     United States (Pacific Time) (UTC-08:00)
-    define( 'K_GMT_OFFSET', -6 );
+    define( 'K_GMT_OFFSET', +5.5 );
 
     // 3.
     // Define the charset used by your site. If in any doubt, leave the default utf-8.
@@ -39,16 +39,16 @@
     // MySQL settings. You need to get this info from your web host.
     // 4.
     // Name of the database
-    define( 'K_DB_NAME', 'u671413047_rb' );
+    define( 'K_DB_NAME', 'database_name' );
     // 5.
     // Database username
-    define( 'K_DB_USER', 'u671413047_rm' );
+    define( 'K_DB_USER', 'database_username' );
     // 6.
     // Database password
-    define( 'K_DB_PASSWORD', 'VHrsTAhvpjvT' );
+    define( 'K_DB_PASSWORD', 'database_password' );
     // 7.
     // MySQL hostname (it will usually be 'localhost')
-    define( 'K_DB_HOST', '127.0.0.1:3307' );
+    define( 'K_DB_HOST', 'localhost' );
     // 7b.
     // Needed only if multiple instances of this CMS are to be installed in the same database
     // (please use only alphanumeric characters or underscore (NO hyphen))
@@ -88,7 +88,7 @@
 
     // 13.
     // Your Email address. Will be used in contact forms.
-    define( 'K_EMAIL_TO', 'maclachlan.rowan@gmail.com' );
+    define( 'K_EMAIL_TO', 'youremail@gmail.com' );
 
     // 14.
     // Will be used as the sender of messages delivered by contact forms to the address above.
@@ -129,7 +129,7 @@
     // 21.
     // Minimum time interval required between two comments posted by the same user (in seconds).
     // Prevents comment flooding. A setting of 5 minutes (300 seconds) is recommended.
-    define( 'K_COMMENTS_INTERVAL', 30 );
+    define( 'K_COMMENTS_INTERVAL', 5 * 60 );
 
     // 22.
     // Language used for localization of admin panel. Needs to have a corresponding language file in couch folder.
