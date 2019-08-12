@@ -39,12 +39,15 @@
     // MySQL settings. You need to get this info from your web host.
     // 4.
     // Name of the database
+    // define( 'K_DB_NAME', 'mysql' ); // For local test server!  Name this whatever you set it to locally.
     define( 'K_DB_NAME', 'mysql' );
     // 5.
     // Database username
+    // define( 'K_DB_USER', 'root' ); // For local test server!  Name this whatever you have it set to locally.
     define( 'K_DB_USER', 'root' );
     // 6.
     // Database password
+    // define( 'K_DB_PASSWORD', '' );  // For local test server!  Name this whatever you have it set to locally.
     define( 'K_DB_PASSWORD', '' );
     // 7.
     // MySQL hostname (it will usually be 'localhost')
@@ -88,11 +91,11 @@
 
     // 13.
     // Your Email address. Will be used in contact forms.
-    define( 'K_EMAIL_TO', 'youremail@gmail.com' );
+    define( 'K_EMAIL_TO', 'maclachlan.rowan@gmail.com' );
 
     // 14.
     // Will be used as the sender of messages delivered by contact forms to the address above.
-    define( 'K_EMAIL_FROM', 'contact@yourdomain.com' );
+    define( 'K_EMAIL_FROM', 'maclachlan.rowan@gmail.com' );
 
     // 15.
     // By default the inbuilt php function 'mail()' is used to deliver messages.
