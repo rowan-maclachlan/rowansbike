@@ -45,6 +45,8 @@
 
 		<!-- Navigation Menu -->
     <?php require 'header.html'; ?>
+    <!-- For pushing down content start -->
+    <div id="nav-menu-clear-fix"></div>
 		
 		<!-- Column 1 /Content -->
 		<!-- Blog Post -->
