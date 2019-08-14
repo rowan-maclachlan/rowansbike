@@ -1,3 +1,7 @@
+========================
+What is this site about?
+========================
+
 This website represents a personal project for me and a sandbox in which to
 developer basic web programming skills.  None of the work in here done by me
 should be considered exemplary or excellent in any regard, unless by chance it
@@ -12,4 +16,15 @@ tour from Saskatoon to Vancouver.  This was published not only for posterity's
 sake but also for the sake of other prospective or aspiring tourists, and to
 contribute to the record of touring routes through Western Canada.  
 
+Can I participate?
+------------------
+If you want, sure.
 
+How does it work?
+-----------------
+The web host will automatically deploy when it recieved a push notification
+from Git.
+
+If something needs to be changed with the content managed by the headless CMS
+used for the blog (<a href="https://www.couchcms.com/">couchCMS</a>), someone with the PHPmyadmin and database
+credentials will need to manage it.
