@@ -71,22 +71,29 @@ div.sub {
   height: auto;
 }
 
-div.sub-info {
-  height: 60px;
-  display: inline-flex;
-  padding-left: 25px;
-}
-
-/* #category-display {
-  padding-left: 25px;
-} */
-
 div.sub a {
   display: inline-block;
   line-height: 50px;
   color: inherit;
   text-decoration: inherit;
   text-decoration-color: none;
+}
+
+div.sub-info {
+  height: 60px;
+  display: inline-flex;
+  padding-left: 25px;
+}
+
+@media screen and (max-width: 580px) {
+  div.sub-info {
+    height: 40px;
+    display: block;
+  }
+  
+  div.sub a {
+    line-height: normal;
+  }
 }
 
 /*** POST INFO END ***/
