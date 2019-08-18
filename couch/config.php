@@ -51,7 +51,7 @@
     define( 'K_DB_PASSWORD', 'VHrsTAhvpjvT' );
     // 7.
     // MySQL hostname (it will usually be 'localhost')
-    define( 'K_DB_HOST', 'localhost' );
+    define( 'K_DB_HOST', 'sql222.main-hosting.eu' );
     // 7b.
     // Needed only if multiple instances of this CMS are to be installed in the same database
     // (please use only alphanumeric characters or underscore (NO hyphen))
