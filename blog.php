@@ -24,6 +24,8 @@
 	<link rel="stylesheet" href="/style/main.css" />
 	<link rel="stylesheet" href="/style/blog.css" />
 
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
 	<!-- Scripts -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
 	<!--[if IE 6]>
@@ -41,8 +43,6 @@
 </head>
 
 <body>
-
-
 		<!-- Navigation Menu -->
     <?php require 'header.html'; ?>
     <!-- For pushing down content start -->
@@ -52,20 +52,34 @@
 		<!-- Blog Post -->
 		<div class="post">
 			<!-- Post Title -->
-			<h3 class="title"><a href="<cms:show k_page_link />"><cms:show k_page_title /></a></h3>
-			<!-- Post Title -->
+      <div class="title-wrapper">
+		    <h3 class="title">
+          <a href="<cms:show k_page_link />"><cms:show k_page_title /></a>
+        </h3>
+      </div>
+      <!-- Post Picture -->
+			<img class="thumb" src="<cms:show blog_image />" alt=""/>
+			<!-- Post Info -->
 			<cms:if k_page_foldertitle >
 				<cms:set my_category=k_page_foldertitle />
 			<cms:else />
 				<cms:set my_category='Uncategorised' />
 			</cms:if>
-      <p class="sub">
-        <a href="#"><cms:show my_category /></a> &bull; <cms:date k_page_date format='jS M, y'/> &bull; <a href="#"><cms:show k_comments_count /> Comments</a>
-      </p>
-			<!-- Post Title -->
-			<img class="thumb" src="<cms:show blog_image />" alt=""/>
-			<!-- Post Content -->
-			<cms:show blog_content />
+      <div class="sub">
+        <div class="sub-info" id="category-display">
+          <a href="#"><cms:show my_category /></a>
+        </div>
+        <div class="sub-info" id="date-display">
+          <cms:date k_page_date format='jS M, y'/> 
+        </div>
+        <div class="sub-info" id="comment-display">
+          <a href="#"><cms:show k_comments_count /> Comments</a>
+        </div>
+      </div>
+      <!-- Post Content -->
+      <div id="blog-content">
+		    <cms:show blog_content />
+      </div>
 			<!-- Post Links -->
 			<div>
 				<a href="<cms:link masterpage='blog.php' />">Back to Blog</a>
