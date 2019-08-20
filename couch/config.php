@@ -11,7 +11,7 @@
     // 1.
     // If necessary, define the full URL of your site including the subdomain, if any.
     // V.IMP: Don't forget the trailing slash!
-    //define( 'K_SITE_URL', 'http://www.test.com/subfolder1/subfolder2/mysite/' );
+    define( 'K_SITE_URL', 'http://www.rowansbike.com/' );
 
     // 1b.
     // For security purpose, the 'index.php' file of Couch can be renamed to anything else.
@@ -40,15 +40,15 @@
     // 4.
     // Name of the database
     // define( 'K_DB_NAME', 'mysql' ); // For local test server!  Name this whatever you set it to locally.
-    define( 'K_DB_NAME', 'mysql' );
+    define( 'K_DB_NAME', 'u671413047_rb' );
     // 5.
     // Database username
     // define( 'K_DB_USER', 'root' ); // For local test server!  Name this whatever you have it set to locally.
-    define( 'K_DB_USER', 'root' );
+    define( 'K_DB_USER', 'u671413047_rm' );
     // 6.
     // Database password
     // define( 'K_DB_PASSWORD', '' );  // For local test server!  Name this whatever you have it set to locally.
-    define( 'K_DB_PASSWORD', '' );
+    define( 'K_DB_PASSWORD', 'VHrsTAhvpjvT' );
     // 7.
     // MySQL hostname (it will usually be 'localhost')
     define( 'K_DB_HOST', 'sql222.main-hosting.eu' );
