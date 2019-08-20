@@ -87,7 +87,7 @@
     // 12b.
     // Folder containing the embedded snippets if not using the default 'snippets' folder within 'couch'.
     // Should be relative to your site. No leading or trailing slashes please.
-    //define( 'K_SNIPPETS_DIR', 'mysnippets' );
+    define( 'K_SNIPPETS_DIR', 'includes' );
 
     // 13.
     // Your Email address. Will be used in contact forms.

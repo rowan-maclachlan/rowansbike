@@ -17,7 +17,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>rowansbike | blog</title>
+	<title>rowansbike | <cms:show k_page_title /></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 	<!-- Stylesheets -->
@@ -65,17 +65,7 @@
 			<cms:else />
 				<cms:set my_category='Uncategorised' />
 			</cms:if>
-      <div class="sub">
-        <div class="sub-info" id="category-display">
-          <a href="#"><cms:show my_category /></a>
-        </div>
-        <div class="sub-info" id="date-display">
-          <cms:date k_page_date format='jS M, y'/> 
-        </div>
-        <div class="sub-info" id="comment-display">
-          <a href="#"><cms:show k_comments_count /> Comments</a>
-        </div>
-      </div>
+      <?php require 'sub.php'; ?>
       <!-- Post Content -->
       <div id="blog-content">
 		    <cms:show blog_content />
