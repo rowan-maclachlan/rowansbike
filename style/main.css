@@ -23,10 +23,9 @@
         height: 100vh;
         background: linear-gradient(
             to bottom,
-            #baf0ff,
+            beige,
             #def5fc
         );
-        background-color: #baf0ff; /* baby blue */
         /* For scroll snapping... */
         scroll-snap-type: y mandatory;
         scroll-padding: -var(--navbar_height, 175px); /* compensate for fixed header */
@@ -204,12 +203,12 @@ nav a:hover {
   width: 100%;
   background: linear-gradient(
     to bottom,
-    white,
-    white 25%,
-    green 25%,
-    green 50%,
-    yellow 50%,
-    yellow 75%,
+    hsl(60, 50%, 93%),
+    hsl(60, 50%, 93%) 25%,
+    ForestGreen 25%,
+    ForestGreen 50%,
+    gold 50%,
+    gold 75%,
     black 75%
   );
 }
@@ -231,11 +230,11 @@ nav a:hover {
     to bottom,
     black,
     black 25%,
-    yellow 25%,
-    yellow 50%,
-    green 50%,
-    green 75%,
-    white 75%
+    gold 25%,
+    gold 50%,
+    ForestGreen 50%,
+    ForestGreen 75%,
+    hsl(60, 50%, 93%) 75%
   );
 }
 
@@ -263,12 +262,12 @@ div.dividor-top {
   width: 100%;
   background: linear-gradient(
     to bottom,
-    white,
-    white 25%,
-    green 25%,
-    green 50%,
-    yellow 50%,
-    yellow 75%,
+    ForestGreen,
+    ForestGreen 25%,
+    hsl(60, 50%, 93%) 25%,
+    hsl(60, 50%, 93%) 50%,
+    gold 50%,
+    gold 75%,
     black 75%
   );
 }
@@ -293,11 +292,11 @@ div.dividor-bottom {
     to bottom,
     black,
     black 25%,
-    yellow 25%,
-    yellow 50%,
-    green 50%,
-    green 75%,
-    white 75%
+    gold 25%,
+    gold 50%,
+    hsl(60, 50%, 93%) 50%,
+    hsl(60, 50%, 93%) 75%,
+    ForestGreen 75%
   );
 }
 /*** BIKE HEADER END ***/
@@ -382,7 +381,7 @@ div.footer-block {
 }
 
 div#footer-info div#site-map {
-  background-color: green;
+  background-color: ForestGreen;
 }
 
 div#footer-info div#site-map a {
@@ -390,11 +389,11 @@ div#footer-info div#site-map a {
 }
 
 div#footer-info div#about-me {
-  background-color: red;
+  background-color: hsl(0, 100%, 50%); /* dark red */
 }
 
 div#footer-info div#contact {
-  background-color: yellow;
+  background-color: gold;
   list-style-position: inside;
 }
 
