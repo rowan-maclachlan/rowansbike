@@ -70,6 +70,19 @@
       <div id="blog-content">
 		    <cms:show blog_content />
       </div>
+      <!-- Next/Prev post -->
+      <div class="blog_nav">
+        <cms:pages start_on=k_page_date order='asc' limit='1' offset='1'>
+        <div class="blog_nav_button" id="prev_posts">
+          <a href="<cms:show k_page_link />">&lt;&lt;<cms:show k_page_title /></a>
+        </div>
+        </cms:pages>
+        <cms:pages stop_before=k_page_date limit='1'>
+        <div class="blog_nav_button" id="next_posts">
+          <a href="<cms:show k_page_link />"><cms:show k_page_title /> >></a>
+        </div>
+        </cms:pages>
+      </div>
 			<!-- Post Links -->
 			<div>
 				<a href="<cms:link masterpage='blog.php' />">Back to Blog</a>
