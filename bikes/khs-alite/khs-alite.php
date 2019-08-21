@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="../style/main.css" type="text/css" rel="stylesheet">
-    <link href="../style/bike.css" type="text/css" rel="stylesheet">
+    <link href="/style/main.css" type="text/css" rel="stylesheet">
+    <link href="/style/bike.css" type="text/css" rel="stylesheet">
     <title>the-khs-alite-100</title>
   </head>
   <body>
@@ -18,10 +18,10 @@
     </div>
     
     <div class=intro_image>
-      <img src="../resources/photos/khs/khs.full.low.jpg"
-           srcset="../resources/photos/khs/khs.full.low.jpg 600w,
-                   ../resources/photos/khs/khs.full.med.jpg 900w,
-                   ../resources/photos/khs/khs.full.high.jpg 1200w"
+      <img src="/resources/photos/khs/khs.full.low.jpg"
+           srcset="/resources/photos/khs/khs.full.low.jpg 600w,
+                   /resources/photos/khs/khs.full.med.jpg 900w,
+                   /resources/photos/khs/khs.full.high.jpg 1200w"
            title="The KHS Alite 100"
            alt="A photo of the KHS Alite 100.">
     </div>
@@ -39,7 +39,7 @@
     <div class="dividor-bottom"></div>
       
     <div class="bike-content">
-      <p>Less has been done on this that on Rowan's <a href="../bikes/cambio-rino.html">Cambio
+      <p>Less has been done on this that on Rowan's <a href="/bikes/cambio-rino/cambio-rino.html">Cambio
           Rino</a>, but there have been a few major changes. The first of these
         was the replacement of the broken <a href="https://www.sheldonbrown.com/upgrade-gears.html#twist">grip</a> shifters (shifters prone to wearing
         out) with a pair of trigger shifters found at the Bridge City Bike

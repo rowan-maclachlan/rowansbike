@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="../style/main.css" type="text/css" rel="stylesheet">
-    <link href="../style/bike.css" type="text/css" rel="stylesheet">
+    <link href="/style/main.css" type="text/css" rel="stylesheet">
+    <link href="/style/bike.css" type="text/css" rel="stylesheet">
     <title>the-bianchi-volpe</title>
   </head>
   <body>
@@ -18,10 +18,10 @@
     </div>
     
     <div class=intro_image>
-      <img src="../resources/photos/bianchi/bianchi.full.low.jpg"
-           srcset="../resources/photos/bianchi/bianchi.full.low.jpg 600w,
-                   ../resources/photos/bianchi/bianchi.full.med.jpg 900w,
-                   ../resources/photos/bianchi/bianchi.full.high.jpg 1200w"
+      <img src="/resources/photos/bianchi/bianchi.full.low.jpg"
+           srcset="/resources/photos/bianchi/bianchi.full.low.jpg 600w,
+                   /resources/photos/bianchi/bianchi.full.med.jpg 900w,
+                   /resources/photos/bianchi/bianchi.full.high.jpg 1200w"
            title="The Bianchi Volpe"
            alt="A photo of the Bianchi Volpe.">
     </div>

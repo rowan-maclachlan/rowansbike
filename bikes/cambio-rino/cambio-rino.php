@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="../style/main.css" type="text/css" rel="stylesheet">
-    <link href="../style/bike.css" type="text/css" rel="stylesheet">
+    <link href="/style/main.css" type="text/css" rel="stylesheet">
+    <link href="/style/bike.css" type="text/css" rel="stylesheet">
     <title>the-cambio-rino</title>
   </head>
   <body>
@@ -18,10 +18,10 @@
     </div>
     
     <div class=intro_image>
-      <img src="../resources/photos/cambio/cambio.full.low.jpg"
-           srcset="../resources/photos/cambio/cambio.full.low.jpg 600w,
-                   ../resources/photos/cambio/cambio.full.med.jpg 900w,
-                   ../resources/photos/cambio/cambio.full.high.jpg 1200w"
+      <img src="/resources/photos/cambio/cambio.full.low.jpg"
+           srcset="/resources/photos/cambio/cambio.full.low.jpg 600w,
+                   /resources/photos/cambio/cambio.full.med.jpg 900w,
+                   /resources/photos/cambio/cambio.full.high.jpg 1200w"
            title="The Cambio Rino"
            alt="A photo of the Cambio Rino.">
     </div>
