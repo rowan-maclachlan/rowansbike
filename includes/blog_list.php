@@ -66,15 +66,19 @@
 			
 	<cms:if k_paginated_bottom >
 		<!-- Blog Navigation -->
-		<p class="clearfix">
+		<div class="blog_nav">
 			<cms:if k_paginate_link_next >
-				<a href="<cms:show k_paginate_link_next />" class="button float">&lt;&lt; Previous Posts</a>
+      <div class="blog_nav_button" id="prev_posts">
+				<a href="<cms:show k_paginate_link_next />" class="button float">&lt;&lt; Older Posts</a>
+      </div>
 			</cms:if>
 					
 			<cms:if k_paginate_link_prev >
+      <div class="blog_nav_button" id="next_posts">
 				<a href="<cms:show k_paginate_link_prev />" class="button float right">Newer Posts >></a>
+      </div>
 			</cms:if>
-		</p>
+		</div>
 	</cms:if>
 		
 	</cms:pages >

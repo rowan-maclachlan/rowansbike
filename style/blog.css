@@ -141,3 +141,54 @@ p.read-more a {
   color: grey;
 }
 /*** READ MORE END ***/
+
+/*** NEXT PREV START ***/
+div.blog_nav {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+div.blog_nav_button {
+  font-size: 24pt;
+  display: inline-block;
+}
+
+#prev_posts {
+  padding-left: 5%;
+}
+
+#next_posts {
+  padding-right: 5%;
+  float: right;
+}
+
+div.blog_nav a {
+  text-decoration: none;
+  text-decoration-color: none;
+  color: grey;
+}
+
+@media screen and (max-width: 580px) {
+  div.blog_nav_button {
+    display: block;
+    text-align: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  #prev_posts {
+    padding-left: 0px;
+  }
+  
+  #next_posts {
+    padding-right: 0px;
+    float: none;
+  }
+
+
+  div.blog_nav a {
+    display: inline-block; 
+  }
+}
+/*** NEXT PREV END ***/
+
