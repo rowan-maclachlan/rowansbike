@@ -6,7 +6,9 @@
 	
 	<!-- Stylesheets -->
   <link href="/style/main.css" type="text/css" rel="stylesheet">
+  <link href="/style/read-more.css" type="text/css" rel="stylesheet">
   <link href="/style/blog.css" type="text/css" rel="stylesheet">
+
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
 	<!-- Scripts -->
@@ -59,9 +61,9 @@
 		  <cms:excerptHTML count='75' ignore='img'><cms:show blog_content /></cms:excerptHTML>
     </div>
 		<!-- Read More Button -->
-    <p class="read-more">
+    <div class="read-more">
       <a href="<cms:show k_page_link />" class="button right"> Read More...</a>
-    </p>
+    </div>
 	</div>
 			
 	<cms:if k_paginated_bottom >

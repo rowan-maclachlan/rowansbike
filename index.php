@@ -2,6 +2,7 @@
 <html>
   <head>
     <link href="./style/main.css" type="text/css" rel="stylesheet">
+    <link href="./style/read-more.css" type="text/css" rel="stylesheet">
     <title>rowans-bike</title>
     <meta name="description"
           content="A collection of work on Rowan's bicycles" />

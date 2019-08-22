@@ -130,16 +130,18 @@ div.sub-info {
 /*** TEXT CONTENT END ***/
 
 /*** READ MORE START ***/
-p.read-more {
+div.read-more {
+  line-height: auto;
+  margin: auto;
+  height: auto;
   padding-left: 10%;
   padding-right: 10%;
 }
 
-p.read-more a {
-  text-decoration: none;
-  text-decoration-color: none;
-  color: grey;
+div.read-more a {
+  padding: 0;
 }
+
 /*** READ MORE END ***/
 
 /*** NEXT PREV START ***/
