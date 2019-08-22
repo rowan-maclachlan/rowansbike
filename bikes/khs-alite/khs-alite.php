@@ -30,8 +30,7 @@
     <h2>The Origin</h2>
     <div class="dividor-bottom"></div>
     <div class="bike-content">
-      <p>Rowan got this bike... for his 16th birthday?  And he's still using
-      it!</p>
+      <?php include("origin.html"); ?>
     </div>
       
     <div class="dividor-top"></div>

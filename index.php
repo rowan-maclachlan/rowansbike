@@ -56,7 +56,7 @@
                alt="A photo of the KHS Alite 100.">
       </div>
       <div class="bike-content">
-        <p>This is the second bike I ever owned.  Purchased from Bike Universe in Saskatoon, it was pretty run of the mill.  The Alite line had a few variations (300, 500), and this was the lowest tier.  Despite the low-tier stock grip shifters and the un-servicable front fork, the frame has always been amenable to upgrades.  A new cockpit, new front wheel, and new RockShox Tora front fork are a few of the upgrades this bike has received over the years.</p>
+        <?php include("bikes/khs-alite/origin.html"); ?>
       </div>
     </div>
 
@@ -74,7 +74,10 @@
                alt="A photo of the Cambio Rino bicycle.">
       </div>
       <div class="bike-content">
-        <p>My first ever road bike.  The Cambio Rino was a made-in-Canada bike.  Although this particular model wasn't too special (as evidenced by what were generally mediocre components) the frame is of decent quality, and other models could be quite nice.  Thankfully, its components could be replaced, and over a period of 3 years, they were.  This bike was my first project bike and it constituted an enormous learning opportunity for me as a bike mechanic.</p>
+        <?php include("bikes/cambio-rino/origin.html"); ?>
+      </div>
+      <div class="read-more">
+        <a href="/bikes/cambio-rino/cambio-rino.php">Read more...</a>
       </div>
     </div>
 
@@ -92,7 +95,7 @@
                alt="A photo of the Beekay Mirage bicycle.">
       </div>
       <div class="bike-content">
-        <p>I got this bike from a friend after helping her with her upgrade (a bike that actually fit!)  Although this bike isn't anything special, its larger frame was the perfect fit for another much taller friend of mine.  These raised handlebars were likely not original - a pair of drop bars were kept apart from the bike, and later donated to the local co-op.  Altogether, though, this bike has a particular appeal to me as a light-weight bar-beater and casual-commuter bicycle.</p>
+        <?php include("bikes/beekay-mirage/origin.html"); ?>      
       </div>
     </div>
 
@@ -110,7 +113,7 @@
                alt="A photo of the Nova bicycle.">
       </div>
       <div class="bike-content">
-        <p>An nice looking old bike whose history and origin I have been unable to learn. This <q>Nova</q>, with its cottered steel crank arms and black/gold colourscheme I think looks excellent with its clean new cockpit and polished aluminum down-tube shifters.  It also features a pair of gorgeous French-made Rigidex steel rims that shine in the sun (after a fair it of work with sandpaper and polish.)</p>
+        <?php require '/bikes/nova/origin.html'; ?>
       </div>
     </div>
 
@@ -128,7 +131,7 @@
              alt="A photo of the unfinished Bianchi Volpe in a workstand.">
       </div>
       <div class="bike-content">
-        <p>The project bike that I worked on with my good friend Jack.  The frame I had noticed sitting around at the local co-op for several months, wishing it fit me so I could put it to use.  When Jack suggested we get a bike for his partner, I agreed to accompany him to the co-op and help him pick something out.  When we couldn't find anything suitable which was worth fixing up (and worthy, in Jack's mind, of his partner,) I suggested we take this nice frame and just put a little more sweat into making it worthwhile.  Jack, knowing this would be a great learning opportunity, jumped at the suggestion.  We left the co-op with the frame, a sadde, a quill stem, and two decent looking aluminum rims.</p>
+        <?php require '/bikes/bianchi-volpe/origin.html'; ?>
       </div>
     </div>
 

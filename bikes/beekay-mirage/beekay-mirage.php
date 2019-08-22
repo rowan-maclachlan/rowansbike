@@ -31,7 +31,7 @@
     <div class="dividor-bottom"></div>
       
     <div class="bike-content">
-      <p></p>
+      <?php include("bikes/beekay-mirage/origin.html"); ?>      
     </div>
 
     <div class="dividor-top"></div>
