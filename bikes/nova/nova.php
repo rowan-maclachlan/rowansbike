@@ -31,7 +31,7 @@
     <div class="dividor-bottom"></div>
       
     <div class="bike-content">
-      <?php require 'origin.html'; ?>
+      <?php include("origin.html"); ?>
     </div>
 
     <div class="dividor-top"></div>

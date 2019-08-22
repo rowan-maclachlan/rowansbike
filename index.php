@@ -58,6 +58,9 @@
       <div class="bike-content">
         <?php include("bikes/khs-alite/origin.html"); ?>
       </div>
+      <div class="read-more">
+        <a href="/bikes/khs-alite/khs-alite.php">Read more...</a>
+      </div>
     </div>
 
     <div class=dividor-top></div>
@@ -97,6 +100,9 @@
       <div class="bike-content">
         <?php include("bikes/beekay-mirage/origin.html"); ?>      
       </div>
+      <div class="read-more">
+        <a href="/bikes/beekay-mirage/beekay-mirage.php">Read more...</a>
+      </div>
     </div>
 
     <div class=dividor-top></div>
@@ -113,7 +119,10 @@
                alt="A photo of the Nova bicycle.">
       </div>
       <div class="bike-content">
-        <?php require '/bikes/nova/origin.html'; ?>
+        <?php include("bikes/nova/origin.html"); ?>
+      </div>
+      <div class="read-more">
+        <a href="/bikes/nova/nova.php">Read more...</a>
       </div>
     </div>
 
@@ -131,7 +140,10 @@
              alt="A photo of the unfinished Bianchi Volpe in a workstand.">
       </div>
       <div class="bike-content">
-        <?php require '/bikes/bianchi-volpe/origin.html'; ?>
+        <?php include("bikes/bianchi-volpe/origin.html"); ?>
+      </div>
+      <div class="read-more">
+        <a href="/bikes/bianchi-volpe/bianchi-volpe.php">Read more...</a>
       </div>
     </div>
 
