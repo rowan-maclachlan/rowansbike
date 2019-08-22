@@ -351,7 +351,8 @@ div.bike div.read-more a {
   -moz-transition: color, 0.5s linear 0s;
   -o-transition: color, 0.5s linear 0s;
   text-decoration: none;
-  color: #4c4b40;
+  color: hsl(0, 0%, 50%);
+  padding: 40px;
 }
 
 div.bike div.read-more a:hover {
