@@ -111,47 +111,59 @@ nav div#menu-button {
   position: absolute;
   right: 0px;
   top: 0px;
-  width: var(--navbar_height);
+  width: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 24pt;
   text-align: center;
-  color: white;
 }
 
-nav div.nav_list {
+nav div.nav-list {
   display: none;
   height: auto; /* tall enough for all urls */
   width: 100%; /* wide enough for individual urls */
   position: absolute;
+  max-height: 0px;
+  transition: max-height, 1s;
+  font-size: 14pt;
+  line-height: 14pt;
+  -webkit-transition: max-height, 1s;
+  -moz-transition: max-height, 1s;
+  -o-transition: max-height, 1s;
 }
 
 nav div.responsive {
+  max-height: 1000px;
   display: block;
 }
 
-nav div.nav_list a {
+nav .menu-trans {
   background-color: #333;
+  color: white;
+  transition: color, 0.5s, linear, 0s;
+  -webkit-transition: color, 0.5s linear 0s;
+  -moz-transition: color, 0.5s linear 0s;
+  -o-transition: color, 0.5s linear 0s;
+  text-decoration: none;
+  text-color: white;
+}
+
+nav .menu-trans:hover {
+  background-color: white;
+  color: #333;
+}
+
+nav div.nav-list a {
   display: block;
   height: auto;
   width: 100%;
   text-align: center;
   padding: 24px; /* hack for centering text vertically... */
   line-height: 20px;
-  text-decoration: none;
   font-size: 14pt;
-  color: white;
-  transition: color, 0.1s, linear, 0s;
-  -webkit-transition: color, 0.1s linear 0s;
-  -moz-transition: color, 0.1s linear 0s;
-  -o-transition: color, 0.1s linear 0s;
-}
-
-nav div.nav_list a:hover {
-  background-color: white;
-  color: black;
-  text-decoration: none;
 }
 
 @media (min-width: 1000px) {
-
   nav {
     overflow: hidden;
     background-color: #333; /* black */
@@ -165,49 +177,35 @@ nav div.nav_list a:hover {
     z-index: 3; /* Overlap other content */
   }
   
-  nav div a {
+  nav div.nav-list {
+    display: inline-block;
+    height: 75px; 
+    width: 100%;
+    max-height: none;
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+  }
+
+  nav div.nav-list a {
     height: 100%;
     width: auto;
     float: left;
-    vertical-align: middle;
-    margin: auto 0;
-    text-align: center;
-    padding: 30px 16px; /* hack for centering text vertically... */
-    line-height: 20px;
-    text-decoration: none;
-    font-size: 14pt;
-    color: white;
-    transition: color, 0.5s, linear, 0s;
-    -webkit-transition: color, 0.5s linear 0s;
-    -moz-transition: color, 0.5s linear 0s;
-    -o-transition: color, 0.5s linear 0s;
+    line-height: 24pt;
   }
   
   nav a#logo {
+    display: inline-block;
     width: 350px;
     padding-left: 25px;
     padding-right: 25px;
-    line-height: 20px;
-    font-size: 24pt;
   }
 
   nav div#menu-button {
     display: none;
   }
   
-  nav a#blog {
-    float: right;
-  }
-  
-  nav a#tour {
-    float: right;
-  }
-  
-  nav a:hover {
-    background: white;
-    color: black;
-    text-decoration: none;
-  }
 }
 /*** NAVBAR END ***/
 
