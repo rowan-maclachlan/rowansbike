@@ -148,7 +148,12 @@ nav .menu-trans {
   text-color: white;
 }
 
-nav .menu-trans:hover {
+nav div.menu-trans:hover {
+  background-color: white;
+  color: #333;
+}
+
+nav a.menu-trans:hover {
   background-color: white;
   color: #333;
 }
@@ -163,7 +168,7 @@ nav div.nav-list a {
   font-size: 14pt;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1250px) {
   nav {
     overflow: hidden;
     background-color: #333; /* black */
