@@ -89,7 +89,7 @@ nav a#logo {
   height: var(--navbar_height);
   width: auto;
   padding-left: 5%;
-  padding-right: 12px;
+  padding-right: 5%;
   text-align: center;
   font-size: 24pt;
   text-decoration: none;
@@ -103,7 +103,7 @@ nav div#menu-button {
   height: var(--navbar_height);
   width: auto;
   padding-right: 5%;
-  padding-left: 12px;
+  padding-left: 5%;
   font-size: 24pt;
   text-align: center;
 }
@@ -139,7 +139,7 @@ nav .menu-trans {
   text-color: white;
 }
 
-nav a.menu-trans:hover {
+nav .menu-trans:hover {
   background-color: white;
   color: #333;
 }
