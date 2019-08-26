@@ -97,15 +97,61 @@ nav a#logo {
 }
 
 nav div#menu-button {
+  display: block;
   position: absolute;
   right: 0px;
   top: 0px;
   height: var(--navbar_height);
-  width: auto;
-  padding-right: 5%;
-  padding-left: 5%;
-  font-size: 24pt;
-  text-align: center;
+  width: 96px;
+  margin-right: 5%;
+  margin-left: 5%;
+  background: linear-gradient(
+    to bottom,
+    #333,
+    #333 11%,
+    white 11%,
+    white 23%,
+    #333 23%,
+    #333 33%,
+    white 33%,
+    white 45%,
+    #333 45%,
+    #333 55%,
+    white 55%,
+    white 67%,
+    #333 67%,
+    #333 77%,
+    white 77%,
+    white 89%,
+    #333 89%
+  );
+  transition: background 1s linear;
+  -webkit-transition: background 1s linear;
+  -moz-transition: background 1s linear;
+  -o-transition: background 1s linear;
+}
+
+nav div#menu-button:hover {
+  background: linear-gradient(
+    to bottom,
+    #333,
+    #333 11%,
+    ForestGreen 11%,
+    ForestGreen 23%,
+    #333 23%,
+    #333 33%,
+    hsl(250, 60%, 45%) 33%,
+    hsl(250, 60%, 45%) 45%,
+    #333 45%,
+    #333 55%,
+    gold 55%,
+    gold 67%,
+    #333 67%,
+    #333 77%,
+    hsl(0, 100%, 50%) 77%,
+    hsl(0, 100%, 50%) 89%,
+    #333 89%
+  );
 }
 
 nav div.nav-list {
