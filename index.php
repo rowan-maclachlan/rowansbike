@@ -32,11 +32,11 @@
     <div id="title-page">
       <div id="title-wrapper">
         <div id="title-band">
-          <div id="dividor-top-title"></div>
+          <div class="dividor-top"></div>
           <h1 id="title">
             <span style="font-family:'Liberty Island'">ROWAN'S BIKE</span>
           </h1>
-          <div id="dividor-bottom-title"></div>
+          <div class="dividor-bottom"></div>
         </div>
         <div id="catchphrase">
           <p>The trials and tribulations of an amateur bike-programmer/web-mechanic.</p>

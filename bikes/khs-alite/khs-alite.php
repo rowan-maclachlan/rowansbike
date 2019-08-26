@@ -10,11 +10,11 @@
     <?php require 'header.html'; ?>
       
     <div class="bike-title-wrapper">
-      <div id="dividor-top-title"></div>
+      <div class="dividor-top"></div>
       <h1 id="title">
           The KHS Alite 100
       </h1>
-      <div id="dividor-bottom-title"></div>
+      <div class="dividor-bottom"></div>
     </div>
     
     <div class=intro_image>
