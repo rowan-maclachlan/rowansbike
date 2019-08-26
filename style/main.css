@@ -29,21 +29,6 @@
         scroll-snap-align: start;
     }
 
-    /* Needs to have a max height of 100% of its container */
-    div.bike div.bike-content {
-        width: calc(30%);
-        min-width: 320px;
-        height: 100%;
-        float: left;
-        padding: 24px;
-        font-size: 16pt;
-        color: #4c4b40; /* grey */
-        line-height: 25pt;
-        text-overflow: ellipsis;
-        /* Required for text-overflow to do anything */
-        overflow: hidden;
-    }
-
     /* max height of whatever the image it contains can be scaled to while maintaining its inline positioning with the bike content to its left (or right in the future).  This content to the left must take at last 260 px, or 25% of the screen, whichever is most.  Because the image scales proportionately, we would like this to occur at the moment that the content and image next to each other become longer in the horizontal axis */
     div.bike div.bike-img {
         width: 70%;
@@ -63,10 +48,10 @@ html{
 }
 
 * {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Raleway, sans-serif;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 :root {
@@ -221,7 +206,6 @@ nav div.nav-list a {
       #f27629 50%,
       red);
   height: 100vh; /* To compensate for fixed nav menu */
-  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -243,7 +227,7 @@ nav div.nav-list a {
   overflow: hidden;
 }
 
-#title-band::after {
+#title-band:after {
   content: '';
   z-index: 2;
   background-color: hsla(0, 0%, 100%, 0.5);
@@ -251,56 +235,26 @@ nav div.nav-list a {
   top: -50%;
   bottom: -50%;
   width: 2em;
-  transform: translateX(-250%) rotate(35deg);
+  height: 16em;
+  transition: transform 0.5s ease-out;
+  transform: translateX(-320%) rotate(35deg);
 }
 
-#title-band:hover::after {
-  transition: transform 0.75s ease-out;
+#title-band:hover:after {
+  transition: transform 1s ease-out;
   transform: translateX(110vw) rotate(35deg);
-}
-
-#dividor-top-title {
-  height: 40px;
-  width: 100%;
-  background: linear-gradient(
-    to bottom,
-    hsl(60, 50%, 93%),
-    hsl(60, 50%, 93%) 25%,
-    ForestGreen 25%,
-    ForestGreen 50%,
-    gold 50%,
-    gold 75%,
-    black 75%
-  );
 }
 
 #title {
   background-color: white;
   font-size: 48pt;
-  height: 75px;
-  width: 100%;
+  height: auto;
   margin: 0;
   padding: 0;
   text-align: center;
 }
 
-#dividor-bottom-title {
-  height: 40px;
-  width: 100%;
-  background: linear-gradient(
-    to bottom,
-    black,
-    black 25%,
-    gold 25%,
-    gold 50%,
-    ForestGreen 50%,
-    ForestGreen 75%,
-    hsl(60, 50%, 93%) 75%
-  );
-}
-
 #catchphrase {
-  width: 100%;
   height: 100%;
 }
 
@@ -320,7 +274,6 @@ nav div.nav-list a {
 /*** BIKE HEADER START ***/
 div.dividor-top {
   height: 40px;
-  width: 100%;
   background: linear-gradient(
     to bottom,
     ForestGreen,
@@ -335,20 +288,15 @@ div.dividor-top {
 
 /* To center the title of the bike */
 h2 {
-  font-size: 28pt;
-  height: 48px;
-  width: 100%;
   display: flex;
-  align-items: center;
+  font-size: 28pt;
   justify-content: center;
-  margin: 0;
-  padding: 0;
+  padding: 12px;
   background-color: white;
 }
 
 div.dividor-bottom {
   height: 40px;
-  width: 100%;
   background: linear-gradient(
     to bottom,
     black,
@@ -377,25 +325,6 @@ div.bike {
   scroll-snap-align: start;
 }
 
-/* Needs to have a max height of 100% of its container */
-div.bike div.bike-content {
-    flex: 1;
-    width: 100%;
-    height: auto;
-    color: #4c4b40; /* grey */
-}
-
-div.bike div.bike-content p {
-    font-size: 24pt;
-    line-height: 32pt;
-    display: block;
-    margin: auto;
-    padding: 24px 24px;
-    height: auto;
-    width: 75%;
-    min-width: 400px;
-}
-
 /* max height of whatever the image it contains can be scaled to while maintaining its inline positioning with the bike content to its left (or right in the future).  This content to the left must take at last 260 px, or 25% of the screen, whichever is most.  Because the image scales proportionately, we would like this to occur at the moment that the content and image next to each other become longer in the horizontal axis */
 div.bike div.bike-img {
   flex: 1;
@@ -414,6 +343,7 @@ div.bike div.bike-img img {
 }
 
 /* Footer design should display as a table of 3 columns on large screens and be stacked on small screens */
+/*** FOOTER START ***/
 footer {
   max-height: 100vh;
 }
@@ -474,4 +404,5 @@ div#footer-info div#contact {
     padding: 24px;
   }
 }
+/*** FOOTER END ***/
 

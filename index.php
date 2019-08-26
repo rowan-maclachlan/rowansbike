@@ -3,6 +3,8 @@
   <head>
     <link href="./style/main.css" type="text/css" rel="stylesheet">
     <link href="./style/read-more.css" type="text/css" rel="stylesheet">
+    <link href="./style/link-trans.css" type="text/css" rel="stylesheet">
+    <link href="./style/content.css" type="text/css" rel="stylesheet">
     <title>rowans-bike</title>
     <meta name="description"
           content="A collection of work on Rowan's bicycles" />
@@ -23,6 +25,10 @@
     <link
       href="https://fonts.googleapis.com/css?family=Sonsie+One&display=swap"
       rel="stylesheet">
+    <!-- Fonts for text -->
+    <link 
+      href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" 
+      rel="stylesheet">
   </head>
   <body>
 
@@ -31,11 +37,11 @@
     <div id="title-page">
       <div id="title-wrapper">
         <div id="title-band">
-          <div id="dividor-top-title"></div>
+          <div class="dividor-top"></div>
           <h1 id="title">
             <span style="font-family:'Liberty Island'">ROWAN'S BIKE</span>
           </h1>
-          <div id="dividor-bottom-title"></div>
+          <div class="dividor-bottom"></div>
         </div>
         <div id="catchphrase">
           <p>The trials and tribulations of an amateur bike-programmer/web-mechanic.</p>
@@ -56,10 +62,10 @@
                title="The KHS Alite 100"
                alt="A photo of the KHS Alite 100.">
       </div>
-      <div class="bike-content">
+      <div class="content">
         <?php include("bikes/khs-alite/origin.html"); ?>
       </div>
-      <div class="read-more">
+      <div class="read-more link-trans">
         <a href="/bikes/khs-alite/khs-alite.php">Read more...</a>
       </div>
     </div>
@@ -77,10 +83,10 @@
                title="The Cambio Rino"
                alt="A photo of the Cambio Rino bicycle.">
       </div>
-      <div class="bike-content">
+      <div class="content">
         <?php include("bikes/cambio-rino/origin.html"); ?>
       </div>
-      <div class="read-more">
+      <div class="read-more link-trans">
         <a href="/bikes/cambio-rino/cambio-rino.php">Read more...</a>
       </div>
     </div>
@@ -98,10 +104,10 @@
                title="The Beekay Mirage"
                alt="A photo of the Beekay Mirage bicycle.">
       </div>
-      <div class="bike-content">
+      <div class="content">
         <?php include("bikes/beekay-mirage/origin.html"); ?>      
       </div>
-      <div class="read-more">
+      <div class="read-more link-trans">
         <a href="/bikes/beekay-mirage/beekay-mirage.php">Read more...</a>
       </div>
     </div>
@@ -119,10 +125,10 @@
                title="The Nova"
                alt="A photo of the Nova bicycle.">
       </div>
-      <div class="bike-content">
+      <div class="content">
         <?php include("bikes/nova/origin.html"); ?>
       </div>
-      <div class="read-more">
+      <div class="read-more link-trans">
         <a href="/bikes/nova/nova.php">Read more...</a>
       </div>
     </div>
@@ -140,10 +146,10 @@
              title="The Bianchi Volpe"
              alt="A photo of the unfinished Bianchi Volpe in a workstand.">
       </div>
-      <div class="bike-content">
+      <div class="content">
         <?php include("bikes/bianchi-volpe/origin.html"); ?>
       </div>
-      <div class="read-more">
+      <div class="read-more link-trans">
         <a href="/bikes/bianchi-volpe/bianchi-volpe.php">Read more...</a>
       </div>
     </div>

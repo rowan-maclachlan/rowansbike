@@ -1,0 +1,12 @@
+/*** MAIN CONTENT ***/
+div.content {
+  padding-top: 1em;
+  padding-bottom:1em;
+  padding-left: 10%;
+  padding-right: 10%;
+  color: rgb(80, 80, 110); /* grey */
+  font-size: 18pt;
+  line-height: 32pt; 
+  margin: 0 auto; /* For horizontally centered children */
+}
+/*** MAIN CONTENT END ***/
