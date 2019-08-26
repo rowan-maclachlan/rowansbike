@@ -10,11 +10,11 @@
     <?php require 'header.html'; ?>
       
     <div class="bike-title-wrapper">
-      <div id="dividor-top-title"></div>
+      <div id="dividor-top"></div>
       <h1 id="title">
           The Cambio Rino
       </h1>
-      <div id="dividor-bottom-title"></div>
+      <div id="dividor-bottom"></div>
     </div>
     
     <div class=intro_image>
