@@ -89,5 +89,6 @@
       <p>Hopefully, this bike can be sold to someone more interested in putting it through it's paces rather than sitting in a garage or just riding around town.  Though it had been neglected in the past, it has always deserved to be ridden down the single track in the Saskatoon river valley, gotten muddy, gotten cleaned, and taken care of.  Now that its been upgraded and serviced properly, its more ready than ever for some excitement.</p>
     </div>
   </body>
+  <?php require 'footer.html'; ?>
 </html>
 <script> </script>

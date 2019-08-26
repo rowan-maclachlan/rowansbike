@@ -51,6 +51,8 @@
     <div class="content">
       <p></p>
     </div>
+
+    <?php require 'footer.html'; ?>
   </body>
 </html>
 <script> </script>
