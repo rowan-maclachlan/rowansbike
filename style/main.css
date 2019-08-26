@@ -155,6 +155,7 @@ nav a:hover {
 }
 
 #title-wrapper {
+  width: 100%;
   display: block;
   align-self: center;
   justify-content: center;
@@ -170,7 +171,7 @@ nav a:hover {
   overflow: hidden;
 }
 
-#title-band::after {
+#title-band:after {
   content: '';
   z-index: 2;
   background-color: hsla(0, 0%, 100%, 0.5);
@@ -178,11 +179,13 @@ nav a:hover {
   top: -50%;
   bottom: -50%;
   width: 2em;
-  transform: translateX(-250%) rotate(35deg);
+  height: 16em;
+  transition: transform 0.5s ease-out;
+  transform: translateX(-320%) rotate(35deg);
 }
 
-#title-band:hover::after {
-  transition: transform 0.75s ease-out;
+#title-band:hover:after {
+  transition: transform 1s ease-out;
   transform: translateX(110vw) rotate(35deg);
 }
 
