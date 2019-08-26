@@ -25,6 +25,10 @@
     <link
       href="https://fonts.googleapis.com/css?family=Sonsie+One&display=swap"
       rel="stylesheet">
+    <!-- Fonts for text -->
+    <link 
+      href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" 
+      rel="stylesheet">
   </head>
   <body>
 
