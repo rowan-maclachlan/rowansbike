@@ -30,7 +30,7 @@
     <h2>The Origin</h2>
     <div class="dividor-bottom"></div>
       
-    <div class="bike-content">
+    <div class="content">
       <?php include("origin.html"); ?>      
     </div>
 
@@ -38,7 +38,7 @@
     <h2>The Upgrades</h2>
     <div class="dividor-bottom"></div>
       
-    <div class="bike-content">
+    <div class="content">
       <p></p>
     </div>
     
@@ -46,7 +46,7 @@
     <h2>The Future</h2>
     <div class="dividor-bottom"></div>
     
-    <div class="bike-content">
+    <div class="content">
       <p></p>
     </div>
   </body>

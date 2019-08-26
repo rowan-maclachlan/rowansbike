@@ -6,6 +6,18 @@ div.bike-title-wrapper {
   justify-content: center;
 }
 
+#title {
+  background-color: white;
+  font-size: 48pt;
+  height: auto;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+/*** TITLE END ***/
+
+/*** IMAGE START ***/
 div.into_image {
   flex: 1;
   display: block;
@@ -21,108 +33,21 @@ div.intro_image img {
   max-width: 900px;
   margin: 0 auto;
 }
-
-/* TODO get backup font? */
-#dividor-top-title {
-  height: 40px;
-  width: 100%;
-  background: linear-gradient(
-    to bottom,
-    white,
-    white 25%,
-    green 25%,
-    green 50%,
-    yellow 50%,
-    yellow 75%,
-    black 75%
-  );
-}
-
-#title {
-  background-color: white;
-  font-size: 48pt;
-  height: 75px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
-#dividor-bottom-title {
-  height: 40px;
-  width: 100%;
-  background: linear-gradient(
-    to bottom,
-    black,
-    black 25%,
-    yellow 25%,
-    yellow 50%,
-    green 50%,
-    green 75%,
-    white 75%
-  );
-}
-/*** TITLE END ***/
+/*** IMAGE END ***/
 
 /*** BIKE HEADER START ***/
-div.dividor-top {
-  height: 40px;
-  width: 100%;
-  background: linear-gradient(
-    to bottom,
-    white,
-    white 25%,
-    green 25%,
-    green 50%,
-    yellow 50%,
-    yellow 75%,
-    black 75%
-  );
-}
 
 /* To center the title of the bike */
 h2 {  
-  height: 40px;
+  height: auto;
   width: 100%;
   display: flex; 
   align-items: center; 
   justify-content: center;
-  margin: 0;
-  padding: 0;
   background-color: white;
 }
 
-div.dividor-bottom {
-  height: 40px;
-  width: 100%;
-  background: linear-gradient(
-    to bottom,
-    black,
-    black 25%,
-    yellow 25%,
-    yellow 50%,
-    green 50%,
-    green 75%,
-    white 75%
-  );
-}
 /*** BIKE HEADER END ***/
-
-/*** MAIN CONTENT ***/
-div.bike-content {
-    background-color: #baf0ff; /* baby blue */
-    color: #4c4b4b; /* grey */
-    font-size: 16pt;
-    line-height: 25pt;
-    width: 100%;
-    padding: 20px;
-    margin: 0 auto; /* For horizontally centered children */
-}
-
-div.bike-content p {
-    margin: auto;
-    width: 50%;
-}
 
 /* To center the image of the bike */
 div.bike div.bike-image {
@@ -133,7 +58,7 @@ div.bike div.bike-image {
 }
 
 div.bike-image img {
-    height: auto;
-    max-height: 100vh;
-    width: 100%;
+  height: auto;
+  max-height: 100vh;
+  width: 100%;
 }

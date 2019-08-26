@@ -30,7 +30,7 @@
     <h2>The Origin</h2>
     <div class="dividor-bottom"></div>
       
-    <div class="bike-content">
+    <div class="content">
       <?php include("origin.html"); ?>
     </div>
 
@@ -38,7 +38,7 @@
     <h2>The Upgrades</h2>
     <div class="dividor-bottom"></div>
       
-    <div class="bike-content">
+    <div class="content">
       <p>Despite its humble beginnings, the bike has gone through significant
       transformations.  On Sunday May 12th, 2019, I had the mechanics at the
       Bike Doctor in Saskatoon replace the last the original component on the
@@ -50,7 +50,7 @@
     <h2>The Future</h2>
     <div class="dividor-bottom"></div>
     
-    <div class="bike-content">
+    <div class="content">
       <p>This is the bike I plan on taking to Vancouver, Canada, from my home in Saskatoon.</p>
     </div>
   </body>

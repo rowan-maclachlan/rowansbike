@@ -3,6 +3,8 @@
   <head>
     <link href="/style/main.css" type="text/css" rel="stylesheet">
     <link href="/style/bike.css" type="text/css" rel="stylesheet">
+    <link href="/style/content.css" type="text/css" rel="stylesheet">
+    <link href="/style/link-trans.css" type="text/css" rel="stylesheet">
     <title>the-khs-alite-100</title>
   </head>
   <body>
@@ -29,7 +31,7 @@
     <div class="dividor-top"></div>
     <h2>The Origin</h2>
     <div class="dividor-bottom"></div>
-    <div class="bike-content">
+    <div class="content">
       <?php include("origin.html"); ?>
     </div>
       
@@ -37,10 +39,10 @@
     <h2>The Upgrades</h2>
     <div class="dividor-bottom"></div>
       
-    <div class="bike-content">
-      <p>Less has been done on this that on Rowan's <a href="/bikes/cambio-rino/cambio-rino.html">Cambio
+    <div class="content">
+      <p>Less has been done on this that on Rowan's <a class="link-trans" href="/bikes/cambio-rino/cambio-rino.html">Cambio
           Rino</a>, but there have been a few major changes. The first of these
-        was the replacement of the broken <a href="https://www.sheldonbrown.com/upgrade-gears.html#twist">grip</a> shifters (shifters prone to wearing
+        was the replacement of the broken <a class="link-trans" href="https://www.sheldonbrown.com/upgrade-gears.html#twist">grip</a> shifters (shifters prone to wearing
         out) with a pair of trigger shifters found at the Bridge City Bike
         Coop. This alone represented a huge upgrade.</p>
       
@@ -66,14 +68,24 @@
       time expanding my experience with front suspension forks, disk brakes, and this
       type of upgrade generally.</p>
       
-      <p>The shox were ridden for a winter to school, and did a great job.  However, I was concerned about their condition because I did not know the previous owners of the shocks or how they had been treated.  I resolved to attempt to service them myself.  I picked up some light shock oil from the BikeDoctor and got them to order me in a new set of fork seals.  After reading through the service manuals (see <a href="https://www.sram.com/service/rockshox/7,105">here</a> and checking out some Youtube <a href="https://www.youtube.com/watch?v=OmehC5MJDHE">videos</a>, I proceeded through an upper fork service.  It seems to have worked well and I can be confident now about their state.</p>
+      <p>The shox were ridden for a winter to school, and did a great job.
+      However, I was concerned about their condition because I did not know the
+      previous owners of the shocks or how they had been treated.  I resolved
+      to attempt to service them myself.  I picked up some light shock oil from
+      the BikeDoctor and got them to order me in a new set of fork seals.
+      After reading through the service manuals (see <a class="link-trans"
+      href="https://www.sram.com/service/rockshox/7,105">here</a> and checking
+      out some Youtube <a class="link-trans"
+      href="https://www.youtube.com/watch?v=OmehC5MJDHE">videos</a>, I
+      proceeded through an upper fork service.  It seems to have worked well
+      and I can be confident now about their state.</p>
     </div>
         
     <div class="dividor-top"></div>
     <h2>The Future</h2>
     <div class="dividor-bottom"></div>
     
-    <div class="bike-content">
+    <div class="content">
       <p>Hopefully, this bike can be sold to someone more interested in putting it through it's paces rather than sitting in a garage or just riding around town.  Though it had been neglected in the past, it has always deserved to be ridden down the single track in the Saskatoon river valley, gotten muddy, gotten cleaned, and taken care of.  Now that its been upgraded and serviced properly, its more ready than ever for some excitement.</p>
     </div>
   </body>

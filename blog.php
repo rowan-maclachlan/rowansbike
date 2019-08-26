@@ -23,6 +23,9 @@
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="/style/main.css" />
 	<link rel="stylesheet" href="/style/blog.css" />
+	<link rel="stylesheet" href="/style/link-trans.css" />
+	<link rel="stylesheet" href="/style/read-more.css" />
+	<link rel="stylesheet" href="/style/content.css" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">

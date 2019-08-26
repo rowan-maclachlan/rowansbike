@@ -115,19 +115,6 @@ div.sub-info {
 
 /*** POST INFO END ***/
 
-/*** TEXT CONTENT START ***/
-#blog-content {
-  padding-left: 10%;
-  padding-right: 10%;
-  color: rgb(80, 80, 110);
-  font-size: 18pt;
-  line-height: 32pt; 
-}
-
-#blog-content p {
-  padding-bottom: 1em;
-}
-/*** TEXT CONTENT END ***/
 
 /*** READ MORE START ***/
 div.read-more {
