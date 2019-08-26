@@ -72,13 +72,13 @@
 		<!-- Blog Navigation -->
 		<div class="blog_nav">
 			<cms:if k_paginate_link_next >
-      <div class="blog_nav_button" id="prev_posts">
+      <div class="blog_nav_button link-trans" id="prev_posts">
 				<a href="<cms:show k_paginate_link_next />" class="button float">&lt;&lt; Older Posts</a>
       </div>
 			</cms:if>
 					
 			<cms:if k_paginate_link_prev >
-      <div class="blog_nav_button" id="next_posts">
+      <div class="blog_nav_button link-trans" id="next_posts">
 				<a href="<cms:show k_paginate_link_prev />" class="button float right">Newer Posts >></a>
       </div>
 			</cms:if>

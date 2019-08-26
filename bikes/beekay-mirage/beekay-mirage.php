@@ -3,6 +3,8 @@
   <head>
     <link href="/style/main.css" type="text/css" rel="stylesheet">
     <link href="/style/bike.css" type="text/css" rel="stylesheet">
+    <link href="/style/content.css" type="text/css" rel="stylesheet">
+    <link href="/style/link-trans.css" type="text/css" rel="stylesheet">
     <title>the-beekay-mirage</title>
   </head>
   <body>
@@ -10,11 +12,11 @@
     <?php require 'header.html'; ?>
       
     <div class="bike-title-wrapper">
-      <div id="dividor-top-title"></div>
+      <div class="dividor-top"></div>
       <h1 id="title">
           The Beekay Mirage
       </h1>
-      <div id="dividor-bottom-title"></div>
+      <div class="dividor-bottom"></div>
     </div>
     
     <div class=intro_image>
