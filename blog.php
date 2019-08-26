@@ -70,7 +70,7 @@
 			</cms:if>
       <?php require 'sub.php'; ?>
       <!-- Post Content -->
-      <div id="blog-content">
+      <div class="content">
 		    <cms:show blog_content />
       </div>
       <!-- Next/Prev post -->
