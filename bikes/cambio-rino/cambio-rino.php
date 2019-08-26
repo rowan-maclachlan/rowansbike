@@ -55,6 +55,8 @@
     <div class="content">
       <p>This is the bike I plan on taking to Vancouver, Canada, from my home in Saskatoon.</p>
     </div>
+
+    <?php require 'footer.html'; ?>
   </body>
 </html>
 <script> </script>
