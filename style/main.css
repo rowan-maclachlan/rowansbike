@@ -160,17 +160,13 @@ nav div.nav-list {
   width: 100%; /* wide enough for individual urls */
   position: absolute;
   top: var(--navbar_height);
-  max-height: 0px;
-  transition: max-height, 1s;
   font-size: 14pt;
   line-height: 14pt;
-  -webkit-transition: max-height, 1s;
-  -moz-transition: max-height, 1s;
-  -o-transition: max-height, 1s;
 }
 
 nav div.responsive {
-  max-height: 1000px;
+  max-height: 50vh;
+  overflow-y: scroll;
   display: block;
 }
 
