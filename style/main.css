@@ -317,14 +317,14 @@ div#footer-info div#contact {
   list-style-position: inside;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 1024px) {
   div.footer-block {
     display: block;
     width: 100%;
   }
 }
 
-@media (min-width: 680px) {
+@media (min-width: 1024px) {
   div.footer-block {
     display: table-cell;
     text-align: left;
