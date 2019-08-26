@@ -74,57 +74,128 @@ body {
 
 /*** NAVBAR BEGIN ***/
 nav {
-  overflow: hidden;
   background-color: #333; /* black */
-  list-style-type: none;
   display: block; /* display as block element */
-  height: var(--navbar_height);
+  line-height: var(--navbar_height);
   width: 100%; /* extend over the whole page */
-  margin: 0;
-  padding: 0;
-  position: fixed; /* Stay in place */
+  position: fixed; /* Stay in place while scrolling */
   z-index: 3; /* Overlap other content */
 }
 
-nav a {
-  height: 100%;
-  width: auto;
-  float: left;
-  vertical-align: middle;
-  margin: auto 0;
+nav a#logo {
+  display: block;
+  width: 100%;
+  margin: auto;
   text-align: center;
-  padding: 30px 16px; /* hack for centering text vertically... */
-  line-height: 20px;
+  font-size: 24pt;
   text-decoration: none;
+  color: white;
+}
+
+nav div#menu-button {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 24pt;
+  text-align: center;
+}
+
+nav div.nav-list {
+  display: none;
+  height: auto; /* tall enough for all urls */
+  width: 100%; /* wide enough for individual urls */
+  position: absolute;
+  max-height: 0px;
+  transition: max-height, 1s;
   font-size: 14pt;
+  line-height: 14pt;
+  -webkit-transition: max-height, 1s;
+  -moz-transition: max-height, 1s;
+  -o-transition: max-height, 1s;
+}
+
+nav div.responsive {
+  max-height: 1000px;
+  display: block;
+}
+
+nav .menu-trans {
+  background-color: #333;
   color: white;
   transition: color, 0.5s, linear, 0s;
   -webkit-transition: color, 0.5s linear 0s;
   -moz-transition: color, 0.5s linear 0s;
   -o-transition: color, 0.5s linear 0s;
-}
-
-nav a#logo {
-  width: 350px;
-  padding-left: 25px;
-  padding-right: 25px;
-  line-height: 20px;
-  font-size: 24pt;
-}
-
-nav a#blog {
-  float: right;
-}
-
-nav a#tour {
-  float: right;
-}
-
-
-nav a:hover {
-  background: white;
-  color: black;
   text-decoration: none;
+  text-color: white;
+}
+
+nav div.menu-trans:hover {
+  background-color: white;
+  color: #333;
+}
+
+nav a.menu-trans:hover {
+  background-color: white;
+  color: #333;
+}
+
+nav div.nav-list a {
+  display: block;
+  height: auto;
+  width: 100%;
+  text-align: center;
+  padding: 24px; /* hack for centering text vertically... */
+  line-height: 20px;
+  font-size: 14pt;
+}
+
+@media (min-width: 1250px) {
+  nav {
+    overflow: hidden;
+    background-color: #333; /* black */
+    list-style-type: none;
+    display: block; /* display as block element */
+    height: var(--navbar_height);
+    width: 100%; /* extend over the whole page */
+    margin: 0;
+    padding: 0;
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Overlap other content */
+  }
+  
+  nav div.nav-list {
+    display: inline-block;
+    height: 75px; 
+    width: 100%;
+    max-height: none;
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+  }
+
+  nav div.nav-list a {
+    height: 100%;
+    width: auto;
+    float: left;
+    line-height: 24pt;
+  }
+  
+  nav a#logo {
+    display: inline-block;
+    width: 350px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  nav div#menu-button {
+    display: none;
+  }
+  
 }
 /*** NAVBAR END ***/
 

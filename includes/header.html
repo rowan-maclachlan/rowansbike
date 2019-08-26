@@ -2,11 +2,27 @@
   <a id="logo" href="/index.php">
     <span style="font-family:'Liberty Island'">ROWAN'S BIKE</span>
   </a>
-  <a class="bike-nav" href="/bikes/khs-alite/khs-alite.php">KHS Alite 100</a>
-  <a class="bike-nav" href="/bikes/cambio-rino/cambio-rino.php">Cambio Rino</a>
-  <a class="bike-nav" href="/bikes/beekay-mirage/beekay-mirage.php">Beekay Mirage</a>
-  <a class="bike-nav" href="/bikes/nova/nova.php">Nova</a>
-  <a class="bike-nav" href="/bikes/bianchi-volpe/bianchi-volpe.php">Bianchi Volpe</a>
-  <a href="/blog.php">Blog</a>
-  <a id="tour" class="bike-nav" href="/tour">The Tour</a>
+  <div class="menu-trans" id="menu-button" onClick="toggleNav()">
+    <span style="font-family:'Liberty Island'">MENU</span>
+  </div>
+  <div class="menu-trans nav-list" id="nav_toggle">
+    <a class="menu-trans bike-nav" href="/bikes/khs-alite/khs-alite.php">KHS Alite 100</a>
+    <a class="menu-trans bike-nav" href="/bikes/cambio-rino/cambio-rino.php">Cambio Rino</a>
+    <a class="menu-trans bike-nav" href="/bikes/beekay-mirage/beekay-mirage.php">Beekay Mirage</a>
+    <a class="menu-trans bike-nav" href="/bikes/nova/nova.php">Nova</a>
+    <a class="menu-trans bike-nav" href="/bikes/bianchi-volpe/bianchi-volpe.php">Bianchi Volpe</a>
+    <a class="menu-trans bike-nav" href="/blog.php">Blog</a>
+    <a class="menu-trans bike-nav" id="tour"  href="/tour">The Tour</a>
+  </div>
 </nav>
+  <script>
+    function toggleNav() {
+      var x = document.getElementById("nav_toggle");
+      if (x.className === "menu-trans nav-list") {
+        x.className += " responsive";
+      }
+      else {
+        x.className = "menu-trans nav-list";
+      }
+    }
+  </script>
