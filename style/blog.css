@@ -194,3 +194,24 @@ div.blog_nav a {
 }
 /*** NEXT PREV END ***/
 
+/*** SIDEBAR START ***/
+div h4 {
+  color: darkslategray;
+  padding-left: 5%;
+  font-size: 18pt;
+}
+div.sidebar div {
+  padding-left: 10%;
+  margin-top: 24px;
+  margin-bottom:24px;
+}
+
+div.sidebar div a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+  text-decoration-color: none;
+  color: grey;
+}
+/*** SIDEBAR END ***/

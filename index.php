@@ -3,6 +3,7 @@
   <head>
     <link href="./style/main.css" type="text/css" rel="stylesheet">
     <link href="./style/read-more.css" type="text/css" rel="stylesheet">
+    <link href="./style/link-trans.css" type="text/css" rel="stylesheet">
     <title>rowans-bike</title>
     <meta name="description"
           content="A collection of work on Rowan's bicycles" />
@@ -59,7 +60,7 @@
       <div class="bike-content">
         <?php include("bikes/khs-alite/origin.html"); ?>
       </div>
-      <div class="read-more">
+      <div class="read-more link-trans">
         <a href="/bikes/khs-alite/khs-alite.php">Read more...</a>
       </div>
     </div>
@@ -80,7 +81,7 @@
       <div class="bike-content">
         <?php include("bikes/cambio-rino/origin.html"); ?>
       </div>
-      <div class="read-more">
+      <div class="read-more link-trans">
         <a href="/bikes/cambio-rino/cambio-rino.php">Read more...</a>
       </div>
     </div>
@@ -101,7 +102,7 @@
       <div class="bike-content">
         <?php include("bikes/beekay-mirage/origin.html"); ?>      
       </div>
-      <div class="read-more">
+      <div class="read-more link-trans">
         <a href="/bikes/beekay-mirage/beekay-mirage.php">Read more...</a>
       </div>
     </div>
@@ -122,7 +123,7 @@
       <div class="bike-content">
         <?php include("bikes/nova/origin.html"); ?>
       </div>
-      <div class="read-more">
+      <div class="read-more link-trans">
         <a href="/bikes/nova/nova.php">Read more...</a>
       </div>
     </div>
@@ -143,7 +144,7 @@
       <div class="bike-content">
         <?php include("bikes/bianchi-volpe/origin.html"); ?>
       </div>
-      <div class="read-more">
+      <div class="read-more link-trans">
         <a href="/bikes/bianchi-volpe/bianchi-volpe.php">Read more...</a>
       </div>
     </div>

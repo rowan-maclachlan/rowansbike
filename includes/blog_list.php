@@ -7,6 +7,7 @@
 	<!-- Stylesheets -->
   <link href="/style/main.css" type="text/css" rel="stylesheet">
   <link href="/style/read-more.css" type="text/css" rel="stylesheet">
+  <link href="/style/link-trans.css" type="text/css" rel="stylesheet">
   <link href="/style/blog.css" type="text/css" rel="stylesheet">
 
   <!-- Fonts -->
@@ -61,7 +62,7 @@
 		  <cms:excerptHTML count='75' ignore='img'><cms:show blog_content /></cms:excerptHTML>
     </div>
 		<!-- Read More Button -->
-    <div class="read-more">
+    <div class="read-more link-trans">
       <a href="<cms:show k_page_link />" class="button right"> Read More...</a>
     </div>
 	</div>
