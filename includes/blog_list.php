@@ -32,8 +32,6 @@
 <body>
 	<!-- Navigation Menu -->
   <cms:embed 'header.html' />
-  <!-- For pushing down content start -->
-  <div id="nav-menu-clear-fix"></div>
 		
 	<!-- Blog Post -->
 	<cms:pages masterpage='blog.php' 
@@ -46,9 +44,9 @@
 	<div class="post">
 		<!-- Post Title -->
 	  <div class="title-wrapper">
-	    <h3 class="title">
+	    <h2 class="title">
         <a href="<cms:show k_page_link />"><cms:show k_page_title /></a>
-      </h3>
+      </h2>
     </div>
 		<!-- Post Data -->
 		<cms:if k_page_foldertitle >

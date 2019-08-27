@@ -5,68 +5,65 @@
   -o-transition: none !important;
  }
 
+
 /*** TITLE BEGIN ***/
 div.title-wrapper {
   height: auto;
-  min-height: 60px;
   width: 100%;
-  display: flex;
   align-items: center;
   padding-left: 5%;
   padding-right: 5%;
-  padding-top: 50px;
-  padding-bottom: 25px;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
-h3.title a {
+h2.title {
+  background-color: inherit;
+  text-align: inherit;
+}
+
+h2.title a {
   height: 100%;
   width: 100%;
   vertical-align: middle;
-  font-size: 36pt;
+  font-size: 1.5em;
   color: rgb(120,120,140);
   text-decoration: none;
 }
-
 /*** TITLE END ***/
 
 /*** POST INFO START ***/
 div.sub {
   color: darkslategray;
-  font-size: 16pt;
+  font-size: 1.25em;
   height: auto;
 }
 
 div.sub a {
   display: inline-block;
-  line-height: 50px;
   color: inherit;
   text-decoration: inherit;
-  text-decoration-color: none;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 div.sub-info {
-  height: 60px;
   display: inline-flex;
-  padding-left: 20px;
+  padding-left: 2em;
 }
 
 #category-display {
   padding-left: 5%;
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 678px) {
   div.sub-info {
-    min-height: 40px;
     height: 100%;
     display: block;
   }
   
   div.sub a {
     line-height: normal;
-  }
-
-  #category-display {
-    padding-left: 5%;
   }
 
   #date-display {
@@ -80,30 +77,14 @@ div.sub-info {
 
 /*** POST INFO END ***/
 
-
-/*** READ MORE START ***/
-div.read-more {
-  line-height: auto;
-  margin: auto;
-  height: auto;
-  padding-left: 10%;
-  padding-right: 10%;
-}
-
-div.read-more a {
-  padding: 0;
-}
-
-/*** READ MORE END ***/
-
 /*** NEXT PREV START ***/
 div.blog_nav {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 div.blog_nav_button {
-  font-size: 24pt;
+  font-size: 2em;
   display: inline-block;
 }
 
@@ -150,18 +131,18 @@ div.blog_nav a {
 div h4 {
   color: darkslategray;
   padding-left: 5%;
-  font-size: 18pt;
+  font-size: 1em;
 }
 div.sidebar div {
   padding-left: 10%;
-  margin-top: 24px;
-  margin-bottom:24px;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 div.sidebar div a {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 10px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-right: 0.5em;
   text-decoration: none;
   text-decoration-color: none;
   color: grey;
