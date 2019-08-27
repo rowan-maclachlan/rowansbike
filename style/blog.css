@@ -14,7 +14,6 @@ div.title-wrapper {
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 5%;
-  padding-bottom: 5%;
 }
 
 h2.title {
@@ -80,7 +79,7 @@ div.sub-info {
 /*** NEXT PREV START ***/
 div.blog_nav {
   margin-top: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 4em;
 }
 
 div.blog_nav_button {

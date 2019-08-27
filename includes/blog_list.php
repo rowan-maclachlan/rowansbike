@@ -63,7 +63,7 @@
     </div>
 		<!-- Read More Button -->
     <div class="read-more link-trans">
-      <a href="<cms:show k_page_link />" class="button right"> Read More...</a>
+      <a href="<cms:show k_page_link />">Read More...</a>
     </div>
 	</div>
 			
@@ -72,13 +72,13 @@
 		<div class="blog_nav">
 			<cms:if k_paginate_link_next >
       <div class="blog_nav_button link-trans" id="prev_posts">
-				<a href="<cms:show k_paginate_link_next />" class="button float">&lt;&lt; Older Posts</a>
+				<a href="<cms:show k_paginate_link_next />">&lt;&lt; Older Posts</a>
       </div>
 			</cms:if>
 					
 			<cms:if k_paginate_link_prev >
       <div class="blog_nav_button link-trans" id="next_posts">
-				<a href="<cms:show k_paginate_link_prev />" class="button float right">Newer Posts >></a>
+				<a href="<cms:show k_paginate_link_prev />">Newer Posts >></a>
       </div>
 			</cms:if>
 		</div>
