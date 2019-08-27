@@ -2,9 +2,9 @@ What is this site about?
 ========================
 
 This website represents a personal project for me and a sandbox in which to
-developer basic web programming skills.  None of the work in here done by me
-should be considered exemplary or excellent in any regard, unless by chance it
-happened to be so.  
+develop basic web programming skills.  None of the work in here done by me
+should be considered exemplary or excellent in any regard, unless judged so on
+its own merit alone.  
 
 In addition to serving as a bit of a playground for my software engineering
 side, it also features some content created by my physical engineering side.
