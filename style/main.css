@@ -213,14 +213,9 @@ div.bike div.bike-img img {
 
 /* Footer design should display as a table of 3 columns on large screens and be stacked on small screens */
 /*** FOOTER START ***/
-footer {
-  max-height: 100vh;
-}
-
 #footer-info {
   display: table;
   width: 100%;
-  height: 100%;
 }
 
 div.footer-block {
@@ -263,15 +258,4 @@ div#footer-info div#contact {
     width: 100%;
   }
 }
-
-@media (min-width: 1024px) {
-  div.footer-block {
-    display: table-cell;
-    text-align: left;
-    vertical-align: middle;
-    width: 33.33%;
-    padding: 24px;
-  }
-}
 /*** FOOTER END ***/
-
