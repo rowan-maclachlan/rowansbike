@@ -48,7 +48,7 @@
         <a href="<cms:show k_page_link />"><cms:show k_page_title /></a>
       </h2>
     </div>
-		<!-- Post Data -->
+		<!-- Post Info -->
 		<cms:if k_page_foldertitle >
 			<cms:set my_category=k_page_foldertitle />
 		<cms:else />

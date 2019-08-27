@@ -60,15 +60,15 @@
           <a href="<cms:show k_page_link />"><cms:show k_page_title /></a>
         </h2>
       </div>
-      <!-- Post Picture -->
-			<img class="thumb" src="<cms:show blog_image />" alt=""/>
 			<!-- Post Info -->
 			<cms:if k_page_foldertitle >
 				<cms:set my_category=k_page_foldertitle />
 			<cms:else />
 				<cms:set my_category='Uncategorised' />
 			</cms:if>
-      <?php require 'sub.php'; ?>
+      <cms:embed 'sub.php' />
+      <!-- Post Picture -->
+			<img class="thumb" src="<cms:show blog_image />" alt=""/>
       <!-- Post Content -->
       <div class="content">
 		    <cms:show blog_content />
