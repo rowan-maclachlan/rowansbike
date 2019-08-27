@@ -82,7 +82,7 @@
     // Upload folder if not using the default upload folder within 'couch'.
     // Should be relative to your site (don't forget to set write permissions on it).
     // No leading or trailing slashes please.
-    define( 'K_UPLOAD_DIR', 'resources/photos/' );
+    define( 'K_UPLOAD_DIR', 'resources/photos' );
 
     // 12b.
     // Folder containing the embedded snippets if not using the default 'snippets' folder within 'couch'.
