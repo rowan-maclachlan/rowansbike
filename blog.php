@@ -3,8 +3,7 @@
 	<cms:editable name='blog_content' type='richtext' />
 	
 	<cms:editable name='blog_image'
-		crop='1'
-		width='1200'
+		width='1600'
 		height='1600'
 		type='image'
 	/>
