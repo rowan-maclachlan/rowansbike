@@ -76,6 +76,16 @@ div.sub-info {
 
 /*** POST INFO END ***/
 
+/*** IMAGE START ***/
+div.blog-image {
+  align-items: center;
+}
+
+div img.thumb {
+  width: auto;
+}
+/*** IMAGE END ***/
+
 /*** NEXT PREV START ***/
 div.blog_nav {
   margin-top: 1em;

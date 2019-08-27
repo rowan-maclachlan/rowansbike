@@ -39,7 +39,7 @@
 				start_on=k_archive_date 
 				stop_before=k_next_archive_date 
 				paginate='1' 
-				limit='10' >
+				limit='8' >
 					
 	<div class="post">
 		<!-- Post Title -->
@@ -56,7 +56,9 @@
 		</cms:if>
     <cms:embed 'sub.php' />
 		<!-- Post Image -->
-		<img class="thumb" alt="" src="<cms:show blog_image />" />
+    <div class="blog-image">
+		  <img class="thumb" alt="" src="<cms:show blog_image />" />
+    </div>
 		<!-- Post Content -->
     <div class="content">
 		  <cms:excerptHTML count='75' ignore='img'><cms:show blog_content /></cms:excerptHTML>
