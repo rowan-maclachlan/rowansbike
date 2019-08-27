@@ -54,6 +54,22 @@ html{
   padding: 0;
 }
 
+h1 {
+  font-family: Roboto, sans-serif;
+}
+
+h2 {
+  font-family: Roboto, sans-serif;
+}
+
+h3 {
+  font-family: Roboto, sans-serif;
+}
+
+h4 {
+  font-family: Roboto, sans-serif;
+}
+
 body {
   margin: 0;
   background-color: beige;
