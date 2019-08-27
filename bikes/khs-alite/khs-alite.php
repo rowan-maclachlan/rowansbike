@@ -7,15 +7,18 @@
     <link href="/style/content.css" type="text/css" rel="stylesheet">
     <link href="/style/link-trans.css" type="text/css" rel="stylesheet">
     <title>the-khs-alite-100</title>
+    <link 
+      href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" 
+      rel="stylesheet">
   </head>
   <body>
     
     <?php require 'header.html'; ?>
       
     <div class="dividor-top"></div>
-    <h1 id="title">
-      <span>The KHS Alite 100</span>
-    </h1>
+      <h1 id="title">
+        <span>The KHS Alite 100</span>
+      </h1>
     <div class="dividor-bottom"></div>
     
     <div class=intro_image>
@@ -30,6 +33,7 @@
     <div class="dividor-top"></div>
     <h2>The Origin</h2>
     <div class="dividor-bottom"></div>
+
     <div class="content">
       <?php include("origin.html"); ?>
     </div>
@@ -88,6 +92,8 @@
       <p>Hopefully, this bike can be sold to someone more interested in putting it through it's paces rather than sitting in a garage or just riding around town.  Though it had been neglected in the past, it has always deserved to be ridden down the single track in the Saskatoon river valley, gotten muddy, gotten cleaned, and taken care of.  Now that its been upgraded and serviced properly, its more ready than ever for some excitement.</p>
     </div>
   </body>
+
   <?php require 'footer.html'; ?>
+
 </html>
 <script> </script>
