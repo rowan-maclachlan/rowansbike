@@ -4,8 +4,8 @@
 	
 	<cms:editable name='blog_image'
 		crop='1'
-		width='610'
-		height='150'
+		width='1200'
+		height='1600'
 		type='image'
 	/>
 	

@@ -77,12 +77,16 @@ div.sub-info {
 /*** POST INFO END ***/
 
 /*** IMAGE START ***/
-div.blog-image {
-  align-items: center;
+div img.thumb {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%;
+  height: auto;
 }
 
-div img.thumb {
-  width: auto;
+@media screen and (max-width: 1200px) {
+  max-width: 100%;
 }
 /*** IMAGE END ***/
 
