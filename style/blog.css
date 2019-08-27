@@ -81,12 +81,14 @@ div.blog-image img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  max-width: 80%;
+  width: 80%;
   height: auto;
 }
 
 @media screen and (max-width: 1200px) {
-  max-width: 100%;
+  div.blog-image img {
+    width: 100%;
+  }
 }
 /*** IMAGE END ***/
 
