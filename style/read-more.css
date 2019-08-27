@@ -1,12 +1,11 @@
 div.read-more {
-  font-size: 24pt;
-  line-height: 32pt;
+  font-size: 2em;
   display: block;
   margin: auto;
   height: auto;
-  padding-bottom: 48px;
+  padding-bottom: 1em;
 }
 
 div.read-more a {
-  padding: 40px;
+  padding: 1em;
 }

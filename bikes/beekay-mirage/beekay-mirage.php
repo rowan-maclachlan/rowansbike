@@ -3,6 +3,7 @@
   <head>
     <link href="/style/main.css" type="text/css" rel="stylesheet">
     <link href="/style/bike.css" type="text/css" rel="stylesheet">
+    <link href="/style/navbar.css" type="text/css" rel="stylesheet">
     <link href="/style/content.css" type="text/css" rel="stylesheet">
     <link href="/style/link-trans.css" type="text/css" rel="stylesheet">
     <title>the-beekay-mirage</title>

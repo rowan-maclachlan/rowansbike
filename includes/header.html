@@ -1,7 +1,9 @@
 <nav>
-  <a id="logo" href="/index.php">
+  <div id="logo" >
+    <a href="/index.php">
     <span style="font-family:'Liberty Island'">ROWAN'S BIKE</span>
   </a>
+  </div>
   <div id="menu-button" onClick="toggleNav()">
   </div>
   <div class="nav-list" id="nav_toggle">
@@ -15,14 +17,15 @@
     <a class="menu-trans bike-nav" id="contact" href="#footer-info">Contact</a>
   </div>
 </nav>
-  <script>
-    function toggleNav() {
-      var x = document.getElementById("nav_toggle");
-      if (x.className === "nav-list") {
-        x.className += " responsive";
-      }
-      else {
-        x.className = "nav-list";
-      }
+<div class="navbar-clearfix"></div>
+<script>
+  function toggleNav() {
+    var x = document.getElementById("nav_toggle");
+    if (x.className === "nav-list") {
+      x.className += " responsive";
     }
-  </script>
+    else {
+      x.className = "nav-list";
+    }
+  }
+</script>

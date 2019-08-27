@@ -2,9 +2,10 @@
 <html>
 
 <head>
-  <link href="../style/main.css" type="text/css" rel="stylesheet">
-  <link href="../style/tour.css" type="text/css" rel="stylesheet">
-  <link href="../style/bike.css" type="text/css" rel="stylesheet">
+  <link href="/style/main.css" type="text/css" rel="stylesheet">
+  <link href="/style/navbar.css" type="text/css" rel="stylesheet">
+  <link href="/style/tour.css" type="text/css" rel="stylesheet">
+  <link href="/style/bike.css" type="text/css" rel="stylesheet">
   <title>the-tour</title>
   <meta name="description" content="Rowan's bicycle tour" />
   <meta name="keywords" content="bike, touring, blog, bike-tour, bike-packing" />

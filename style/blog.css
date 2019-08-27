@@ -1,36 +1,9 @@
-@media only screen and (min-width: 1000px) { /* For tablets and desktops */
-
-}
-
-html{
-  scroll-behavior:smooth
-}
-
-:root {
-  --navbar_height: 75px;
-}
-
-body {
-  margin: 0;
-  background: beige;
-  font-size: 16pt;
-}
-
 .preload * { /* To prevent unwanted transitions on page load */
   -webkit-transition: none !important;
   -moz-transition: none !important;
   -ms-transition: none !important;
   -o-transition: none !important;
  }
-
-/*** NAVBAR BEGIN ***/
-#nav-menu-clear-fix {
-  height: var(--navbar_height, 175px);
-}
-/*** NAVBAR END ***/
-
-/*** POST IMAGE BEGIN ***/
-/*** POST IMAGE END ***/
 
 /*** TITLE BEGIN ***/
 div.title-wrapper {

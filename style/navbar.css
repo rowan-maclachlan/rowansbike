@@ -1,0 +1,177 @@
+/*** NAVBAR BEGIN ***/
+:root {
+  --navbar_height: 75px;
+}
+
+#nav-menu-clear-fix {
+  height: var(--navbar_height);
+}
+
+nav {
+  background-color: #333; /* black */
+  height: var(--navbar_height);
+  width: 100%; /* extend over the whole page */
+  position: fixed; /* Stay in place while scrolling */
+  z-index: 4; /* Overlap other content */
+}
+
+nav div#logo {
+  overflow: hidden;
+  display: inline-block;
+  height: var(--navbar_height);
+  width: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 1.5em;
+  line-height: var(--navbar_height);
+}
+
+nav div#logo a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  background-color: #333;
+  color: white;
+}
+
+nav div#menu-button {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: var(--navbar_height);
+  width: 96px;
+  margin-right: 5%;
+  margin-left: 5%;
+  background: linear-gradient(
+    to bottom,
+    #333,
+    #333 11%,
+    white 11%,
+    white 23%,
+    #333 23%,
+    #333 33%,
+    white 33%,
+    white 45%,
+    #333 45%,
+    #333 55%,
+    white 55%,
+    white 67%,
+    #333 67%,
+    #333 77%,
+    white 77%,
+    white 89%,
+    #333 89%
+  );
+  transition: background 1s linear;
+  -webkit-transition: background 1s linear;
+  -moz-transition: background 1s linear;
+  -o-transition: background 1s linear;
+}
+
+nav div#menu-button:hover {
+  background: linear-gradient(
+    to bottom,
+    #333,
+    #333 11%,
+    ForestGreen 11%,
+    ForestGreen 23%,
+    #333 23%,
+    #333 33%,
+    hsl(250, 60%, 45%) 33%,
+    hsl(250, 60%, 45%) 45%,
+    #333 45%,
+    #333 55%,
+    gold 55%,
+    gold 67%,
+    #333 67%,
+    #333 77%,
+    hsl(0, 100%, 50%) 77%,
+    hsl(0, 100%, 50%) 89%,
+    #333 89%
+  );
+}
+
+nav div.nav-list {
+  display: none;
+  height: auto; /* tall enough for all urls */
+  width: 100%; /* wide enough for individual urls */
+  position: absolute;
+  top: var(--navbar_height);
+  font-size: 1em;
+  line-height: 1em;
+}
+
+nav div.responsive {
+  max-height: 50vh;
+  overflow-y: scroll;
+  display: block;
+}
+
+nav .menu-trans {
+  text-decoration: none;
+  background-color: #333;
+  color: white;
+  transition: color, 0.5s, linear, 0s;
+  -webkit-transition: color, 0.5s linear 0s;
+  -moz-transition: color, 0.5s linear 0s;
+  -o-transition: color, 0.5s linear 0s;
+}
+
+nav .menu-trans:hover {
+  background-color: white;
+  color: #333;
+}
+
+nav div.nav-list a {
+  display: block;
+  height: auto;
+  width: 100%;
+  text-align: center;
+  padding: 1em; /* hack for centering text vertically... */
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+@media (min-width: 1296px) {
+  nav {
+    overflow: hidden;
+    background-color: #333; /* black */
+    display: block; /* display as block element */
+    height: var(--navbar_height);
+    width: 100%; /* extend over the whole page */
+    margin: 0;
+    padding: 0;
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Overlap other content */
+  }
+  
+  nav div.nav-list {
+    display: inline-block;
+    top: auto;
+    width: 100%;
+    max-height: none;
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+  }
+
+  nav div.nav-list a {
+    height: 100%;
+    width: auto;
+    float: left;
+  }
+  
+  nav div#menu-button {
+    display: none;
+  }
+}
+
+div.navbar-clearfix {
+  content: "";
+  height: var(--navbar_height);
+}
+/*** NAVBAR END ***/
+

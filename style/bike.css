@@ -1,22 +1,3 @@
-div.bike-title-wrapper {
-  width: 100%;
-  padding-top: var(--navbar_height, 75px);
-  display: block;
-  align-self: center;
-  justify-content: center;
-}
-
-#title {
-  background-color: white;
-  font-size: 48pt;
-  height: auto;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-/*** TITLE END ***/
-
 /*** IMAGE START ***/
 div.into_image {
   flex: 1;
@@ -34,20 +15,6 @@ div.intro_image img {
   margin: 0 auto;
 }
 /*** IMAGE END ***/
-
-/*** BIKE HEADER START ***/
-
-/* To center the title of the bike */
-h2 {  
-  height: auto;
-  width: 100%;
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
-  background-color: white;
-}
-
-/*** BIKE HEADER END ***/
 
 /* To center the image of the bike */
 div.bike div.bike-image {

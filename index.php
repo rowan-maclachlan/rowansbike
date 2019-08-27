@@ -2,6 +2,7 @@
 <html>
   <head>
     <link href="./style/main.css" type="text/css" rel="stylesheet">
+    <link href="./style/navbar.css" type="text/css" rel="stylesheet">
     <link href="./style/read-more.css" type="text/css" rel="stylesheet">
     <link href="./style/link-trans.css" type="text/css" rel="stylesheet">
     <link href="./style/content.css" type="text/css" rel="stylesheet">

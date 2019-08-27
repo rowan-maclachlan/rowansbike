@@ -23,6 +23,7 @@
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="/style/main.css" />
 	<link rel="stylesheet" href="/style/blog.css" />
+	<link rel="stylesheet" href="/style/navbar.css" />
 	<link rel="stylesheet" href="/style/link-trans.css" />
 	<link rel="stylesheet" href="/style/read-more.css" />
 	<link rel="stylesheet" href="/style/content.css" />

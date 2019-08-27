@@ -3,6 +3,7 @@
   <head>
     <link href="/style/main.css" type="text/css" rel="stylesheet">
     <link href="/style/bike.css" type="text/css" rel="stylesheet">
+    <link href="/style/navbar.css" type="text/css" rel="stylesheet">
     <link href="/style/content.css" type="text/css" rel="stylesheet">
     <link href="/style/link-trans.css" type="text/css" rel="stylesheet">
     <title>the-khs-alite-100</title>
@@ -11,13 +12,11 @@
     
     <?php require 'header.html'; ?>
       
-    <div class="bike-title-wrapper">
-      <div class="dividor-top"></div>
-      <h1 id="title">
-          The KHS Alite 100
-      </h1>
-      <div class="dividor-bottom"></div>
-    </div>
+    <div class="dividor-top"></div>
+    <h1 id="title">
+      <span>The KHS Alite 100</span>
+    </h1>
+    <div class="dividor-bottom"></div>
     
     <div class=intro_image>
       <img src="/resources/photos/khs/khs.full.low.jpg"
