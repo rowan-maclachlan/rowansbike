@@ -43,7 +43,7 @@
     <div class="dividor-bottom"></div>
       
     <div class="content">
-      <p></p>
+      <?php include("upgrades.html"); ?>
     </div>
     
     <div class="dividor-top"></div>
@@ -51,7 +51,7 @@
     <div class="dividor-bottom"></div>
     
     <div class="content">
-      <p></p>
+      <?php include("future.html"); ?>
     </div>
 
     <?php require 'footer.html'; ?>
