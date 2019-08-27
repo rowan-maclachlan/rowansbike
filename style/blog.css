@@ -102,7 +102,7 @@ div.blog_nav a {
   color: grey;
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 1248px) {
   div.blog_nav_button {
     display: block;
     text-align: center;
