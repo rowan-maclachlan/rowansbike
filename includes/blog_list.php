@@ -57,7 +57,7 @@
     <cms:embed 'sub.php' />
 		<!-- Post Image -->
     <div class="blog-image">
-		  <img class="thumb" alt="" src="<cms:show blog_image />" />
+		  <img alt="" src="<cms:show blog_image />" />
     </div>
 		<!-- Post Content -->
     <div class="content">
