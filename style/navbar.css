@@ -1,6 +1,6 @@
 /*** NAVBAR BEGIN ***/
 :root {
-  --navbar_height: 75px;
+  --navbar_height: 74px;
 }
 
 #nav-menu-clear-fix {
@@ -129,7 +129,10 @@ nav div.nav-list a {
   height: auto;
   width: 100%;
   text-align: center;
-  padding: 1em; /* hack for centering text vertically... */
+  padding-left:   1em; /* hack for centering text vertically... */
+  padding-right:  1em; /* hack for centering text vertically... */
+  padding-bottom: 1em; /* hack for centering text vertically... */
+  padding-top:    1em; /* hack for centering text vertically... */
   font-size: 1em;
   line-height: 1.5em;
 }
@@ -159,9 +162,11 @@ nav div.nav-list a {
   }
 
   nav div.nav-list a {
-    height: 100%;
     width: auto;
     float: left;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: var(--navbar_height);
   }
   
   nav div#menu-button {
