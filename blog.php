@@ -2,11 +2,19 @@
 <cms:template title='Blog' clonable='1' commentable='1'>
 	<cms:editable name='blog_content' type='richtext' />
 	
-	<cms:editable name='blog_image'
+	<cms:editable name='first_image'
 		width='1600'
 		height='1600'
 		type='image'
 	/>
+  <cms:editable name='first_alt' type='richtext' />
+
+  <cms:editable name='second_image'
+		width='1600'
+		height='1600'
+		type='image'
+	/>
+  <cms:editable name='second_alt' type='richtext' />
 	
 	<cms:folder name="touring" title="Bicycle Touring" />
 	
@@ -68,11 +76,15 @@
       <cms:embed 'sub.php' />
       <!-- Post Picture -->
       <div class="blog-image">
-		    <img alt="" src="<cms:show blog_image />" />
+		    <img alt="<cms:show first_alt />" src="<cms:show first_image />" />
       </div>
       <!-- Post Content -->
       <div class="content">
 		    <cms:show blog_content />
+      </div>
+      <!-- Post Picture -->
+      <div class="blog-image">
+		    <img alt="<cms:show second_alt />" src="<cms:show second_image />" />
       </div>
       <!-- Next/Prev post -->
       <div class="blog_nav">
