@@ -64,7 +64,11 @@
 		<!-- Navigation Menu -->
     <?php require 'header.html'; ?>
     <!-- For pushing down content start -->
-		
+    <cms:if k_user_access_level ge '10' >
+      <p><a target="_blank" href="<cms:admin_link />">EDIT</a></p>
+    <cms:else />  
+      <h3>You cannot edit!</h3>
+    </cms:if>
 		<!-- Column 1 /Content -->
 		<!-- Blog Post -->
 		<div class="post">
