@@ -7,13 +7,11 @@
 		height='1600'
 		type='image'
 	/>
-  <cms:editable label='First image alt'
+  <cms:editable name='first_alt' 
+                label='First image alt'
                 desc='Scroll tip for the first image.'
-                name='first_alt' 
                 type='richtext' 
-                height='50'>
-                What is this image about?
-  <cmd:editable/>
+                height='50'/>
 
   <cms:editable name='video' type='textarea' no_xss_check='1' />
   <cms:editable name='video_alt' type='richtext' height='50'/>
