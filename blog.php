@@ -7,14 +7,23 @@
 		height='1600'
 		type='image'
 	/>
-  <cms:editable name='first_alt' type='richtext' />
+  <cms:editable label='First image alt'
+                desc='Scroll tip for the first image.'
+                name='first_alt' 
+                type='richtext' 
+                height='50'>
+                What is this image about?
+  <cmd:editable/>
+
+  <cms:editable name='video' type='textarea' no_xss_check='1' />
+  <cms:editable name='video_alt' type='richtext' height='50'/>
 
   <cms:editable name='second_image'
 		width='1600'
 		height='1600'
 		type='image'
 	/>
-  <cms:editable name='second_alt' type='richtext' />
+  <cms:editable name='second_alt' type='richtext' height='50'/>
 	
 	<cms:folder name="touring" title="Bicycle Touring" />
 	
@@ -83,6 +92,9 @@
 		    <cms:show blog_content />
       </div>
       <!-- Post Picture -->
+      <div class="blog-image">
+        <cms:show video /> 
+      </div>
       <div class="blog-image">
 		    <img alt="<cms:show second_alt />" src="<cms:show second_image />" />
       </div>
