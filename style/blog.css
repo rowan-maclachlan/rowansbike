@@ -85,6 +85,15 @@ div.blog-image img {
   height: auto;
 }
 
+/*** IMAGE START ***/
+div.blog-image iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: auto;
+}
+
 @media screen and (max-width: 1200px) {
   div.blog-image img {
     width: 100%;
