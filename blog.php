@@ -9,19 +9,42 @@
 	/>
   <cms:editable name='first_alt' 
                 label='First image alt'
-                desc='Scroll tip for the first image.'
+                desc='alt text for the first image.'
                 type='richtext' 
-                height='50'/>
+                height='20'/>
+  <cms:editable name='first_title' 
+                label='First image title'
+                desc='scroll tip for the first image.'
+                type='richtext' 
+                height='20'/>
+  <cms:editable name='first_desc' 
+                label='Image description'
+                desc='Description or explanation of the image.'
+                type='richtext' 
+                height='20'/>
 
   <cms:editable name='video' type='textarea' no_xss_check='1' />
-  <cms:editable name='video_alt' type='richtext' height='50'/>
+  <cms:editable name='video_desc' 
+                label='Video description'
+                desc='Description or explanation of the video.'
+                type='richtext' 
+                height='20'/>
 
   <cms:editable name='second_image'
 		width='1600'
 		height='1600'
 		type='image'
 	/>
-  <cms:editable name='second_alt' type='richtext' height='50'/>
+  <cms:editable name='second_alt' 
+                label='Second image alt' 
+                desc='alt text for the second image' 
+                type='richtext' 
+                height='20'/>
+  <cms:editable name='second_desc' 
+                label='Image description'
+                desc='Description or explanation of the image.'
+                type='richtext' 
+                height='20'/>
 	
 	<cms:folder name="touring" title="Bicycle Touring" />
 	
