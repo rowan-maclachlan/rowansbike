@@ -110,8 +110,13 @@
       <cms:embed 'sub.php' />
       <!-- Post Picture -->
       <div class="blog-image">
-		    <img alt="<cms:show first_alt />" src="<cms:show first_image />" />
+        <img title="<cms:show first_title />" 
+             alt="<cms:show first_alt />" 
+             src="<cms:show first_image />" />
       </div>
+      <div class="secondary_content">
+        <cms:show first_desc />
+      </div> 
       <!-- Post Content -->
       <div class="content">
 		    <cms:show blog_content />
@@ -120,9 +125,17 @@
       <div class="blog-image">
         <cms:show video /> 
       </div>
-      <div class="blog-image">
-		    <img alt="<cms:show second_alt />" src="<cms:show second_image />" />
+      <div class="secondary_content">
+        <cms:show video_desc> 
       </div>
+      <div class="blog-image">
+        <img title="<cms:show second_title />"
+             alt="<cms:show second_alt />" 
+             src="<cms:show second_image />" />
+      </div>
+      <div class="secondary_content">
+        <cms:show second_desc />
+      </div> 
       <!-- Next/Prev post -->
       <div class="blog_nav">
         <cms:pages start_on=k_page_date order='asc' limit='1' offset='1'>

@@ -9,4 +9,15 @@ div.content {
   line-height: 2em; 
   margin: 0 auto; /* For horizontally centered children */
 }
+
+div.secondary_content {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 20%;
+  padding-right: 20%;
+  color: rgb(80, 80, 110); /* TODO: darker grey */
+  font-size: 1.25em;
+  line-height: 1.5em; 
+  margin: 0 auto; /* For horizontally centered children */
+}
 /*** MAIN CONTENT END ***/
