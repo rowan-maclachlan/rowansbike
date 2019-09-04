@@ -85,18 +85,27 @@ div.blog-image img {
   height: auto;
 }
 
-/*** IMAGE START ***/
 div.blog-image iframe {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
-  height: auto;
+  height: 650px;
 }
 
-@media screen and (max-width: 1200px) {
+/* Don't display GIPHY link */
+div.blog-image p {
+  display: none;
+}
+
+/*** IMAGE/VIDEO END ***/
+@media screen and (max-width: 1248px) {
   div.blog-image img {
     width: 100%;
+  }
+
+  div.blog-image iframe {
+    height:400px;
   }
 }
 /*** IMAGE END ***/
@@ -172,3 +181,4 @@ div.sidebar div a {
   color: grey;
 }
 /*** SIDEBAR END ***/
+
