@@ -14,20 +14,19 @@
   <cms:editable name='first_title' 
                 label='First image title'
                 desc='scroll tip for the first image.'
-                type='richtext' 
-                height='40'/>
+                type='text' />
   <cms:editable name='first_desc' 
                 label='First image description'
                 desc='Description or explanation of the image.'
                 type='richtext' 
-                height='40'/>
+                height='60'/>
 
   <cms:editable name='video' type='textarea' no_xss_check='1' />
   <cms:editable name='video_desc' 
                 label='Video description'
                 desc='Description or explanation of the video.'
                 type='richtext' 
-                height='40'/>
+                height='60'/>
 
   <cms:editable name='second_image'
 		width='1600'
@@ -41,13 +40,12 @@
   <cms:editable name='second_title' 
                 label='Second image title'
                 desc='scroll tip for the second image.'
-                type='richtext' 
-                height='40'/>
+                type='text' />
   <cms:editable name='second_desc' 
                 label='Second image description'
                 desc='Description or explanation of the image.'
                 type='richtext' 
-                height='40'/>
+                height='60'/>
 	
 	<cms:folder name="touring" title="Bicycle Touring" />
 	
