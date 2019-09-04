@@ -10,15 +10,14 @@
   <cms:editable name='first_alt' 
                 label='First image alt'
                 desc='alt text for the first image.'
-                type='richtext' 
-                height='40'/>
+                type='text' />
   <cms:editable name='first_title' 
                 label='First image title'
                 desc='scroll tip for the first image.'
                 type='richtext' 
                 height='40'/>
   <cms:editable name='first_desc' 
-                label='Image description'
+                label='First image description'
                 desc='Description or explanation of the image.'
                 type='richtext' 
                 height='40'/>
@@ -38,8 +37,7 @@
   <cms:editable name='second_alt' 
                 label='Second image alt' 
                 desc='alt text for the second image' 
-                type='richtext' 
-                height='40'/>
+                type='text' />
   <cms:editable name='second_title' 
                 label='Second image title'
                 desc='scroll tip for the second image.'
