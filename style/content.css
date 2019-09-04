@@ -1,13 +1,18 @@
 /*** MAIN CONTENT ***/
 div.content {
-  padding-top: 1em;
-  padding-bottom:1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   padding-left: 10%;
   padding-right: 10%;
   color: rgb(80, 80, 110); /* grey */
   font-size: 1.5em;
   line-height: 2em; 
   margin: 0 auto; /* For horizontally centered children */
+}
+
+div.content p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 div.secondary_content {
