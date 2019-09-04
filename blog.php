@@ -126,7 +126,7 @@
         <cms:show video /> 
       </div>
       <div class="secondary_content">
-        <cms:show video_desc> 
+        <cms:show video_desc /> 
       </div>
       <div class="blog-image">
         <img title="<cms:show second_title />"
