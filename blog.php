@@ -48,6 +48,7 @@
                 height='60'/>
 	
 	<cms:folder name="touring" title="Bicycle Touring" />
+	<cms:folder name="mechanics" title="Bicycle Mechanics" />
 	
 </cms:template>
 
