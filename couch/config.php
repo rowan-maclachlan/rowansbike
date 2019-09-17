@@ -60,7 +60,7 @@
     // 8.
     // Set the following to '1' if you wish to enable Pretty URLS.
     // After enabling it, use gen_htaccess.php to generate an .htaccess file and place it in the root folder of your site.
-    define( 'K_PRETTY_URLS', 0 );
+    define( 'K_PRETTY_URLS', 1 );
 
     // 9.
     // If set, CMS will cache generated pages and serve them if possible.
